@@ -1,7 +1,7 @@
 {
-  "name": "portfolio",
+  "name": "The Flare Initiative ",
   "version": "1.0.0",
-  "description": "Mi portafolio",
+  "description": "The Flare Initiative ",
   "main": "index.html",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",

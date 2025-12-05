@@ -137,6 +137,7 @@
      */
     &-langlist {
       box-shadow: 0 2px 4px rgba(0, 0, 0, 0);
+
       max-height: 0rem; /* Initially hidden */
       opacity: 0;
       overflow: hidden;
@@ -307,7 +308,7 @@
   overflow: none; /* Note: should be 'visible' or 'auto', 'none' is not valid */
 
   @include respond-to(large) {
-    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px; /* Adds shadow when expanded */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
   }
 }
 

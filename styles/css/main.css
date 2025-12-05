@@ -882,7 +882,7 @@ table {
 }
 @media (min-width: 992px) {
   .header__nav-langlist--active {
-    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px; /* Adds shadow when expanded */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
   }
 }
 

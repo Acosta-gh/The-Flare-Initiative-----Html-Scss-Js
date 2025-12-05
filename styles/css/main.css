@@ -289,10 +289,24 @@ table {
   border-radius: 20px;
   transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
   position: relative;
+  overflow: hidden;
   font-family: "Roboto", sans-serif;
 }
 .card:hover {
   transform: translateY(-5px);
+}
+.card__icon {
+  position: absolute;
+  bottom: -23px;
+  right: -23px;
+  opacity: 0.1;
+  z-index: 0;
+}
+.card__icon svg {
+  width: 8rem;
+  height: 8rem;
+  transition: transform 0.4s ease, opacity 0.4s ease;
+  color: inherit;
 }
 .card__title {
   font-size: 1.5rem;
@@ -317,6 +331,8 @@ table {
   line-height: 1.7;
   margin-top: 5px;
   text-align: left;
+  position: relative;
+  z-index: 1;
 }
 .card__number {
   font-size: 3rem;

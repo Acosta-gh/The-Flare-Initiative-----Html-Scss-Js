@@ -1,0 +1,122 @@
+/**
+ * This file contains the animations used on the website:
+ * 1. Scroll-based animations for elements that appear when entering the viewport
+ * 2. Animated scroll down indicator
+ */
+
+@use "../abstracts/variables" as *; // Import global variables
+@use "../abstracts/mixins" as *; // Import responsive mixins
+
+/**
+ * Scroll-triggered animations
+ * -----------------------------
+ * Allows elements to appear with a smooth animation when
+ * they enter the viewport. The .scrolled class is added via JavaScript
+ * when the element becomes visible.
+ */
+.scroll-container {
+  // Initial state: elements invisible and shifted down
+  .js-scroll {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  // Visible state: elements visible and in their normal position
+  .js-scroll.scrolled {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 500ms ease; // Only opacity transition by default
+  }
+
+  // Variant with slide up effect
+  .js-scroll.scrolled.slideup {
+    transition: opacity 500ms ease, transform 500ms ease; // Add movement transition
+  }
+}
+
+/**
+ * Scroll down indicator
+ * -----------------------------------
+ * Displays animated arrows that indicate to the user they should scroll down
+ * to see more content.
+ * 
+ * Based on code by Mike Wagz (https://codepen.io/mikewagz/pen/PGXqOg)
+ * Licensed under the MIT License
+ */
+$strokeWidth: 4px; // Arrow thickness
+$strokeColor: $primary-color; // Arrow color (imported from variables)
+
+$timing: 2.6s; // Animation duration
+$easing: cubic-bezier(0.77, 0, 0.175, 1); // Custom acceleration curve
+
+// Main container for the indicator
+.scroll-down-indicator {
+  display: block;
+  margin: 0 auto;
+  opacity: 0.5; // Semi-transparent to avoid being intrusive
+  width: 1rem;
+  position: absolute; // Absolute positioning within its container
+  bottom: 0;
+  left: 49%;
+  bottom: 12.5%;
+  @include respond-to(medium) {
+    bottom: 22.5%;
+    left: 49.25%;
+  }
+}
+
+// Creating arrows using pseudo-elements
+.scroll-down-indicator:before,
+.scroll-down-indicator:after {
+  content: "";
+  display: block;
+  width: 12px;
+  height: 12px;
+  transform: rotate(45deg); // Rotation to create arrow shape
+  border-bottom: $strokeWidth solid $strokeColor; // Creates arrow shape
+  border-right: $strokeWidth solid $strokeColor; // using borders
+}
+
+// Animation for the first arrow
+.scroll-down-indicator:before {
+  animation: down-arrow-before $timing $easing infinite;
+}
+
+// Animation for the second arrow
+.scroll-down-indicator:after {
+  animation: down-arrow-after $timing $easing infinite;
+}
+
+/**
+ * @keyframes animation definitions
+ * ----------------------------------
+ * Control the movement and opacity of the arrows
+ */
+
+// Animation for the first arrow - simple downward movement
+@keyframes down-arrow-before {
+  50% {
+    transform: rotate(45deg) translate(70%, 70%); // Moves the arrow down
+  }
+
+  100% {
+    transform: rotate(45deg) translate(70%, 70%); // Maintains position
+  }
+}
+
+// Animation for the second arrow - cyclic movement with fade out and reappearance
+@keyframes down-arrow-after {
+  50% {
+    transform: rotate(45deg) translate(110%, 110%); // Moves further than the first
+    opacity: 0; // Gradually disappears
+  }
+
+  51% {
+    transform: rotate(45deg) translate(-130%, -130%); // Repositions above (invisible)
+  }
+
+  100% {
+    transform: rotate(45deg) translate(-70%, -70%); // Returns to its position
+    opacity: 1; // Fully visible
+  }
+}

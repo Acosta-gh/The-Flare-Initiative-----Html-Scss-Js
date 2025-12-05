@@ -1,0 +1,123 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+
+.card.highlight {
+  transform: scale(1.1);
+
+  z-index: 2;
+
+  border: 1px solid $accent-color; // Borde naranja
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px; // Sombra más profunda
+
+  &:hover {
+    transform: scale(1.1) translateY(-5px);
+  }
+
+  @include respond-to(medium, max) {
+    transform: scale(1);
+    margin: 1rem 0;
+    border: 2px solid $accent-color;
+
+    &:hover {
+      transform: translateY(-5px);
+    }
+  }
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+  border-radius: 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+
+  position: relative;
+
+  font-family: $primary-font;
+
+  &:hover {
+    transform: translateY(-5px);
+  }
+
+  &__title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    position: relative;
+    padding-bottom: 0.5rem;
+    width: 100%;
+    text-align: left;
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 40px;
+      height: 3px;
+    }
+  }
+
+  &__desc,
+  &__paragraph {
+    font-family: $primary-font;
+    font-size: 1rem;
+    line-height: 1.7;
+    margin-top: 5px;
+    text-align: left;
+  }
+
+  &__number {
+    font-size: 3rem;
+    font-weight: 900;
+    color: $accent-color;
+    line-height: 1;
+    margin-bottom: 1rem;
+  }
+
+  &--light {
+    background-color: #ffffff;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    box-shadow: rgba(149, 157, 165, 0.1) 0px 8px 24px;
+
+    &:hover {
+      box-shadow: rgba(149, 157, 165, 0.2) 0px 12px 30px;
+      border: 1px solid $accent-color;
+    }
+
+    .card__title {
+      color: $secondary-color;
+      &::after {
+        background-color: $accent-color; // Línea Naranja
+      }
+    }
+
+    .card__desc,
+    .card__paragraph {
+      color: lighten($secondary-color, 20%);
+    }
+  }
+
+  &--dark {
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: none;
+
+    &:hover {
+      background-color: rgba(255, 255, 255, 0.1);
+      border-color: $accent-color;
+    }
+
+    .card__title {
+      color: $accent-color;
+      &::after {
+        background-color: $white;
+      }
+    }
+
+    .card__desc,
+    .card__paragraph {
+      color: rgba($white, 0.8);
+    }
+  }
+}

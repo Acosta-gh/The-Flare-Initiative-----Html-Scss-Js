@@ -1,0 +1,32 @@
+@use 'sass:map';
+
+// where breakpoints are defined
+$breakpoints: (
+  very-small: 376px,
+  small: 576px,
+  medium: 768px,
+  large: 992px,
+  xlarge: 1200px,
+  xxlarge: 1400px
+);
+
+// Mixin to handle min or max
+@mixin respond-to($breakpoint, $direction: min) {
+  $value: map.get($breakpoints, $breakpoint);
+
+  @if $value {
+    @if $direction == min {
+      @media (min-width: $value) {
+        @content;
+      }
+    } @else if $direction == max {
+      @media (max-width: ($value - 1px)) {
+        @content;
+      }
+    } @else {
+      @error "La dirección debe ser `min` o `max`, pero se encontró `#{$direction}`.";
+    }
+  } @else {
+    @error "No se encontró el breakpoint `#{$breakpoint}`. Verifica el nombre en \$breakpoints.";
+  }
+}

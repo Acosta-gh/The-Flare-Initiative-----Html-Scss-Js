@@ -1,0 +1,336 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+
+/* 
+ * Header Component - Main navigation bar
+ * ---------------------------------------------------
+ * This file defines the structure, layout and responsive
+ * behaviors of the site's navigation bar.
+ */
+
+.header {
+  background-color: $primary-color;
+  position: fixed; /* Fixes the header at the top of the window */
+  top: 0.5rem;
+  left: 0;
+  width: 96%;
+  margin: 2% 2%; /* Centers the header with 5% margins on each side */
+  border-radius: 15px;
+
+  z-index: 1000; /* Ensures the header is above other elements */
+
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  transition: border-radius 0.1s ease-in-out;
+  font-family: $primary-font;
+
+  @include respond-to(medium) {
+    top: 0;
+  }
+  &__nav {
+    position: relative;
+    display: flex;
+    justify-content: space-between; /* Distributes elements at start and end */
+    align-items: center;
+    padding: 10px 5%;
+
+    @include respond-to(medium) {
+      margin-left: 5%;
+      margin-right: 5%;
+    }
+
+    /* 
+     * Language selection menu
+     * --------------------------
+     * Button that controls the opening of the language dropdown menu
+     */
+    &-langmenu {
+      background: none;
+      border: none;
+      box-shadow: none;
+      padding: 0;
+      margin: 0;
+      color: inherit;
+      font: inherit;
+      cursor: pointer;
+
+      .arrow {
+        transition: transform 0.3s ease; /* Rotation animation for the arrow icon */
+      }
+    }
+
+    /* 
+     * Site logo 
+     * ------------
+     * Contains the logo image and possibly the site name
+     */
+    &-logo {
+      display: flex;
+      align-items: center;
+      padding: 5px;
+      font-size: 24px;
+      font-weight: bold;
+
+      .header__logo-img {
+        width: 35px;
+        height: auto;
+
+        /* Filter to adjust logo color if needed */
+        filter: invert(12%) sepia(0%) saturate(0%) hue-rotate(0deg)
+          brightness(12%) contrast(100%);
+
+        @include respond-to(large) {
+          width: 40px; /* Slightly larger logo on large screens */
+          cursor: pointer;
+        }
+      }
+    }
+
+    /* 
+     * Main navigation list 
+     * ----------------------------
+     * On mobile it displays as a dropdown menu,
+     * on desktop as a horizontal bar
+     */
+    &-list {
+      background-color: $primary-color;
+
+      overflow: hidden;
+      position: absolute; /* On mobile, absolute positioning for dropdown */
+      left: 0;
+      top: 30px;
+      z-index: -1;
+      width: 100%;
+
+      border-radius: 0 0 15px 15px;
+      max-height: 0vh; /* Initially hidden (height 0) */
+      padding: 2rem 0 0 0;
+
+      //box-shadow: 0px 20px 20px -10px rgba(149, 157, 165, 0.537);
+
+      opacity: 1;
+      transition: all 0.3s ease; /* Smooth transition to show/hide */
+
+      /* On large screens, displays as horizontal bar */
+      @include respond-to(large) {
+        position: static;
+        opacity: 1;
+        display: flex;
+        flex-direction: row;
+        max-height: none;
+        height: auto;
+        padding: 0;
+        overflow: visible;
+        box-shadow: 0px 12px 20px -10px rgba(149, 157, 165, 0);
+        width: auto;
+      }
+
+      @include respond-to(medium) {
+        padding: 0;
+        z-index: 1;
+      }
+    }
+
+    /* 
+     * Language dropdown list 
+     * --------------------------
+     * Initially hidden, displays when clicking the language button
+     */
+    &-langlist {
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0);
+      max-height: 0rem; /* Initially hidden */
+      opacity: 0;
+      overflow: hidden;
+      /* Transitions for various effects when showing/hiding */
+      transition: max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1),
+        opacity 0.5s ease-in-out, border-radius 0.5s ease;
+
+      padding: 0.1rem;
+      margin-top: 5px;
+
+      /* Language list items */
+      .header__nav-langitem {
+        margin-top: 0px;
+        margin: 10px;
+        cursor: pointer;
+      }
+
+      /* On large screens, the language menu is a positioned dropdown */
+      @include respond-to(large) {
+        transition: max-height 0.35s cubic-bezier(0.4, 0, 0.2, 1),
+          opacity 0.3s ease-in-out, border-radius 5s ease, box-shadow 1s ease;
+        opacity: 0;
+        margin-top: 0px;
+        overflow: hidden;
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        top: 3.3rem;
+        right: -25px; /* Adjusted positioning */
+        max-height: 0px;
+        padding: 0.1rem;
+        background-color: $primary-color;
+        box-shadow: 0px 12px 20px -10px rgba(149, 157, 165, 0);
+        border-radius: 15px;
+      }
+
+      @include respond-to(large) {
+        margin: 0 12%;
+      }
+    }
+
+    /* 
+     * Navigation and language items
+     * -------------------------------
+     * Style for navigation links and language options
+     */
+    &-item,
+    &-lang {
+      margin: 1rem;
+      cursor: pointer;
+
+      a {
+        display: block;
+        width: 100vw; /* Full width on mobile */
+        text-decoration: none;
+        color: inherit;
+        opacity: 0; /* Initially invisible on mobile (until activation) */
+        transition: opacity 0.3s ease;
+      }
+
+      /* Specific styles for large screens */
+      @include respond-to(large, min) {
+        a {
+          width: 100%;
+          opacity: 1; /* Visible on desktop */
+        }
+
+        font-size: $font-size-medium;
+
+        display: inline-block;
+        position: relative;
+
+        /* Animated underline effect on hover */
+        &::after {
+          content: "";
+          position: absolute;
+          width: 100%;
+          transform: scaleX(0); /* Initially scale 0 (invisible) */
+          height: 2px;
+          bottom: -5px;
+          left: 0;
+          background-color: $accent-color;
+          transition: transform 0.25s ease-out;
+        }
+      }
+    }
+
+    /* 
+     * Hamburger menu button
+     * -----------------------
+     * Only visible on mobile, controls the opening of the main menu
+     */
+    &-burguer {
+      background: none;
+      border: none;
+      box-shadow: none;
+      padding: 0;
+      margin: 0;
+      color: inherit;
+      font: inherit;
+      cursor: pointer;
+
+      /* Hidden on large screens */
+      @include respond-to(large) {
+        display: none;
+      }
+    }
+
+    /* Hamburger menu lines */
+    &-burguer-line {
+      @include respond-to(xxlarge, max) {
+        display: block;
+        background-color: $secondary-color;
+        width: 30px;
+        height: 2px;
+        margin: 5px 0;
+        transition: all 0.3s ease; /* For animation when transforming to X */
+      }
+    }
+  }
+}
+
+/*
+ * ACTIVE STATES
+ * --------------
+ * These styles are applied via JavaScript to control
+ * the different interaction states of the menus
+ */
+
+/* Animation of hamburger button to X shape when active */
+.header__nav-burguer--active {
+  @include respond-to(large, max) {
+    span:nth-child(1) {
+      transform: rotate(45deg) translate(5px, 5px); /* Diagonal line \ */
+    }
+
+    span:nth-child(2) {
+      opacity: 0; /* Hides middle line */
+    }
+
+    span:nth-child(3) {
+      transform: rotate(-45deg) translate(5px, -5px); /* Diagonal line / */
+    }
+  }
+}
+
+/* 
+ * Expands max-height to show menus
+ * when active (burger and lang)
+ */
+.header__nav--active,
+.header__nav-langlist--active {
+  max-height: 13rem;
+}
+
+/* Makes links visible when mobile menu is active */
+.header__nav--active {
+  box-shadow: 0 15px 25px -10px rgba(0, 0, 0, 0.15);
+  a {
+    opacity: 1;
+  }
+}
+
+/* Additional adjustments for language menu when active */
+.header__nav-langlist--active {
+  max-height: 7rem;
+  opacity: 1;
+  overflow: none; /* Note: should be 'visible' or 'auto', 'none' is not valid */
+
+  @include respond-to(large) {
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px; /* Adds shadow when expanded */
+  }
+}
+
+/* 
+ * Style for active/selected navigation item
+ * Shows accent color and animated bottom line
+ */
+.item--active {
+  a {
+    color: $accent-color;
+  }
+
+  &::after {
+    transform: scaleX(1); /* Shows expanded bottom line */
+  }
+}
+
+/* 
+ * Arrow rotation when language menu is active
+ * to visually indicate open/closed state
+ */
+.header__nav-langmenu--active {
+  .arrow {
+    transform: rotate(180deg); /* Rotates arrow upward */
+  }
+}

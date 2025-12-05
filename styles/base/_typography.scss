@@ -1,0 +1,35 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+
+.subtitle {
+    text-align: left;
+    font-size: $font-size-xxlarge;
+    font-family: $secondary-font;
+    color: $secondary-color;
+   
+    font-weight: $font-weight-medium;
+}
+
+.paragraph{
+    color: $secondary-color;
+    font-family: $primary-font;
+    font-size: $font-size-medium;
+    line-height: 22px;
+}
+
+.underline{
+    text-decoration: underline; 
+    color: $accent-color; 
+    font-weight: $font-weight-bold;
+
+    svg{
+        width: 20px;
+        height: 20px;
+        margin-bottom: -3px;
+
+        path{
+            stroke: $accent-color;
+            stroke-width: 2px;
+        }
+    }
+}

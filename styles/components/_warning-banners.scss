@@ -1,0 +1,15 @@
+.in_construction{
+    display: flex;
+    align-items: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: auto;
+    padding: 1rem .5rem;
+    background-color: yellow;
+    color: black;
+    z-index: 999;
+    span{
+        margin-left: .5rem;
+    }
+}

@@ -1,0 +1,1329 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote::before, blockquote::after,
+q::before, q::after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+.subtitle {
+  text-align: left;
+  font-size: 3.5rem;
+  font-family: "Kedebideri", sans-serif;
+  color: #1A262B;
+  font-weight: 500;
+}
+
+.paragraph {
+  color: #1A262B;
+  font-family: "Roboto", sans-serif;
+  font-size: 1.25rem;
+  line-height: 22px;
+}
+
+.underline {
+  text-decoration: underline;
+  color: #e37e54;
+  font-weight: 700;
+}
+.underline svg {
+  width: 20px;
+  height: 20px;
+  margin-bottom: -3px;
+}
+.underline svg path {
+  stroke: #e37e54;
+  stroke-width: 2px;
+}
+
+/**
+ * This file contains the animations used on the website:
+ * 1. Scroll-based animations for elements that appear when entering the viewport
+ * 2. Animated scroll down indicator
+ */
+/**
+ * Scroll-triggered animations
+ * -----------------------------
+ * Allows elements to appear with a smooth animation when
+ * they enter the viewport. The .scrolled class is added via JavaScript
+ * when the element becomes visible.
+ */
+.scroll-container .js-scroll {
+  opacity: 0;
+  transform: translateY(20px);
+}
+.scroll-container .js-scroll.scrolled {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 500ms ease;
+}
+.scroll-container .js-scroll.scrolled.slideup {
+  transition: opacity 500ms ease, transform 500ms ease;
+}
+
+/**
+ * Scroll down indicator
+ * -----------------------------------
+ * Displays animated arrows that indicate to the user they should scroll down
+ * to see more content.
+ * 
+ * Based on code by Mike Wagz (https://codepen.io/mikewagz/pen/PGXqOg)
+ * Licensed under the MIT License
+ */
+.scroll-down-indicator {
+  display: block;
+  margin: 0 auto;
+  opacity: 0.5;
+  width: 1rem;
+  position: absolute;
+  bottom: 0;
+  left: 49%;
+  bottom: 12.5%;
+}
+@media (min-width: 768px) {
+  .scroll-down-indicator {
+    bottom: 22.5%;
+    left: 49.25%;
+  }
+}
+
+.scroll-down-indicator:before,
+.scroll-down-indicator:after {
+  content: "";
+  display: block;
+  width: 12px;
+  height: 12px;
+  transform: rotate(45deg);
+  border-bottom: 4px solid hsl(32, 100%, 97%);
+  border-right: 4px solid hsl(32, 100%, 97%);
+}
+
+.scroll-down-indicator:before {
+  animation: down-arrow-before 2.6s cubic-bezier(0.77, 0, 0.175, 1) infinite;
+}
+
+.scroll-down-indicator:after {
+  animation: down-arrow-after 2.6s cubic-bezier(0.77, 0, 0.175, 1) infinite;
+}
+
+/**
+ * @keyframes animation definitions
+ * ----------------------------------
+ * Control the movement and opacity of the arrows
+ */
+@keyframes down-arrow-before {
+  50% {
+    transform: rotate(45deg) translate(70%, 70%);
+  }
+  100% {
+    transform: rotate(45deg) translate(70%, 70%);
+  }
+}
+@keyframes down-arrow-after {
+  50% {
+    transform: rotate(45deg) translate(110%, 110%);
+    opacity: 0;
+  }
+  51% {
+    transform: rotate(45deg) translate(-130%, -130%);
+  }
+  100% {
+    transform: rotate(45deg) translate(-70%, -70%);
+    opacity: 1;
+  }
+}
+.target {
+  scroll-margin-top: 60px;
+}
+
+.no-select {
+  -webkit-user-select: none; /* Safari */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* IE10+/Edge */
+  user-select: none;
+}
+
+.js_license_information {
+  position: absolute;
+  right: 25px;
+  color: white;
+}
+
+.button {
+  font-family: "Roboto", sans-serif;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.button--primary,
+.button--disabled,
+.button--secondary,
+.button--tertiary {
+  display: inline-flex;
+  align-items: center;
+  padding: 1rem 1rem 1rem 1.2rem;
+  background-color: #e37e54;
+  color: #1A262B;
+  border: none;
+  border-radius: 15px;
+  font-size: 1rem;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+.button--primary svg,
+.button--disabled svg,
+.button--secondary svg,
+.button--tertiary svg {
+  margin: 0 3px 0 8px;
+  width: 25px;
+  height: 25px;
+}
+.button--primary svg path,
+.button--disabled svg path,
+.button--secondary svg path,
+.button--tertiary svg path {
+  stroke: #1A262B;
+  stroke-width: 2px;
+}
+
+.button--primary {
+  font-weight: 400;
+}
+
+.button--disabled {
+  cursor: not-allowed;
+  opacity: 0.4;
+}
+
+.button--secondary {
+  padding: 0.8rem 1rem;
+  background-color: #1A262B;
+  color: #ffffff;
+}
+.button--secondary svg path {
+  stroke: #ffffff;
+}
+
+.button--tertiary {
+  padding: 1rem 2rem;
+  background-color: hsl(32, 100%, 97%);
+  border: 2px solid hsl(32, 100%, 97%);
+  color: #1A262B;
+  border-radius: 45px;
+  transition: all 0.3s ease;
+  opacity: 0.9;
+}
+.button--tertiary svg path {
+  stroke: #1A262B;
+}
+.button--tertiary:hover {
+  padding: 1rem 2.5rem;
+}
+
+.card.highlight {
+  transform: scale(1.1);
+  z-index: 2;
+  border: 1px solid #e37e54;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px;
+}
+.card.highlight:hover {
+  transform: scale(1.1) translateY(-5px);
+}
+@media (max-width: 767px) {
+  .card.highlight {
+    transform: scale(1);
+    margin: 1rem 0;
+    border: 2px solid #e37e54;
+  }
+  .card.highlight:hover {
+    transform: translateY(-5px);
+  }
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+  border-radius: 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+  position: relative;
+  font-family: "Roboto", sans-serif;
+}
+.card:hover {
+  transform: translateY(-5px);
+}
+.card__title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  position: relative;
+  padding-bottom: 0.5rem;
+  width: 100%;
+  text-align: left;
+}
+.card__title::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 40px;
+  height: 3px;
+}
+.card__desc, .card__paragraph {
+  font-family: "Roboto", sans-serif;
+  font-size: 1rem;
+  line-height: 1.7;
+  margin-top: 5px;
+  text-align: left;
+}
+.card__number {
+  font-size: 3rem;
+  font-weight: 900;
+  color: #e37e54;
+  line-height: 1;
+  margin-bottom: 1rem;
+}
+.card--light {
+  background-color: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  box-shadow: rgba(149, 157, 165, 0.1) 0px 8px 24px;
+}
+.card--light:hover {
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 12px 30px;
+  border: 1px solid #e37e54;
+}
+.card--light .card__title {
+  color: #1A262B;
+}
+.card--light .card__title::after {
+  background-color: #e37e54;
+}
+.card--light .card__desc,
+.card--light .card__paragraph {
+  color: rgb(64.4347826087, 94.1739130435, 106.5652173913);
+}
+.card--dark {
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: none;
+}
+.card--dark:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-color: #e37e54;
+}
+.card--dark .card__title {
+  color: #e37e54;
+}
+.card--dark .card__title::after {
+  background-color: #ffffff;
+}
+.card--dark .card__desc,
+.card--dark .card__paragraph {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.divider {
+  display: block;
+  width: 100px;
+  height: 3px;
+  background-color: #e37e54;
+  margin: 1.5rem 0;
+  border-radius: 2px;
+}
+
+.in_construction {
+  display: flex;
+  align-items: center;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: auto;
+  padding: 1rem 0.5rem;
+  background-color: yellow;
+  color: black;
+  z-index: 999;
+}
+.in_construction span {
+  margin-left: 0.5rem;
+}
+
+.footer {
+  background-color: hsl(32, 100%, 97%);
+  padding: 2.3rem 2.5rem 5.3rem 2.5rem;
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+  color: #1A262B;
+  margin-top: auto;
+}
+.footer__title {
+  margin-top: 0.5rem;
+  margin-bottom: 1rem;
+  min-height: 3rem;
+  text-align: center;
+  font-family: "Roboto", sans-serif;
+  font-size: clamp(3rem, 5vw, 12rem);
+  margin-inline: auto;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+@media (min-width: 992px) {
+  .footer__title {
+    font-size: 3.5rem;
+  }
+}
+@media (min-width: 768px) {
+  .footer {
+    padding: 5% 13%;
+  }
+}
+.footer .subtitle {
+  text-align: center;
+  color: #1A262B;
+  margin-bottom: 2rem;
+  font-weight: 700;
+}
+.footer .sr-only {
+  margin: 0.9rem 0 0 0;
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+.footer__form {
+  display: flex;
+  flex-direction: column;
+  margin: 1rem 0;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.footer__form input,
+.footer__form textarea,
+.footer__form .footer__input,
+.footer__form .footer__textarea {
+  margin: 0.5rem 0 1.5rem 0;
+  padding: 0.8rem 0;
+  border: none;
+  border-radius: 0;
+  background: none;
+  color: #1A262B;
+  font-size: 1.125rem;
+  width: 100%;
+  font-family: "Roboto", sans-serif;
+  position: relative;
+  border-bottom: 1px solid rgba(26, 38, 43, 0.2);
+  background-image: linear-gradient(#e37e54, #e37e54);
+  background-position: left bottom;
+  background-repeat: no-repeat;
+  background-size: 0% 2px;
+  transition: background-size 320ms cubic-bezier(0.2, 0.9, 0.3, 1), border-color 220ms ease;
+}
+.footer__form input::placeholder,
+.footer__form textarea::placeholder,
+.footer__form .footer__input::placeholder,
+.footer__form .footer__textarea::placeholder {
+  color: rgba(26, 38, 43, 0.5);
+  font-family: "Roboto", sans-serif;
+}
+.footer__form input:focus, .footer__form input:focus-visible,
+.footer__form textarea:focus,
+.footer__form textarea:focus-visible,
+.footer__form .footer__input:focus,
+.footer__form .footer__input:focus-visible,
+.footer__form .footer__textarea:focus,
+.footer__form .footer__textarea:focus-visible {
+  outline: none;
+  background-size: 100% 2px;
+  border-bottom-color: transparent;
+}
+.footer__form input:not(:placeholder-shown),
+.footer__form textarea:not(:placeholder-shown),
+.footer__form .footer__input:not(:placeholder-shown),
+.footer__form .footer__textarea:not(:placeholder-shown) {
+  background-size: 100% 2px;
+}
+.footer__form-actions {
+  margin: 1rem 0 2rem 0;
+}
+.footer__form-actions button {
+  background-color: #1A262B;
+  color: #ffffff;
+  border: none;
+  padding: 1rem 1.5rem;
+  border-radius: 50px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: transform 0.2s, background-color 0.2s;
+}
+.footer__form-actions button:hover {
+  background-color: #e37e54;
+  transform: translateY(-2px);
+}
+.footer__form-actions button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.footer__form-actions button svg {
+  width: 1.2em;
+  height: 1.2em;
+}
+.footer__form-actions button svg path {
+  stroke: #ffffff;
+  stroke-width: 2px;
+}
+.footer__form-note {
+  font-size: 1rem;
+  color: rgba(26, 38, 43, 0.6);
+  margin-top: 0;
+}
+.footer__form-note a {
+  color: #e37e54;
+  text-decoration: none;
+}
+.footer__form-note a:hover {
+  text-decoration: underline;
+}
+.footer__form-note svg {
+  display: inline-block;
+  vertical-align: middle;
+  width: 1em;
+  height: 1em;
+  margin-left: 2px;
+}
+.footer__bottom {
+  margin-top: 2rem;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(26, 38, 43, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  font-size: 0.85rem;
+  opacity: 0.8;
+}
+.footer__bottom a {
+  color: #1A262B;
+}
+.footer__bottom-social-media a {
+  display: flex;
+  align-items: center;
+}
+.footer__bottom-social-media-icon {
+  margin-right: 1rem;
+  margin-bottom: 0.5rem;
+  text-decoration: none;
+}
+.footer__bottom-social-media-icon svg {
+  width: 20px;
+  height: 20px;
+  margin-right: 8px;
+}
+
+/* 
+ * Header Component - Main navigation bar
+ * ---------------------------------------------------
+ * This file defines the structure, layout and responsive
+ * behaviors of the site's navigation bar.
+ */
+.header {
+  background-color: hsl(32, 100%, 97%);
+  position: fixed; /* Fixes the header at the top of the window */
+  top: 0.5rem;
+  left: 0;
+  width: 96%;
+  margin: 2% 2%; /* Centers the header with 5% margins on each side */
+  border-radius: 15px;
+  z-index: 1000; /* Ensures the header is above other elements */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  transition: border-radius 0.1s ease-in-out;
+  font-family: "Roboto", sans-serif;
+}
+@media (min-width: 768px) {
+  .header {
+    top: 0;
+  }
+}
+.header__nav {
+  position: relative;
+  display: flex;
+  justify-content: space-between; /* Distributes elements at start and end */
+  align-items: center;
+  padding: 10px 5%;
+}
+@media (min-width: 768px) {
+  .header__nav {
+    margin-left: 5%;
+    margin-right: 5%;
+  }
+}
+.header__nav {
+  /* 
+   * Language selection menu
+   * --------------------------
+   * Button that controls the opening of the language dropdown menu
+   */
+}
+.header__nav-langmenu {
+  background: none;
+  border: none;
+  box-shadow: none;
+  padding: 0;
+  margin: 0;
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+}
+.header__nav-langmenu .arrow {
+  transition: transform 0.3s ease; /* Rotation animation for the arrow icon */
+}
+.header__nav {
+  /* 
+   * Site logo 
+   * ------------
+   * Contains the logo image and possibly the site name
+   */
+}
+.header__nav-logo {
+  display: flex;
+  align-items: center;
+  padding: 5px;
+  font-size: 24px;
+  font-weight: bold;
+}
+.header__nav-logo .header__logo-img {
+  width: 35px;
+  height: auto;
+  /* Filter to adjust logo color if needed */
+  filter: invert(12%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(12%) contrast(100%);
+}
+@media (min-width: 992px) {
+  .header__nav-logo .header__logo-img {
+    width: 40px; /* Slightly larger logo on large screens */
+    cursor: pointer;
+  }
+}
+.header__nav {
+  /* 
+   * Main navigation list 
+   * ----------------------------
+   * On mobile it displays as a dropdown menu,
+   * on desktop as a horizontal bar
+   */
+}
+.header__nav-list {
+  background-color: hsl(32, 100%, 97%);
+  overflow: hidden;
+  position: absolute; /* On mobile, absolute positioning for dropdown */
+  left: 0;
+  top: 30px;
+  z-index: -1;
+  width: 100%;
+  border-radius: 0 0 15px 15px;
+  max-height: 0vh; /* Initially hidden (height 0) */
+  padding: 2rem 0 0 0;
+  opacity: 1;
+  transition: all 0.3s ease; /* Smooth transition to show/hide */
+  /* On large screens, displays as horizontal bar */
+}
+@media (min-width: 992px) {
+  .header__nav-list {
+    position: static;
+    opacity: 1;
+    display: flex;
+    flex-direction: row;
+    max-height: none;
+    height: auto;
+    padding: 0;
+    overflow: visible;
+    box-shadow: 0px 12px 20px -10px rgba(149, 157, 165, 0);
+    width: auto;
+  }
+}
+@media (min-width: 768px) {
+  .header__nav-list {
+    padding: 0;
+    z-index: 1;
+  }
+}
+.header__nav {
+  /* 
+   * Language dropdown list 
+   * --------------------------
+   * Initially hidden, displays when clicking the language button
+   */
+}
+.header__nav-langlist {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0);
+  max-height: 0rem; /* Initially hidden */
+  opacity: 0;
+  overflow: hidden;
+  /* Transitions for various effects when showing/hiding */
+  transition: max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.5s ease-in-out, border-radius 0.5s ease;
+  padding: 0.1rem;
+  margin-top: 5px;
+  /* Language list items */
+}
+.header__nav-langlist .header__nav-langitem {
+  margin-top: 0px;
+  margin: 10px;
+  cursor: pointer;
+}
+.header__nav-langlist {
+  /* On large screens, the language menu is a positioned dropdown */
+}
+@media (min-width: 992px) {
+  .header__nav-langlist {
+    transition: max-height 0.35s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease-in-out, border-radius 5s ease, box-shadow 1s ease;
+    opacity: 0;
+    margin-top: 0px;
+    overflow: hidden;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    top: 3.3rem;
+    right: -25px; /* Adjusted positioning */
+    max-height: 0px;
+    padding: 0.1rem;
+    background-color: hsl(32, 100%, 97%);
+    box-shadow: 0px 12px 20px -10px rgba(149, 157, 165, 0);
+    border-radius: 15px;
+  }
+}
+@media (min-width: 992px) {
+  .header__nav-langlist {
+    margin: 0 12%;
+  }
+}
+.header__nav {
+  /* 
+   * Navigation and language items
+   * -------------------------------
+   * Style for navigation links and language options
+   */
+}
+.header__nav-item, .header__nav-lang {
+  margin: 1rem;
+  cursor: pointer;
+}
+.header__nav-item a, .header__nav-lang a {
+  display: block;
+  width: 100vw; /* Full width on mobile */
+  text-decoration: none;
+  color: inherit;
+  opacity: 0; /* Initially invisible on mobile (until activation) */
+  transition: opacity 0.3s ease;
+}
+.header__nav-item, .header__nav-lang {
+  /* Specific styles for large screens */
+}
+@media (min-width: 992px) {
+  .header__nav-item a, .header__nav-lang a {
+    width: 100%;
+    opacity: 1; /* Visible on desktop */
+  }
+  .header__nav-item, .header__nav-lang {
+    font-size: 1.25rem;
+    display: inline-block;
+    position: relative;
+    /* Animated underline effect on hover */
+  }
+  .header__nav-item::after, .header__nav-lang::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0); /* Initially scale 0 (invisible) */
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+    background-color: #e37e54;
+    transition: transform 0.25s ease-out;
+  }
+}
+.header__nav {
+  /* 
+   * Hamburger menu button
+   * -----------------------
+   * Only visible on mobile, controls the opening of the main menu
+   */
+}
+.header__nav-burguer {
+  background: none;
+  border: none;
+  box-shadow: none;
+  padding: 0;
+  margin: 0;
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+  /* Hidden on large screens */
+}
+@media (min-width: 992px) {
+  .header__nav-burguer {
+    display: none;
+  }
+}
+.header__nav {
+  /* Hamburger menu lines */
+}
+@media (max-width: 1399px) {
+  .header__nav-burguer-line {
+    display: block;
+    background-color: #1A262B;
+    width: 30px;
+    height: 2px;
+    margin: 5px 0;
+    transition: all 0.3s ease; /* For animation when transforming to X */
+  }
+}
+
+/*
+ * ACTIVE STATES
+ * --------------
+ * These styles are applied via JavaScript to control
+ * the different interaction states of the menus
+ */
+/* Animation of hamburger button to X shape when active */
+@media (max-width: 991px) {
+  .header__nav-burguer--active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px); /* Diagonal line \ */
+  }
+  .header__nav-burguer--active span:nth-child(2) {
+    opacity: 0; /* Hides middle line */
+  }
+  .header__nav-burguer--active span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px); /* Diagonal line / */
+  }
+}
+
+/* 
+ * Expands max-height to show menus
+ * when active (burger and lang)
+ */
+.header__nav--active,
+.header__nav-langlist--active {
+  max-height: 13rem;
+}
+
+/* Makes links visible when mobile menu is active */
+.header__nav--active {
+  box-shadow: 0 15px 25px -10px rgba(0, 0, 0, 0.15);
+}
+.header__nav--active a {
+  opacity: 1;
+}
+
+/* Additional adjustments for language menu when active */
+.header__nav-langlist--active {
+  max-height: 7rem;
+  opacity: 1;
+  overflow: none; /* Note: should be 'visible' or 'auto', 'none' is not valid */
+}
+@media (min-width: 992px) {
+  .header__nav-langlist--active {
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px; /* Adds shadow when expanded */
+  }
+}
+
+/* 
+ * Style for active/selected navigation item
+ * Shows accent color and animated bottom line
+ */
+.item--active a {
+  color: #e37e54;
+}
+.item--active::after {
+  transform: scaleX(1); /* Shows expanded bottom line */
+}
+
+/* 
+ * Arrow rotation when language menu is active
+ * to visually indicate open/closed state
+ */
+.header__nav-langmenu--active .arrow {
+  transform: rotate(180deg); /* Rotates arrow upward */
+}
+
+/**
+ * Base document structure
+ * ---------------------------
+ * Establishes the fundamental page layout with full height and smooth scrolling
+ */
+html,
+.body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  scroll-behavior: smooth;
+}
+
+/**
+ * Specific body styles
+ * ---------------------------
+ * Configures the main body element with background color and
+ * initial opacity for fade-in animation
+ */
+.body {
+  background-color: hsl(32, 100%, 97%);
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  opacity: 0;
+}
+
+/**
+ * Main content container
+ * ------------------------------
+ * Contains all main content sections of the website
+ */
+.main {
+  /**
+   * Introduction section
+   * --------------------
+   * The hero section with greeting, name and position
+   * Takes up full screen height to create a strong first impression
+   */
+}
+.main__intro {
+  padding: 1rem;
+}
+@media (max-width: 767px) {
+  .main__intro {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}
+.main__intro {
+  color: hsl(32, 100%, 97%);
+  min-height: 100vh;
+  position: relative;
+  background-image: url("../../assets/images/FlareBGBlur2.webp");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 60%;
+}
+.main__intro::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background: linear-gradient(135deg, rgba(26, 38, 43, 0.7) 0%, rgba(26, 38, 43, 0.5) 100%);
+}
+.main__intro-name, .main__intro-subtitle, .main__intro-donate, .main__intro-salutation-container {
+  position: relative;
+  z-index: 1;
+}
+@media (min-width: 768px) {
+  .main__intro {
+    padding-top: 17%;
+    min-height: 80vh;
+    padding-left: 10%;
+    padding-right: 10%;
+  }
+}
+.main__intro {
+  /**
+   * Name style
+   * The main heading that displays the association's name
+   */
+}
+.main__intro-name {
+  margin-top: 0.1rem;
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  font-weight: 950;
+  font-family: "Kedebideri", sans-serif;
+  text-align: center;
+  opacity: 0.8;
+  font-size: clamp(3rem, 10vw, 5rem);
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+  text-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
+  word-wrap: break-word;
+  hyphens: auto;
+  padding: 0 1rem;
+}
+@media (max-width: 575px) {
+  .main__intro-name {
+    font-size: 4rem;
+    line-height: 1.2;
+  }
+}
+@media (max-width: 375px) {
+  .main__intro-name {
+    font-size: 3.5rem;
+  }
+}
+@media (min-width: 992px) {
+  .main__intro-name {
+    font-size: 8.125rem;
+  }
+}
+.main__intro-subtitle {
+  margin-top: 0.5rem;
+  margin-bottom: 1rem;
+  min-height: 3rem;
+  text-align: center;
+  font-family: "Roboto", sans-serif;
+  line-height: 1.4;
+  font-size: 1.125rem;
+  max-width: 800px;
+  margin-inline: auto;
+  opacity: 0.8;
+}
+@media (min-width: 992px) {
+  .main__intro-subtitle {
+    font-size: 2.25rem;
+  }
+}
+.main__intro-donate {
+  margin-top: 1.5%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.main__intro-donate .paragraph {
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: 400;
+}
+@media (min-width: 992px) {
+  .main__intro-donate {
+    position: relative;
+    right: 0.7rem;
+  }
+}
+.main {
+  /**
+   * Contains introduction and image
+   */
+}
+.main .about-us {
+  padding: 2.3rem 2.5rem 5.3rem 2.5rem;
+  color: #1A262B;
+  font-family: "Roboto", sans-serif;
+  font-size: 1.75rem;
+  background-color: hsl(32, 100%, 97%);
+}
+.main .about-us .subtitle {
+  text-align: center;
+  margin: 2rem 2rem 1.3rem 2rem;
+}
+.main .about-us .paragraph {
+  text-align: center;
+}
+.main .about-us {
+  /**
+   * Visual divider that is hidden on mobile
+   * Only appears on medium screens and larger
+   */
+}
+.main .about-us .divider {
+  display: none;
+}
+@media (min-width: 768px) {
+  .main .about-us {
+    padding-left: 13%;
+    padding-right: 13%;
+    padding-bottom: 0px;
+    padding-top: 10%;
+  }
+  .main .about-us .divider {
+    display: block;
+  }
+  .main .about-us .subtitle {
+    margin: 2rem 2rem 1.3rem 0rem;
+    text-align: left;
+  }
+  .main .about-us .paragraph {
+    text-align: left;
+  }
+}
+.main .about-us {
+  /**
+   * Introduction text container
+   * Contains the brief introduction paragraph
+   */
+}
+@media (min-width: 768px) {
+  .main .about-us__intro p {
+    width: 60%;
+    margin: 0 0 1rem 0;
+  }
+}
+.main .about-us {
+  /**
+   * Media section containing image and detailed biography
+   */
+}
+.main .about-us__media {
+  gap: 3rem;
+}
+@media (min-width: 768px) {
+  .main .about-us__media {
+    display: flex;
+    flex-direction: row-reverse;
+  }
+}
+.main .about-us__media {
+  /**
+   * Detailed biography text
+   */
+}
+.main .about-us__media p {
+  margin-bottom: 3rem;
+  text-align: left;
+}
+@media (min-width: 992px) {
+  .main .about-us__media p {
+    line-height: 25px;
+    width: 60%;
+    margin: 0;
+  }
+}
+.main .about-us__media img {
+  width: 180px;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 45px;
+  display: block;
+  margin: 3rem auto;
+  box-shadow: 4px 3px 17px -11px rgba(0, 0, 0, 0.411);
+}
+@media (min-width: 768px) {
+  .main .about-us__media img {
+    width: 324px;
+    height: 450px;
+    position: relative;
+    bottom: 15rem;
+    left: 2rem;
+    margin: 0 auto;
+  }
+}
+.main {
+  /**
+   * "Our Mission" section
+   * -------------------
+   */
+}
+.main .mission {
+  padding: 2.3rem 2.5rem 5.3rem 2.5rem;
+  font-family: "Roboto", sans-serif;
+  font-size: 1.75rem;
+  background-color: #1A262B;
+  border-radius: 45px 45px 0 0;
+}
+.main .mission .subtitle {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: hsl(32, 100%, 97%);
+}
+@media (min-width: 768px) {
+  .main .mission .subtitle {
+    text-align: right;
+  }
+}
+.main .mission .paragraph {
+  text-align: center;
+  color: hsl(32, 100%, 97%);
+}
+@media (min-width: 768px) {
+  .main .mission .paragraph {
+    text-align: right;
+  }
+}
+.main .mission .divider {
+  display: none;
+}
+@media (min-width: 768px) {
+  .main .mission {
+    padding-left: 13%;
+    padding-right: 13%;
+    padding-bottom: 0px;
+    padding-top: 10%;
+  }
+  .main .mission .divider {
+    display: block;
+    margin-left: auto;
+    margin-right: 0;
+  }
+}
+@media (min-width: 768px) {
+  .main .mission__intro p {
+    width: 60%;
+    margin: 0 0 1rem 0;
+    margin-left: auto;
+    text-align: right;
+  }
+}
+.main .mission__intro p {
+  color: hsl(32, 100%, 97%);
+}
+.main .mission__media {
+  gap: 3rem;
+}
+@media (min-width: 768px) {
+  .main .mission__media {
+    display: flex;
+    flex-direction: row;
+    height: 25rem;
+  }
+}
+.main .mission__media p {
+  margin-bottom: 3rem;
+  text-align: left;
+  color: hsl(32, 100%, 97%);
+}
+@media (min-width: 992px) {
+  .main .mission__media p {
+    line-height: 25px;
+    width: 60%;
+    margin: 0;
+    margin-left: auto;
+    text-align: right;
+  }
+}
+.main .mission__media img {
+  width: 180px;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 45px;
+  display: block;
+  margin: 3rem auto;
+  box-shadow: 4px 3px 17px -11px rgba(0, 0, 0, 0.411);
+}
+@media (min-width: 768px) {
+  .main .mission__media img {
+    width: 324px;
+    height: 450px;
+    position: relative;
+    bottom: 15rem;
+    left: 0;
+    margin-right: auto;
+    margin-left: 0;
+  }
+}
+.main .our-approach {
+  padding: 2.3rem 2.5rem 5.3rem 2.5rem;
+}
+@media (min-width: 768px) {
+  .main .our-approach {
+    padding: 7% 13%;
+    padding-bottom: 13.25%;
+  }
+}
+.main .our-approach__subtitle {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+.main .our-approach__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+}
+.main {
+  /**
+   * "How You Can Help" Section 
+   */
+}
+.main .how-to-help {
+  padding: 2.3rem 2.5rem 5.3rem 2.5rem;
+  padding-top: 4rem;
+  padding-bottom: 8rem;
+  background-color: #1A262B;
+  color: #ffffff;
+}
+@media (min-width: 768px) {
+  .main .how-to-help {
+    padding: 4rem 13% 13.25% 13%;
+  }
+}
+.main .how-to-help__subtitle {
+  text-align: center;
+  margin-bottom: 1rem;
+  margin-top: 3rem;
+  color: #ffffff;
+}
+.main .how-to-help__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+}
+.main .how-to-help__title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: #e37e54;
+  font-family: "Roboto", sans-serif;
+  position: relative;
+  padding-bottom: 0.5rem;
+}
+.main .how-to-help__title::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 40px;
+  height: 3px;
+  background-color: #ffffff;
+}
+.main .how-to-help__desc {
+  font-family: "Roboto", sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.8);
+  margin-top: 1rem;
+}
+
+/*# sourceMappingURL=main.css.map */

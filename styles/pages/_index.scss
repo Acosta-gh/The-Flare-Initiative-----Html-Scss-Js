@@ -1,0 +1,457 @@
+@use "../abstracts/variables" as *; // Import global variables
+@use "../abstracts/mixins" as *; // Import responsive mixins
+@use "../base/animations" as *; // Import animation definitions
+
+/**
+ * Base document structure
+ * ---------------------------
+ * Establishes the fundamental page layout with full height and smooth scrolling
+ */
+html,
+.body {
+  height: 100%; // Full viewport height
+  margin: 0; // Remove default margins
+  padding: 0; // Remove default padding
+  display: flex; // Use flexbox for layout
+  flex-direction: column; // Stack elements vertically
+  scroll-behavior: smooth; // Enable smooth scrolling for anchor links
+}
+
+/**
+ * Specific body styles
+ * ---------------------------
+ * Configures the main body element with background color and
+ * initial opacity for fade-in animation
+ */
+.body {
+  background-color: $primary-color; // Set background from variables
+  flex: 1; // Take up all available space
+  display: flex; // Use flexbox
+  flex-direction: column; // Stack children vertically
+  opacity: 0; // Start invisible for fade-in animation
+}
+
+/**
+ * Main content container
+ * ------------------------------
+ * Contains all main content sections of the website
+ */
+.main {
+  /**
+   * Introduction section
+   * --------------------
+   * The hero section with greeting, name and position
+   * Takes up full screen height to create a strong first impression
+   */
+  &__intro {
+    padding: 1rem;
+
+    @include respond-to(medium, max) {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    color: $primary-color;
+    min-height: 100vh;
+
+    position: relative;
+
+    background-image: url("../../assets/images/FlareBGBlur2.webp");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 60%;
+
+    &::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      background: linear-gradient(
+        135deg,
+        rgba(26, 38, 43, 0.7) 0%,
+        rgba(26, 38, 43, 0.5) 100%
+      );
+    }
+
+    &-name,
+    &-subtitle,
+    &-donate,
+    &-salutation-container {
+      position: relative;
+      z-index: 1;
+    }
+
+    // Responsive adjustments for medium screens
+    @include respond-to(medium) {
+      padding-top: 17%;
+      min-height: 80vh; // Adjust height for medium screens
+      padding-left: 10%; // Moderate side margins
+      padding-right: 10%;
+    }
+
+    /**
+     * Name style
+     * The main heading that displays the association's name
+     */
+    &-name {
+      margin-top: 0.1rem;
+      margin-bottom: 0.5rem;
+
+      text-transform: uppercase;
+      font-weight: $font-weight-heavy;
+      font-family: $secondary-font;
+      text-align: center;
+      opacity: 0.8;
+
+      font-size: clamp(3rem, 10vw, $font-size-giant);
+
+      letter-spacing: -0.02em;
+      line-height: 1.1;
+      text-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
+
+      word-wrap: break-word;
+      hyphens: auto;
+      padding: 0 1rem;
+      @include respond-to(small, max) {
+        font-size: $font-size-xxxlarge;
+        line-height: 1.2;
+      }
+
+      @include respond-to(very-small, max) {
+        font-size: $font-size-xxlarge;
+      }
+
+      @include respond-to(large) {
+        font-size: calc($font-size-huge * 1.25);
+      }
+    }
+
+    &-subtitle {
+      margin-top: 0.5rem;
+      margin-bottom: 1rem;
+      min-height: 3rem;
+      text-align: center;
+      font-family: $primary-font;
+      line-height: 1.4;
+      font-size: $font-size-base;
+
+      max-width: 800px;
+      margin-inline: auto;
+      opacity: 0.8;
+
+      @include respond-to(large) {
+        font-size: $font-size-xlarge;
+      }
+    }
+
+    &-donate {
+      margin-top: 1.5%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      .paragraph {
+        margin: 0;
+        font-size: $font-size-medium;
+        font-weight: $font-weight-normal;
+      }
+      @include respond-to(large) {
+        position: relative;
+        right: 0.7rem;
+      }
+    }
+  }
+
+  /**
+   * Contains introduction and image
+   */
+  .about-us {
+    padding: $padding-section;
+    color: $secondary-color;
+    font-family: $primary-font;
+    font-size: $font-size-large;
+    background-color: $primary-color;
+
+    .subtitle {
+      text-align: center;
+      margin: 2rem 2rem 1.3rem 2rem;
+    }
+
+    .paragraph {
+      text-align: center;
+    }
+    /**
+     * Visual divider that is hidden on mobile
+     * Only appears on medium screens and larger
+     */
+    .divider {
+      display: none;
+    }
+
+    // Responsive adjustments for medium screens
+    @include respond-to(medium) {
+      padding-left: 13%;
+      padding-right: 13%;
+      padding-bottom: 0px;
+      padding-top: 10%;
+      .divider {
+        display: block; // Show divider on medium screens and larger
+      }
+      .subtitle {
+        margin: 2rem 2rem 1.3rem 0rem;
+
+        text-align: left;
+      }
+      .paragraph {
+        text-align: left;
+      }
+    }
+
+    /**
+     * Introduction text container
+     * Contains the brief introduction paragraph
+     */
+    &__intro {
+      // Responsive adjustments for medium screens
+      @include respond-to(medium) {
+        p {
+          width: 60%; // Limit paragraph width for better readability
+          margin: 0 0 1rem 0;
+        }
+      }
+    }
+
+    /**
+     * Media section containing image and detailed biography
+     */
+    &__media {
+      gap: 3rem;
+
+      @include respond-to(medium) {
+        display: flex;
+        flex-direction: row-reverse;
+      }
+
+      /**
+       * Detailed biography text
+       */
+      p {
+        margin-bottom: 3rem;
+        text-align: left;
+
+        @include respond-to(large) {
+          line-height: 25px;
+          width: 60%;
+          margin: 0;
+        }
+      }
+
+      img {
+        width: 180px;
+        height: 250px;
+        object-fit: cover;
+        border-radius: 45px;
+
+        display: block;
+        margin: 3rem auto;
+        box-shadow: 4px 3px 17px -11px rgba(0, 0, 0, 0.411);
+
+        @include respond-to(medium) {
+          width: calc(180px * 1.8);
+          height: calc(250px * 1.8);
+
+          position: relative;
+          bottom: 15rem;
+          left: 2rem;
+          margin: 0 auto;
+        }
+      }
+    }
+  }
+
+  /**
+   * "Our Mission" section
+   * -------------------
+   */
+  .mission {
+    padding: $padding-section;
+    font-family: $primary-font;
+    font-size: $font-size-large;
+    background-color: $secondary-color;
+    border-radius: 45px 45px 0 0;
+    .subtitle {
+      text-align: center;
+      margin-bottom: 2rem;
+
+      color: $primary-color;
+      @include respond-to(medium) {
+        text-align: right;
+      }
+    }
+
+    .paragraph {
+      text-align: center;
+      color: $primary-color;
+      @include respond-to(medium) {
+        text-align: right;
+      }
+    }
+    .divider {
+      display: none;
+    }
+
+    @include respond-to(medium) {
+      padding-left: 13%;
+      padding-right: 13%;
+      padding-bottom: 0px;
+      padding-top: 10%;
+      .divider {
+        display: block;
+        margin-left: auto;
+        margin-right: 0;
+      }
+    }
+
+    &__intro {
+      @include respond-to(medium) {
+        p {
+          width: 60%;
+          margin: 0 0 1rem 0;
+
+          margin-left: auto;
+          text-align: right;
+        }
+      }
+      p {
+        color: $primary-color;
+      }
+    }
+
+    &__media {
+      gap: 3rem;
+
+      @include respond-to(medium) {
+        display: flex;
+        flex-direction: row;
+        height: 25rem; // Otherwise, the image might make the section too tall
+      }
+
+      p {
+        margin-bottom: 3rem;
+        text-align: left;
+        color: $primary-color;
+
+        @include respond-to(large) {
+          line-height: 25px;
+          width: 60%;
+          margin: 0;
+
+          margin-left: auto;
+          text-align: right;
+        }
+      }
+
+      img {
+        width: 180px;
+        height: 250px;
+        object-fit: cover;
+        border-radius: 45px;
+        display: block;
+        margin: 3rem auto;
+        box-shadow: 4px 3px 17px -11px rgba(0, 0, 0, 0.411);
+
+        @include respond-to(medium) {
+          width: calc(180px * 1.8);
+          height: calc(250px * 1.8);
+          position: relative;
+          bottom: 15rem;
+
+          left: 0;
+          margin-right: auto;
+          margin-left: 0;
+        }
+      }
+    }
+  }
+
+  .our-approach {
+    padding: $padding-section;
+
+    @include respond-to(medium) {
+      padding: 7% 13%;
+      padding-bottom: 13.25%;
+    }
+
+    &__subtitle {
+      text-align: center;
+      margin-bottom: 1rem;
+    }
+
+    &__grid {
+      display: grid;
+
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+  }
+
+  /**
+   * "How You Can Help" Section 
+   */
+  .how-to-help {
+    padding: $padding-section;
+    padding-top: 4rem;
+    padding-bottom: 8rem;
+
+    background-color: $secondary-color;
+    color: $white;
+
+    @include respond-to(medium) {
+      padding: 4rem 13% 13.25% 13%;
+    }
+
+    &__subtitle {
+      text-align: center;
+      margin-bottom: 1rem;
+      margin-top: 3rem;
+      color: $white;
+    }
+
+    &__grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+
+    &__title {
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      color: $accent-color;
+      font-family: $primary-font;
+      position: relative;
+      padding-bottom: 0.5rem;
+
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 40px;
+        height: 3px;
+        background-color: $white;
+      }
+    }
+
+    &__desc {
+      font-family: $primary-font;
+      font-size: 1rem;
+      line-height: 1.6;
+      color: rgba($white, 0.8);
+      margin-top: 1rem;
+    }
+  }
+}

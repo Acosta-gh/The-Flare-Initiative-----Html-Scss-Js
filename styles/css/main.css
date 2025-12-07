@@ -870,6 +870,11 @@ table {
 .header__nav--active {
   box-shadow: 0 15px 25px -10px rgba(0, 0, 0, 0.15);
 }
+@media (min-width: 992px) {
+  .header__nav--active {
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0);
+  }
+}
 .header__nav--active a {
   opacity: 1;
 }

@@ -42,7 +42,7 @@
         <!-- Site logo -->
         <a href="#" class="header__nav-logo">
           <img
-            src="../../assets/images/logo.svg"
+            src="../../assets/images/logo.png"
             alt="The Flare Initiative Logo - First Responder Support"
             class="header__logo-img"
           />
@@ -143,16 +143,17 @@
           Mettre en lumière les suicides chez les premiers répondants
         </h2>
         <div class="main__intro-donate">
-          <button class="btn button--tertiary">
-            <p class="paragraph">Faire un don</p>
-          </button>
+          <a href="#about_us" class="btn button--tertiary">
+            <span class="paragraph">Qui Nous Sommes</span>
+          </a>
         </div>
 
         <!-- Visual scroll down indicator -->
         <div class="scroll-down-indicator" aria-hidden="true"></div>
       </section>
 
-      <!-- scroll-container -->
+  <!-- scroll-container -->
+      <!-- About Us Section -->
       <section
         class="about-us scroll-container target"
         id="about_us"
@@ -161,37 +162,39 @@
       >
         <!-- js-scroll -->
         <div class="js-scroll slideup" aria-live="polite">
-          <h3 class="subtitle" id="about-us-title" tabindex="0">À propos</h3>
+          <h3 class="subtitle" id="about-us-title" tabindex="0">À propos de nous</h3>
           <div class="about-us__content">
             <div class="about-us__intro">
               <p class="paragraph" tabindex="0">
-                L’Initiative Flare a été créée en réponse à l’absence d’un
-                système de suivi des suicides chez les premiers répondants.
-                <span class="underline">
-                  Il n’existe actuellement aucun système uniforme au Canada pour
-                  suivre les suicides parmi les policiers, pompiers, paramédics,
-                  agents correctionnels ou répartiteurs.
-                </span>
-                L’information existante est fragmentée, incohérente et souvent
-                inaccessible, ce qui empêche les organisations de comprendre
-                pleinement l’ampleur du problème ou d’évaluer l’efficacité des
-                efforts de prévention.
+                L'Initiative Flare a été créée en réponse à un manque de suivi des suicides chez les premiers répondants.
+              </p>
+              <p class="paragraph underline">
+                Le Canada ne dispose actuellement d'aucun système cohérent pour suivre les suicides parmi la police, les pompiers, les services médicaux d'urgence, les services correctionnels ou le personnel de répartition.
+              </p>
+              <p class="paragraph">
+                Les informations existantes sont fragmentées, incohérentes et
+                inaccessibles, ce qui empêche les agences de premiers répondants et les organisations de santé mentale de comprendre pleinement l'ampleur du problème
+                or evaluate prevention efforts.
               </p>
             </div>
             <span class="divider" aria-hidden="true"></span>
             <div class="about-us__media">
-              <img
-                src="../../assets/images/firefighter.jpg"
-                alt="firefighter in gear, representing first responder mental health"
-                tabindex="0"
-              />
+              <figure>
+                <img
+                  src="../../assets/images/firefighter.jpg"
+                  alt="firefighter in gear, representing first responder mental health"
+                  tabindex="0"
+                />
+                               <figcaption class="image-credit">
+                  <!-- Photo courtesy of -->
+                  <a href="#" target="_blank" rel="noopener">   <!-- dansunphotos.com --> </a>
+                    <!-- dansunphotos.com -->
+                    </a>
+                </figcaption>
+              </figure>
+
               <p class="paragraph" tabindex="0">
-                En créant une meilleure visibilité sur la réalité des suicides
-                chez les premiers répondants, l’Initiative Flare fournira une
-                base de données essentielle pour appuyer les programmes de
-                prévention, orienter les politiques publiques et réduire la
-                stigmatisation entourant la santé mentale des premiers
-                répondants.
+                En rendant visible la véritable ampleur des suicides chez les premiers répondants, l'Initiative Flare fournira la base de preuves pour des programmes de prévention efficaces, informera les changements de politique et réduira la stigmatisation autour de la santé mentale des premiers répondants.
               </p>
             </div>
           </div>
@@ -202,33 +205,36 @@
       <!-- Mission Section -->
       <section class="mission scroll-container" tabindex="-1">
         <div class="js-scroll slideup" aria-live="polite">
-          <h3 class="subtitle" id="mission-title" tabindex="0">
-            Notre mission
-          </h3>
+          <h3 class="subtitle" id="mission-title" tabindex="0">Notre Mission</h3>
 
           <div class="mission__content">
             <div class="mission__intro">
               <p class="paragraph mission__statement" tabindex="0">
-                Réduire les suicides chez les premiers répondants grâce à une
-                prévention fondée sur les données.
+                Réduire les suicides chez les premiers répondants grâce à une prévention basée sur les données.
               </p>
             </div>
 
             <span class="divider" aria-hidden="true"></span>
 
             <div class="mission__media">
-              <img
-                src="../../assets/images/flowers.jpg"
-                alt="flowers"
-                tabindex="0"
-              />
+              <figure>
+                <img
+                  src="../../assets/images/police.png"
+                  alt="firefighter in gear, representing first responder mental health"
+                  tabindex="0"
+                />
+                 <figcaption class="image-credit">
+                  <!-- Photo courtesy of -->
+                  <a href="#" target="_blank" rel="noopener">   <!-- dansunphotos.com --> </a>
+                    <!-- dansunphotos.com -->
+                    </a>
+                </figcaption>
+              </figure>
 
-              <p class="paragraph">
-                En créant une visibilité réelle de la situation des suicides
-                chez les premiers répondants,
-                <span class="underline">
-                  l’Initiative Flare fournira la base factuelle nécessaire pour
-                  soutenir des programmes de prévention efficaces.
+              <p class="paragraph" tabindex="0">
+                En rendant visible la véritable ampleur des suicides chez les premiers répondants,
+                <span class="underline"
+                  >l'Initiative Flare fournira la base de preuves pour des programmes de prévention efficaces.
                 </span>
               </p>
             </div>
@@ -501,60 +507,73 @@
         </form>
       </div>
 
-      <div class="footer__bottom">
-        <div>
-          <ul class="footer__bottom-social-media">
-            <li class="footer__bottom-social-media-icon">
+           <div class="footer__bottom">
+        <div class="footer__social-section">
+          <h6 class="footer__social-title subtitle">Suivez-nous</h6>
+          <ul class="footer__social-media">
+            <li class="footer__social-item">
               <a
                 href="https://www.instagram.com/the_flare_initiative/"
                 aria-label="Visit our Instagram profile"
-                ><svg
+                class="footer__social-link"
+              >
+                <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  width="16"
-                  height="16"
+                  width="24"
+                  height="24"
                   fill="currentColor"
-                  class="bi bi-instagram"
                   viewBox="0 0 16 16"
+                  aria-hidden="true"
                 >
                   <path
                     d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.9 3.9 0 0 0-1.417.923A3.9 3.9 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.9 3.9 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.9 3.9 0 0 0-.923-1.417A3.9 3.9 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599s.453.546.598.92c.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.5 2.5 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.5 2.5 0 0 1-.92-.598 2.5 2.5 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233s.008-2.388.046-3.231c.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92s.546-.453.92-.598c.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92m-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217m0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334"
                   />
                 </svg>
-                Instagram</a
-              >
+                <span class="footer__social-text">Instagram</span>
+              </a>
             </li>
-            <li class="footer__bottom-social-media-icon">
+            <li class="footer__social-item">
               <a
                 href="https://www.linkedin.com/company/flare-initiative"
                 aria-label="Visit our Linkedin profile"
+                class="footer__social-link"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  width="16"
-                  height="16"
+                  width="24"
+                  height="24"
                   fill="currentColor"
-                  class="bi bi-linkedin"
                   viewBox="0 0 16 16"
+                  aria-hidden="true"
                 >
                   <path
                     d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854zm4.943 12.248V6.169H2.542v7.225zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248S2.4 3.226 2.4 3.934c0 .694.521 1.248 1.327 1.248zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016l.016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225z"
                   />
                 </svg>
-                Linkedin</a
-              >
-            </li>
-          </ul>
-          <ul>
-            <li>
-              <a
-                href="../../pages/javascript.html"
-                data-jslicense="1"
-                class="js_license_information"
-                >JavaScript license information</a
-              >
+                <span class="footer__social-text">LinkedIn</span>
+              </a>
             </li>
           </ul>
         </div>
+
+        <ul class="footer__legal">
+          <li>
+            <a
+              href="/pages/javascript.html"
+              data-jslicense="1"
+              class="footer__legal-link"
+            >
+              JavaScript license information
+            </a>
+          </li>
+          <li>
+            <a 
+            class="footer__legal-link"
+            href="https://www.dansunphotos.com/">
+             Photos fournies par dansunphotos.com
+            </a>
+          </li>
+        </ul>
       </div>
     </footer>
   </body>

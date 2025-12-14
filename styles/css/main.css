@@ -692,6 +692,7 @@ table {
   padding: 0;
 }
 .footer__legal li {
+  margin-bottom: 0.8rem;
   list-style: none;
 }
 .footer__legal-link {

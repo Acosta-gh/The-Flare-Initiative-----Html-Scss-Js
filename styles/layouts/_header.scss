@@ -9,7 +9,8 @@
  */
 
 .header {
-  background-color: $primary-color;
+  //background-color: $primary-color;
+  background-color: $secondary-color;
   position: fixed; /* Fixes the header at the top of the window */
   top: 0.5rem;
   left: 0;
@@ -17,6 +18,7 @@
   margin: 2% 2%; /* Centers the header with 5% margins on each side */
   border-radius: 15px;
 
+  color: $primary-color;
   z-index: 1000; /* Ensures the header is above other elements */
 
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
@@ -74,10 +76,12 @@
         width: 35px;
         height: auto;
 
-        /* Filter to adjust logo color if needed */
+        /* Filter to adjust logo color if needed
         filter: invert(12%) sepia(0%) saturate(0%) hue-rotate(0deg)
           brightness(12%) contrast(100%);
-
+        */
+        filter: brightness(90%);
+        
         @include respond-to(large) {
           width: 40px; /* Slightly larger logo on large screens */
           cursor: pointer;
@@ -92,8 +96,8 @@
      * on desktop as a horizontal bar
      */
     &-list {
-      background-color: $primary-color;
-
+      //background-color: $primary-color;
+      background-color: $secondary-color;
       overflow: hidden;
       position: absolute; /* On mobile, absolute positioning for dropdown */
       left: 0;
@@ -169,7 +173,8 @@
         right: -25px; /* Adjusted positioning */
         max-height: 0px;
         padding: 0.1rem;
-        background-color: $primary-color;
+        //background-color: $primary-color;
+        background-color: $secondary-color;
         box-shadow: 0px 12px 20px -10px rgba(149, 157, 165, 0);
         border-radius: 15px;
       }
@@ -240,6 +245,8 @@
       font: inherit;
       cursor: pointer;
 
+      
+      
       /* Hidden on large screens */
       @include respond-to(large) {
         display: none;
@@ -250,11 +257,12 @@
     &-burguer-line {
       @include respond-to(xxlarge, max) {
         display: block;
-        background-color: $secondary-color;
+      
         width: 30px;
         height: 2px;
         margin: 5px 0;
         transition: all 0.3s ease; /* For animation when transforming to X */
+        background-color: $primary-color;
       }
     }
   }

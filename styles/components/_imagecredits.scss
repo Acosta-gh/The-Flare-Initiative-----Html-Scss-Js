@@ -1,0 +1,39 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+
+.image-credit {
+  font-size: 0.75rem;
+  color: rgba($secondary-color, 0.6);
+  text-align: center;
+  margin-top: 0.5rem;
+  font-family: $primary-font;
+  font-style: italic;
+
+  @include respond-to(medium) {
+    position: relative;
+    left: 1.5rem;
+  }
+  
+  a {
+    color: rgba($secondary-color, 0.7);
+    text-decoration: none;
+    transition: color 0.2s ease;
+
+    &:hover {
+      color: $accent-color;
+      text-decoration: underline;
+    }
+  }
+}
+
+.image-credit--dark {
+  color: rgba($white, 0.6);
+
+  a {
+    color: rgba($white, 0.7);
+
+    &:hover {
+      color: $accent-color;
+    }
+  }
+}

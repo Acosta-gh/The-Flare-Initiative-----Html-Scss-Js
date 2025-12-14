@@ -147,14 +147,18 @@ html,
     }
 
     &-donate {
-      margin-top: 1.5%;
+      margin-top: 3%;
       display: flex;
       justify-content: center;
       align-items: center;
+      a {
+        text-decoration: none;
+      }
       .paragraph {
         margin: 0;
         font-size: $font-size-medium;
         font-weight: $font-weight-normal;
+        text-decoration: none;
       }
       @include respond-to(large) {
         position: relative;
@@ -172,7 +176,7 @@ html,
     font-family: $primary-font;
     font-size: $font-size-large;
     background-color: $primary-color;
-    
+
     .subtitle {
       text-align: center;
       margin: 2rem 2rem 1.3rem 2rem;
@@ -180,7 +184,7 @@ html,
 
     .paragraph {
       text-align: center;
-      margin-bottom: 0.5rem;
+      margin-bottom: 0.8rem;
     }
     /**
      * Visual divider that is hidden on mobile
@@ -195,7 +199,7 @@ html,
       padding-left: 13%;
       padding-right: 13%;
       padding-bottom: 0px;
-      padding-top: 5%;
+      padding-top: 3%;
       .divider {
         display: block; // Show divider on medium screens and larger
       }
@@ -233,8 +237,7 @@ html,
         display: flex;
         flex-direction: row-reverse;
         gap: 0;
-        height: 17rem; 
-        
+        height: 15rem;
       }
 
       /**
@@ -251,25 +254,30 @@ html,
         }
       }
 
-      img {
-        width: 180px;
-        height: 250px;
-        object-fit: cover;
-        border-radius: 45px;
+      figure {
+        img {
+          width: 100%;
+          height: 400px;
+          object-fit: cover;
+          border-radius: 45px;
+          box-shadow: 4px 3px 17px -11px rgba(0, 0, 0, 0.411);
+          @include respond-to(medium) {
+            width: 380px;
+            height: 450px;
+          }
+        }
 
         display: block;
         margin: 3rem auto;
-        box-shadow: 4px 3px 17px -11px rgba(0, 0, 0, 0.411);
 
         @include respond-to(medium) {
           width: calc(180px * 1.8);
           height: calc(250px * 1.8);
 
           position: relative;
-          bottom: 19rem;
+          bottom: 20rem;
           left: 2rem;
           margin: 0 auto;
-          
         }
       }
     }
@@ -309,8 +317,8 @@ html,
     @include respond-to(medium) {
       padding-left: 13%;
       padding-right: 13%;
-      padding-bottom: 0px;
-      padding-top: 5%;
+      padding-bottom: 5px;
+      padding-top: 8%;
       .divider {
         display: block;
         margin-left: auto;
@@ -339,42 +347,49 @@ html,
       @include respond-to(medium) {
         display: flex;
         flex-direction: row;
-        height: 20rem; 
+        gap: 0;
+        height: 17rem;
       }
 
+      /**
+       * Detailed biography text
+       */
       p {
         margin-bottom: 3rem;
         text-align: left;
-        color: $primary-color;
 
         @include respond-to(large) {
           line-height: 25px;
           width: 60%;
           margin: 0;
-
-          margin-left: auto;
-          text-align: right;
         }
       }
 
-      img {
-        width: 180px;
-        height: 250px;
-        object-fit: cover;
-        border-radius: 45px;
+      figure {
+        img {
+          width: 100%;
+          height: 400px;
+          object-fit: cover;
+          border-radius: 45px;
+          box-shadow: 4px 3px 17px -11px rgba(0, 0, 0, 0.411);
+
+          @include respond-to(medium) {
+            width: 380px;
+            height: 450px;
+          }
+        }
+
         display: block;
         margin: 3rem auto;
-        box-shadow: 4px 3px 17px -11px rgba(0, 0, 0, 0.411);
 
         @include respond-to(medium) {
           width: calc(180px * 1.8);
           height: calc(250px * 1.8);
+
           position: relative;
           bottom: 15rem;
-
-          left: 0;
-          margin-right: auto;
-          margin-left: 0;
+          right: 6rem;
+          margin: 0 auto;
         }
       }
     }

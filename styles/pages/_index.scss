@@ -172,7 +172,7 @@ html,
     font-family: $primary-font;
     font-size: $font-size-large;
     background-color: $primary-color;
-
+    
     .subtitle {
       text-align: center;
       margin: 2rem 2rem 1.3rem 2rem;
@@ -180,6 +180,7 @@ html,
 
     .paragraph {
       text-align: center;
+      margin-bottom: 0.5rem;
     }
     /**
      * Visual divider that is hidden on mobile
@@ -194,7 +195,7 @@ html,
       padding-left: 13%;
       padding-right: 13%;
       padding-bottom: 0px;
-      padding-top: 10%;
+      padding-top: 5%;
       .divider {
         display: block; // Show divider on medium screens and larger
       }
@@ -231,6 +232,9 @@ html,
       @include respond-to(medium) {
         display: flex;
         flex-direction: row-reverse;
+        gap: 0;
+        height: 17rem; 
+        
       }
 
       /**
@@ -262,9 +266,10 @@ html,
           height: calc(250px * 1.8);
 
           position: relative;
-          bottom: 15rem;
+          bottom: 19rem;
           left: 2rem;
           margin: 0 auto;
+          
         }
       }
     }
@@ -305,7 +310,7 @@ html,
       padding-left: 13%;
       padding-right: 13%;
       padding-bottom: 0px;
-      padding-top: 10%;
+      padding-top: 8%;
       .divider {
         display: block;
         margin-left: auto;
@@ -334,7 +339,7 @@ html,
       @include respond-to(medium) {
         display: flex;
         flex-direction: row;
-        height: 25rem; // Otherwise, the image might make the section too tall
+        height: 23rem; 
       }
 
       p {

@@ -25,7 +25,7 @@
     />
     <meta
       property="og:image"
-      content="https://flareinitiative.org/assets/images/flowers.jpg"
+      content="https://flareinitiative.org/assets/images/police.png"
     />
     <!-- Pon una imagen real aquí -->
     <meta property="og:url" content="https://flareinitiative.org/" />
@@ -146,9 +146,9 @@
           Shining a Light on First Responder Suicides
         </h2>
         <div class="main__intro-donate">
-          <button class="btn button--tertiary">
-            <p class="paragraph">Donate Now</p>
-          </button>
+          <a href="#about_us" class="btn button--tertiary">
+            <span class="paragraph">Who We Are</span>
+          </a>
         </div>
 
         <!-- Visual scroll down indicator -->
@@ -170,10 +170,13 @@
               <p class="paragraph" tabindex="0">
                 The Flare Initiative was created in response to a gap in suicide
                 tracking for first responders.
-                <span class="underline"
-                  >Canada currently has no consistent system to track suicides
-                  among police, fire, EMS, corrections, or dispatch personnel </span
-                >. Existing information is fragmented, inconsistent, and
+              </p>
+              <p class="paragraph underline">
+                Canada currently has no consistent system to track suicides
+                among police, fire, EMS, corrections, or dispatch personnel.
+              </p>
+              <p class="paragraph">
+                Existing information is fragmented, inconsistent, and
                 inaccessible, leaving first responder agencies and mental health
                 organizations unable to fully understand the scope of the issue
                 or evaluate prevention efforts.
@@ -215,7 +218,7 @@
 
             <div class="mission__media">
               <img
-                src="./assets/images/flowers.jpg"
+                src="./assets/images/police.png"
                 alt="flowers"
                 tabindex="0"
               />
@@ -356,7 +359,7 @@
                   />
                 </svg>
               </div>
-              <h3 class="card__title">Funders</h3>
+              <h3 class="card__title">Donate</h3>
               <p class="card__desc">
                 Help bring national attention to an issue too often overlooked.
               </p>
@@ -381,7 +384,7 @@
                   />
                 </svg>
               </div>
-              <h3 class="card__title">Partners</h3>
+              <h3 class="card__title">Support Us</h3>
               <p class="card__desc">
                 Support the development of a sustainable database that ensures
                 long-term visibility and accountability.
@@ -401,98 +404,14 @@
       <div class="footer__inner">
         <h5 class="subtitle footer__title">Contact Us</h5>
 
-        <!-- action="https://formsubmit.co/fb5070***************708a1" -->
-        <form
-          class="footer__form"
-          action="https://formsubmit.co/info@flareinitiative.org"
-          method="POST"
-          aria-label="Formulario de contacto"
-        >
-          <input type="hidden" name="_captcha" value="true" />
-          <input
-            type="hidden"
-            name="_subject"
-            value="Nuevo mensaje desde el sitio web"
-          />
-
-          <label class="sr-only" for="footer-name">Name</label>
-          <input
-            id="footer-name"
-            name="name"
-            class="footer__input"
-            type="text"
-            placeholder="E.g. John Doe"
-            required
-          />
-
-          <label class="sr-only" for="footer-email">Email</label>
-          <input
-            id="footer-email"
-            name="email"
-            class="footer__input"
-            type="email"
-            placeholder="E.g. jhondoe@mail.com"
-            required
-          />
-
-          <label class="sr-only" for="footer-message">Message</label>
-          <textarea
-            id="footer-message"
-            name="message"
-            class="footer__textarea"
-            rows="5"
-            placeholder="E.g. Hello, I would like to know more about your initiative..."
-            required
-          ></textarea>
-
-          <div class="footer__form-actions">
-            <button type="submit" class="button button--primary">
-              Send
-              <svg
-                class="w-6 h-6 text-gray-800 dark:text-white"
-                aria-hidden="true"
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                fill="none"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  stroke="currentColor"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M19 12H5m14 0-4 4m4-4-4-4"
-                />
-              </svg>
-            </button>
-          </div>
-
-          <div class="footer__form-note">
-            FormSubmit will open in a new tab to complete the submission. The
-            information I receive is your message and your email address to
-            respond to you. I do not store or share it with third parties.
-            <a href="https://formsubmit.co/" class="underline"
-              >For more information, learn about FormSubmit
-              <svg
-                class="w-6 h-6 text-gray-800 dark:text-white"
-                aria-hidden="true"
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                fill="none"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  stroke="currentColor"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M18 14v4.833A1.166 1.166 0 0 1 16.833 20H5.167A1.167 1.167 0 0 1 4 18.833V7.167A1.166 1.166 0 0 1 5.167 6h4.618m4.447-2H20v5.768m-7.889 2.121 7.778-7.778"
-                /></svg
-            ></a>
-          </div>
-        </form>
+      <div class="footer__contact-info">
+  <a href="mailto:info@flareinitiative.org?subject=Inquiry%20from%20Website" class="footer__email-link">
+    <svg class="footer__email-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16" aria-hidden="true">
+      <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1zm13 2.383-4.708 2.825L15 11.105zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741M1 11.105l4.708-2.897L1 5.383z"/>
+    </svg>
+    <span class="footer__email-text">info@flareinitiative.org</span>
+  </a>
+</div>
       </div>
 
       <div class="footer__bottom">

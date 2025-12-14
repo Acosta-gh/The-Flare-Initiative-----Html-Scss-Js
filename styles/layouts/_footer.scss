@@ -16,10 +16,9 @@
     text-align: center;
     font-family: $primary-font;
     font-size: clamp(3rem, 5vw, 12rem);
-   
-   
+
     margin-inline: auto;
-   
+
     word-wrap: break-word;
     overflow-wrap: break-word;
     @include respond-to(large) {
@@ -156,6 +155,54 @@
       }
     }
   }
+
+ &__contact-info {
+  margin-top: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+&__email-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 1.5rem;
+  color: $secondary-color;
+  text-decoration: none;
+  font-size: $font-size-base;
+  border-radius: 50px;
+  background-color: rgba($secondary-color, 0.05);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  
+  &:hover {
+    background-color: rgba($accent-color, 0.15);
+    color: $accent-color;
+   
+  }
+
+  &:focus-visible {
+    outline: 2px solid $accent-color;
+    outline-offset: 2px;
+  }
+}
+
+&__email-icon {
+  width: 1.25em;
+  height: 1.25em;
+  flex-shrink: 0;
+  fill: currentColor;
+  transition: transform 0.3s ease;
+  
+  .footer__email-link:hover & {
+    
+  }
+}
+
+&__email-text {
+  font-weight: 500;
+  letter-spacing: 0.02em;
+}
 
   &__bottom {
     margin-top: 2rem;

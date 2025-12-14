@@ -16,11 +16,10 @@
     text-align: center;
     font-family: $primary-font;
     font-size: clamp(3rem, 5vw, 12rem);
-
     margin-inline: auto;
-
     word-wrap: break-word;
     overflow-wrap: break-word;
+    
     @include respond-to(large) {
       font-size: $font-size-xxlarge;
     }
@@ -66,21 +65,16 @@
       border: none;
       border-radius: 0;
       background: none;
-
       color: $secondary-color;
-
       font-size: $font-size-base;
       width: 100%;
       font-family: $primary-font;
       position: relative;
-
       border-bottom: 1px solid rgba($secondary-color, 0.2);
-
       background-image: linear-gradient($accent-color, $accent-color);
       background-position: left bottom;
       background-repeat: no-repeat;
       background-size: 0% 2px;
-
       transition: background-size 320ms cubic-bezier(0.2, 0.9, 0.3, 1),
         border-color 220ms ease;
 
@@ -122,9 +116,11 @@
         display: inline-flex;
         align-items: center;
         gap: 0.5rem;
+        
         svg {
           width: 1.2em;
           height: 1.2em;
+          
           path {
             stroke: $white;
             stroke-width: 2px;
@@ -135,12 +131,13 @@
 
     &-note {
       font-size: $font-size-small;
-      color: rgba($secondary-color, 0.6); // Gris suave
+      color: rgba($secondary-color, 0.6);
       margin-top: 0;
 
       a {
         color: $accent-color;
         text-decoration: none;
+        
         &:hover {
           text-decoration: underline;
         }
@@ -156,83 +153,142 @@
     }
   }
 
- &__contact-info {
-  margin-top: 2rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-&__email-link {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.75rem;
-  padding: 0.75rem 1.5rem;
-  color: $secondary-color;
-  text-decoration: none;
-  font-size: $font-size-base;
-  border-radius: 50px;
-  background-color: rgba($secondary-color, 0.05);
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  
-  &:hover {
-    background-color: rgba($accent-color, 0.15);
-    color: $accent-color;
-   
+  &__contact-info {
+    margin-top: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
-  &:focus-visible {
-    outline: 2px solid $accent-color;
-    outline-offset: 2px;
-  }
-}
+  &__email-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.75rem 1.5rem;
+    color: $secondary-color;
+    text-decoration: none;
+    font-size: $font-size-base;
+    border-radius: 50px;
+    background-color: rgba($secondary-color, 0.05);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 
-&__email-icon {
-  width: 1.25em;
-  height: 1.25em;
-  flex-shrink: 0;
-  fill: currentColor;
-  transition: transform 0.3s ease;
-  
-  .footer__email-link:hover & {
-    
-  }
-}
+    &:hover {
+      background-color: rgba($accent-color, 0.15);
+      color: $accent-color;
+    }
 
-&__email-text {
-  font-weight: 500;
-  letter-spacing: 0.02em;
-}
+    &:focus-visible {
+      outline: 2px solid $accent-color;
+      outline-offset: 2px;
+    }
+  }
+
+  &__email-icon {
+    width: 1.25em;
+    height: 1.25em;
+    flex-shrink: 0;
+    fill: currentColor;
+    transition: transform 0.3s ease;
+  }
+
+  &__email-text {
+    font-weight: 500;
+    letter-spacing: 0.02em;
+  }
 
   &__bottom {
-    margin-top: 2rem;
-    padding-top: 2rem;
+    margin-top: 3rem;
+    padding-top: 2.5rem;
     border-top: 1px solid rgba($secondary-color, 0.1);
+  }
+
+  &__social-section {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+
+  &__social-title {
+    color: $secondary-color;
+    font-size: $font-size-medium;
+    font-weight: $font-weight-bold;
+    margin-bottom: 1.5rem;
+    letter-spacing: 0.05em;
+  }
+
+  &__social-media {
     display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-    font-size: 0.85rem;
-    opacity: 0.8;
+    justify-content: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
 
-    a {
+  &__social-item {
+    list-style: none;
+  }
+
+  &__social-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 1rem 1.75rem;
+    color: $secondary-color;
+    text-decoration: none;
+    background-color: rgba($secondary-color, 0.05);
+    border: 2px solid transparent;
+    border-radius: 50px;
+    font-weight: $font-weight-semibold;
+    font-family: $primary-font;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+    svg {
+      width: 24px;
+      height: 24px;
+      flex-shrink: 0;
+      transition: transform 0.3s ease;
+    }
+
+    &:hover {
+      background-color: $accent-color;
+      color: $white;
+      border-color: $accent-color;
+
+    
+    }
+
+    &:focus-visible {
+      outline: 2px solid $accent-color;
+      outline-offset: 3px;
+    }
+  }
+
+  &__social-text {
+    font-size: $font-size-base;
+    letter-spacing: 0.02em;
+  }
+
+  &__legal {
+    text-align: center;
+    margin-top: 1.5rem;
+    list-style: none;
+    padding: 0;
+
+    li {
+      list-style: none;
+    }
+  }
+
+  &__legal-link {
+    color: rgba($secondary-color, 0.6);
+    text-decoration: none;
+    font-size: $font-size-small;
+    transition: color 0.2s ease;
+
+    &:hover {
       color: $secondary-color;
-    }
-
-    &-social-media {
-      a {
-        display: flex;
-        align-items: center;
-      }
-    }
-    &-social-media-icon {
-      margin-right: 1rem;
-      margin-bottom: 0.5rem;
-      text-decoration: none;
-      svg {
-        width: 20px;
-        height: 20px;
-        margin-right: 8px;
-      }
+      text-decoration: underline;
     }
   }
 }

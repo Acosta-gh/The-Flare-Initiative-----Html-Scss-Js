@@ -310,7 +310,7 @@ html,
       padding-left: 13%;
       padding-right: 13%;
       padding-bottom: 0px;
-      padding-top: 8%;
+      padding-top: 5%;
       .divider {
         display: block;
         margin-left: auto;
@@ -339,7 +339,7 @@ html,
       @include respond-to(medium) {
         display: flex;
         flex-direction: row;
-        height: 23rem; 
+        height: 20rem; 
       }
 
       p {

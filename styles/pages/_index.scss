@@ -1,48 +1,26 @@
-@use "../abstracts/variables" as *; // Import global variables
-@use "../abstracts/mixins" as *; // Import responsive mixins
-@use "../base/animations" as *; // Import animation definitions
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+@use "../base/animations" as *;
 
-/**
- * Base document structure
- * ---------------------------
- * Establishes the fundamental page layout with full height and smooth scrolling
- */
 html,
 .body {
-  height: 100%; // Full viewport height
-  margin: 0; // Remove default margins
-  padding: 0; // Remove default padding
-  display: flex; // Use flexbox for layout
-  flex-direction: column; // Stack elements vertically
-  scroll-behavior: smooth; // Enable smooth scrolling for anchor links
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  scroll-behavior: smooth;
 }
 
-/**
- * Specific body styles
- * ---------------------------
- * Configures the main body element with background color and
- * initial opacity for fade-in animation
- */
 .body {
-  background-color: $primary-color; // Set background from variables
-  flex: 1; // Take up all available space
-  display: flex; // Use flexbox
-  flex-direction: column; // Stack children vertically
-  opacity: 0; // Start invisible for fade-in animation
+  background-color: $primary-color;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  opacity: 0;
 }
 
-/**
- * Main content container
- * ------------------------------
- * Contains all main content sections of the website
- */
 .main {
-  /**
-   * Introduction section
-   * --------------------
-   * The hero section with greeting, name and position
-   * Takes up full screen height to create a strong first impression
-   */
   &__intro {
     padding: 1rem;
 
@@ -53,15 +31,14 @@ html,
       align-items: center;
     }
 
-    color: $primary-color;
+    color: $white;
     min-height: 100vh;
-
     position: relative;
 
-    background-image: url("../../assets/images/FlareBGBlur2.webp");
+    background-image: url("../../assets/images/background.jpg");
     background-size: cover;
     background-repeat: no-repeat;
-    background-position: 60%;
+    background-position: center;
 
     &::before {
       content: "";
@@ -70,96 +47,102 @@ html,
       z-index: 0;
       background: linear-gradient(
         135deg,
-        rgba(26, 38, 43, 0.7) 0%,
-        rgba(26, 38, 43, 0.5) 100%
+        rgba(#415b8a, 0.85) 0%,
+        rgba(#415b8a, 0.7) 50%,
+        rgba(#415b8a, 0.3) 100%
       );
     }
 
     &-name,
     &-subtitle,
     &-donate,
-    &-salutation-container {
+    &-salutation-container,
+    &-logo {
       position: relative;
       z-index: 1;
     }
 
-    // Responsive adjustments for medium screens
     @include respond-to(medium) {
       padding-top: 17%;
-      min-height: 80vh; // Adjust height for medium screens
-      padding-left: 10%; // Moderate side margins
+      min-height: 80vh;
+      padding-left: 10%;
       padding-right: 10%;
     }
+    &-logo-name-container {
+      display: flex;
+      flex-direction: row;
+      @include respond-to(large) {
+        padding: 0 25%;
+      }
+    }
 
-    /**
-     * Name style
-     * The main heading that displays the association's name
-     */
+    &-logo {
+      width: 30vw;
+      flex: 1;
+      position: relative;
+      bottom: 0px;
+      //filter: drop-shadow(0 2px 30px rgba(0, 0, 0, 0.5));
+      @include respond-to(large) {
+        width: 15vw;
+      }
+    }
+
     &-name {
       margin-top: 0.1rem;
       margin-bottom: 0.5rem;
-
       text-transform: uppercase;
-      font-weight: $font-weight-heavy;
+      font-weight: $font-weight-normal;
       font-family: $secondary-font;
-      text-align: center;
-      opacity: 0.8;
-
-      font-size: clamp(3rem, 10vw, $font-size-giant);
-
-      letter-spacing: -0.02em;
-      line-height: 1.1;
-      text-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
-
+      text-align: left;
+      font-size: clamp(2rem, 10vw, $font-size-giant);
+      //letter-spacing: -0.02em;
+      //line-height: 1.1;
+      //text-shadow: 0 2px 30px rgba(0, 0, 0, 0.5);
       word-wrap: break-word;
       hyphens: auto;
       padding: 0 1rem;
-      @include respond-to(small, max) {
-        font-size: $font-size-xxxlarge;
-        line-height: 1.2;
-      }
-
-      @include respond-to(very-small, max) {
-        font-size: $font-size-xxlarge;
-      }
-
+      color: $white;
+      flex: 1;
       @include respond-to(large) {
-        font-size: calc($font-size-huge * 1.25);
+        font-size: $font-size-huge;
       }
     }
 
     &-subtitle {
-      margin-top: 0.5rem;
+      margin-top: 1rem;
       margin-bottom: 1rem;
       min-height: 3rem;
       text-align: center;
       font-family: $primary-font;
       line-height: 1.4;
       font-size: $font-size-base;
-
       max-width: 800px;
       margin-inline: auto;
-      opacity: 0.8;
-
+      color: rgba($white, 0.95);
+      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+      font-weight: $font-weight-normal;
       @include respond-to(large) {
-        font-size: $font-size-xlarge;
+        font-size: $font-size-large;
       }
     }
 
     &-donate {
       margin-top: 3%;
-      display: flex;
+      display: none;
       justify-content: center;
       align-items: center;
+
       a {
         text-decoration: none;
       }
+
       .paragraph {
         margin: 0;
         font-size: $font-size-medium;
         font-weight: $font-weight-normal;
         text-decoration: none;
       }
+
       @include respond-to(large) {
         position: relative;
         right: 0.7rem;
@@ -167,12 +150,8 @@ html,
     }
   }
 
-  /**
-   * Contains introduction and image
-   */
   .about-us {
     padding: $padding-section;
-    color: $secondary-color;
     font-family: $primary-font;
     font-size: $font-size-large;
     background-color: $primary-color;
@@ -180,56 +159,51 @@ html,
     .subtitle {
       text-align: center;
       margin: 2rem 2rem 1.3rem 2rem;
+      color: $calmred;
     }
 
     .paragraph {
       text-align: center;
       margin-bottom: 0.8rem;
+      color: $secondary-color;
     }
-    /**
-     * Visual divider that is hidden on mobile
-     * Only appears on medium screens and larger
-     */
+
     .divider {
       display: none;
     }
-
-    // Responsive adjustments for medium screens
+    .underline {
+      color: $calmred;
+    }
     @include respond-to(medium) {
       padding-left: 13%;
       padding-right: 13%;
       padding-bottom: 0px;
       padding-top: 3%;
+
       .divider {
-        display: block; // Show divider on medium screens and larger
+        display: block;
+        background-color: $calmred;
       }
+
       .subtitle {
         margin: 2rem 2rem 1.3rem 0rem;
-
         text-align: left;
       }
+
       .paragraph {
         text-align: left;
       }
     }
 
-    /**
-     * Introduction text container
-     * Contains the brief introduction paragraph
-     */
     &__intro {
-      // Responsive adjustments for medium screens
       @include respond-to(medium) {
         p {
-          width: 60%; // Limit paragraph width for better readability
+          width: 60%;
           margin: 0 0 1rem 0;
         }
       }
     }
 
-    /**
-     * Media section containing image and detailed biography
-     */
     &__media {
       gap: 3rem;
 
@@ -240,9 +214,6 @@ html,
         height: 15rem;
       }
 
-      /**
-       * Detailed biography text
-       */
       p {
         margin-bottom: 3rem;
         text-align: left;
@@ -259,8 +230,9 @@ html,
           width: 100%;
           height: 400px;
           object-fit: cover;
-          border-radius: 45px;
-          box-shadow: 4px 3px 17px -11px rgba(0, 0, 0, 0.411);
+          border-radius: 10px;
+          box-shadow: 4px 3px 17px -11px rgba(0, 0, 0, 0.2);
+
           @include respond-to(medium) {
             width: 380px;
             height: 450px;
@@ -273,7 +245,6 @@ html,
         @include respond-to(medium) {
           width: calc(180px * 1.8);
           height: calc(250px * 1.8);
-
           position: relative;
           bottom: 20rem;
           left: 2rem;
@@ -283,21 +254,19 @@ html,
     }
   }
 
-  /**
-   * "Our Mission" section
-   * -------------------
-   */
   .mission {
     padding: $padding-section;
     font-family: $primary-font;
     font-size: $font-size-large;
-    background-color: $secondary-color;
-    border-radius: 45px 45px 0 0;
+    background-color: #2c3e50;
+    //border-radius: 45px 45px 0 0;
+    color: $white;
+
     .subtitle {
       text-align: center;
       margin-bottom: 2rem;
+      color: $white;
 
-      color: $primary-color;
       @include respond-to(medium) {
         text-align: right;
       }
@@ -305,13 +274,21 @@ html,
 
     .paragraph {
       text-align: center;
-      color: $primary-color;
+      color: $white;
+
       @include respond-to(medium) {
         text-align: right;
       }
     }
+
+    .subtitle,
+    .underline {
+      color: $comfortingorange;
+    }
+
     .divider {
       display: none;
+      background-color: $comfortingorange;
     }
 
     @include respond-to(medium) {
@@ -319,6 +296,7 @@ html,
       padding-right: 13%;
       padding-bottom: 5px;
       padding-top: 8%;
+
       .divider {
         display: block;
         margin-left: auto;
@@ -331,13 +309,13 @@ html,
         p {
           width: 60%;
           margin: 0 0 1rem 0;
-
           margin-left: auto;
           text-align: right;
         }
       }
+
       p {
-        color: $primary-color;
+        color: $white;
       }
     }
 
@@ -351,9 +329,6 @@ html,
         height: 17rem;
       }
 
-      /**
-       * Detailed biography text
-       */
       p {
         margin-bottom: 3rem;
         text-align: left;
@@ -370,8 +345,8 @@ html,
           width: 100%;
           height: 400px;
           object-fit: cover;
-          border-radius: 45px;
-          box-shadow: 4px 3px 17px -11px rgba(0, 0, 0, 0.411);
+          border-radius: 10px;
+          box-shadow: 4px 3px 17px -11px rgba(0, 0, 0, 0.2);
 
           @include respond-to(medium) {
             width: 380px;
@@ -385,7 +360,6 @@ html,
         @include respond-to(medium) {
           width: calc(180px * 1.8);
           height: calc(250px * 1.8);
-
           position: relative;
           bottom: 15rem;
           right: 6rem;
@@ -397,6 +371,7 @@ html,
 
   .our-approach {
     padding: $padding-section;
+    background-color: $primary-color;
 
     @include respond-to(medium) {
       padding: 7% 13%;
@@ -406,26 +381,22 @@ html,
     &__subtitle {
       text-align: center;
       margin-bottom: 1rem;
+      color: $secondary-color;
     }
 
     &__grid {
       display: grid;
-
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 2rem;
       margin-top: 3rem;
     }
   }
 
-  /**
-   * "How You Can Help" Section 
-   */
   .how-to-help {
     padding: $padding-section;
     padding-top: 4rem;
     padding-bottom: 8rem;
-
-    background-color: $secondary-color;
+    background-color: #2c3e50;
     color: $white;
 
     @include respond-to(medium) {
@@ -444,34 +415,6 @@ html,
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 2rem;
       margin-top: 3rem;
-    }
-
-    &__title {
-      font-size: 1.5rem;
-      font-weight: 700;
-      margin-bottom: 1rem;
-      color: $accent-color;
-      font-family: $primary-font;
-      position: relative;
-      padding-bottom: 0.5rem;
-
-      &::after {
-        content: "";
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        width: 40px;
-        height: 3px;
-        background-color: $white;
-      }
-    }
-
-    &__desc {
-      font-family: $primary-font;
-      font-size: 1rem;
-      line-height: 1.6;
-      color: rgba($white, 0.8);
-      margin-top: 1rem;
     }
   }
 }

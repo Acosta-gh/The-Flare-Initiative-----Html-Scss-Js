@@ -4,43 +4,49 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>
-      Initiative Flare | Prévention du suicide chez les premiers répondants au
-      Canada
+      The Flare Initiative | First Responder Suicide Prevention Canada
     </title>
     <meta
       name="description"
-      content="L’Initiative Flare vise à réduire les suicides chez les premiers répondants grâce à une prévention fondée sur les données. Nous développons des systèmes nationaux de suivi pour les services policiers, incendie et paramédics."
+      content="The Flare Initiative is dedicated to reducing first responder suicides through data-driven prevention. We build national tracking systems for police, fire, and EMS."
     />
     <meta
       name="keywords"
-      content="suicide premiers répondants, santé mentale, prévention du suicide, police, pompiers, services paramédics, suivi des données, Canada"
+      content="first responder suicide, mental health, suicide prevention, police, firefighter, EMS, data tracking, Canada"
     />
-    <meta name="author" content="Initiative Flare" />
+    <meta name="author" content="The Flare Initiative" />
     <meta
       property="og:title"
-      content="Initiative Flare | Prévention du suicide chez les premiers répondants"
+      content="The Flare Initiative | First Responder Suicide Prevention"
     />
     <meta
       property="og:description"
-      content="Joignez-vous à nous pour créer un système national sécuritaire de suivi et de prévention du suicide chez les premiers répondants."
+      content="Join us in building a secure, national system for first responder suicide tracking and prevention."
     />
     <meta
       property="og:image"
-      content="https://flareinitiative.org/assets/images/flowers.jpg"
+      content="https://flareinitiative.org/assets/images/police.jpg"
     />
     <meta property="og:url" content="https://flareinitiative.org/" />
     <meta property="og:type" content="website" />
+    
     <link rel="icon" href="/favicon.ico" type="image/x-icon" />
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=BBH+Bogle&family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
     <link rel="stylesheet" href="../../styles/css/main.css" />
       <script async src="https://www.googletagmanager.com/gtag/js?id=G-37S5JYS2ZN"></script>
+
       <!-- Google Analytics -->
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-37S5JYS2ZN');
-    </script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-37S5JYS2ZN');
+  </script>
   </head>
 
   <body class="body">
@@ -50,7 +56,7 @@
         <!-- Site logo -->
         <a href="#" class="header__nav-logo">
           <img
-            src="../../assets/images/logo.png"
+            src="../../assets/images/logo.svg"
             alt="The Flare Initiative Logo - First Responder Support"
             class="header__logo-img"
           />
@@ -60,12 +66,8 @@
           <li class="header__nav-item">
             <a href="#" aria-current="page">Accueil</a>
           </li>
-          <li class="header__nav-item">
-            <a href="#about_us">À propos de nous</a>
-          </li>
-          <li class="header__nav-item">
-            <a href="#contact_us">Contactez-nous</a>
-          </li>
+          <li class="header__nav-item"><a href="#about_us">À propos</a></li>        
+                     <li class="header__nav-item"><a href="#contact_us">Nous contacter</a></li>
           <!-- Language selector with dropdown menu -->
           <li class="header__nav-lang">
             <button
@@ -119,10 +121,10 @@
               aria-labelledby="lang-menu-button"
             >
               <li class="header__nav-langitem" role="menuitem">
-                <a href="../../index.html" class="no-select" href="">English</a>
+                <a class="no-select" href="/index.html">English</a>
               </li>
               <li class="header__nav-langitem" role="menuitem">
-                <a class="no-select" href="">Français</a>
+                <a class="no-select" href="pages/fr/index.html">Français</a>
               </li>
             </ul>
           </li>
@@ -144,15 +146,18 @@
     <main class="main">
       <!-- Introduction section -->
       <section class="main__intro" aria-labelledby="intro-title" tabindex="-1">
-        <h1 class="main__intro-name" id="intro-title" tabindex="0">
-          Initiative Flare
+       <div class="main__intro-logo-name-container">
+        <img class="main__intro-logo" src="../../assets/images/logo.svg">
+         <h1 class="main__intro-name" id="intro-title" tabindex="0">
+          The <br>Flare<br> Initiative
         </h1>
+       </div>
         <h2 class="main__intro-subtitle">
-          Mettre en lumière les suicides chez les premiers répondants
+         Briser le silence.
         </h2>
         <div class="main__intro-donate">
           <a href="#about_us" class="btn button--tertiary">
-            <span class="paragraph">Qui Nous Sommes</span>
+            <span class="paragraph">Who We Are</span>
           </a>
         </div>
 
@@ -160,7 +165,7 @@
         <div class="scroll-down-indicator" aria-hidden="true"></div>
       </section>
 
-  <!-- scroll-container -->
+      <!-- scroll-container -->
       <!-- About Us Section -->
       <section
         class="about-us scroll-container target"
@@ -170,19 +175,16 @@
       >
         <!-- js-scroll -->
         <div class="js-scroll slideup" aria-live="polite">
-          <h3 class="subtitle" id="about-us-title" tabindex="0">À propos de nous</h3>
+          <h3 class="subtitle" id="about-us-title" tabindex="0">À propos</h3>
           <div class="about-us__content">
             <div class="about-us__intro">
               <p class="paragraph" tabindex="0">
-                L'Initiative Flare a été créée en réponse à un manque de suivi des suicides chez les premiers répondants.
-              </p>
+                     The Flare Initiative a été créée en réponse à l’absence de suivi du suicide chez les premiers intervenants.
               <p class="paragraph underline">
-                Le Canada ne dispose actuellement d'aucun système cohérent pour suivre les suicides parmi la police, les pompiers, les services médicaux d'urgence, les services correctionnels ou le personnel de répartition.
+                           Le Canada ne dispose actuellement d’aucun système cohérent pour suivre les suicides chez les policiers, pompiers, services médicaux d’urgence, agents correctionnels ou répartiteurs.
               </p>
               <p class="paragraph">
-                Les informations existantes sont fragmentées, incohérentes et
-                inaccessibles, ce qui empêche les agences de premiers répondants et les organisations de santé mentale de comprendre pleinement l'ampleur du problème
-                or evaluate prevention efforts.
+                           Les informations existantes sont fragmentées, incohérentes et difficiles d’accès, empêchant les organismes et les professionnels de la santé mentale de comprendre pleinement l’ampleur du problème.
               </p>
             </div>
             <span class="divider" aria-hidden="true"></span>
@@ -193,7 +195,7 @@
                   alt="firefighter in gear, representing first responder mental health"
                   tabindex="0"
                 />
-                               <figcaption class="image-credit">
+                <figcaption class="image-credit">
                   <!-- Photo courtesy of -->
                   <a href="#" target="_blank" rel="noopener">   <!-- dansunphotos.com --> </a>
                     <!-- dansunphotos.com -->
@@ -202,7 +204,10 @@
               </figure>
 
               <p class="paragraph" tabindex="0">
-                En rendant visible la véritable ampleur des suicides chez les premiers répondants, l'Initiative Flare fournira la base de preuves pour des programmes de prévention efficaces, informera les changements de politique et réduira la stigmatisation autour de la santé mentale des premiers répondants.
+                By creating visibility on the true scale of first responder
+                suicides, the Flare Initiative will provide the evidence base
+                for effective prevention programs, inform policy changes, and
+                reduce stigma around first responder mental health
               </p>
             </div>
           </div>
@@ -213,12 +218,12 @@
       <!-- Mission Section -->
       <section class="mission scroll-container" tabindex="-1">
         <div class="js-scroll slideup" aria-live="polite">
-          <h3 class="subtitle" id="mission-title" tabindex="0">Notre Mission</h3>
+          <h3 class="subtitle" id="mission-title" tabindex="0">Notre mission</h3>
 
           <div class="mission__content">
             <div class="mission__intro">
               <p class="paragraph mission__statement" tabindex="0">
-                Réduire les suicides chez les premiers répondants grâce à une prévention basée sur les données.
+                           Réduire les suicides chez les premiers intervenants grâce à une prévention fondée sur les données.
               </p>
             </div>
 
@@ -231,7 +236,7 @@
                   alt="firefighter in gear, representing first responder mental health"
                   tabindex="0"
                 />
-                 <figcaption class="image-credit">
+                <figcaption class="image-credit">
                   <!-- Photo courtesy of -->
                   <a href="#" target="_blank" rel="noopener">   <!-- dansunphotos.com --> </a>
                     <!-- dansunphotos.com -->
@@ -239,12 +244,13 @@
                 </figcaption>
               </figure>
 
-              <p class="paragraph" tabindex="0">
-                En rendant visible la véritable ampleur des suicides chez les premiers répondants,
-                <span class="underline"
-                  >l'Initiative Flare fournira la base de preuves pour des programmes de prévention efficaces.
-                </span>
-              </p>
+<p class="paragraph" tabindex="0">
+  En rendant visible l’ampleur réelle des suicides chez les premiers intervenants,
+  <span class="underline">
+    The Flare Initiative fournira la base de données probantes nécessaire à des programmes de prévention efficaces.
+  </span>
+</p>
+
             </div>
           </div>
         </div>
@@ -265,18 +271,17 @@
             id="our-approach-section-title"
             class="our-approach__subtitle subtitle"
           >
-            Notre approche
-          </h4>
+Notre approche          </h4>
 
           <!-- Grid Container -->
           <div class="our-approach__grid">
             <!-- Card 1 -->
             <article class="card card--light">
               <div class="card__number">01</div>
-              <h3 class="card__title">Collecte de données</h3>
+              <h3 class="card__title">Collecter les données</h3>
               <p class="card__desc">
-                Construire une base de données nationale sécurisée avec des
-                informations historiques et actuelles.
+                    Créer une base de données nationale sécurisée contenant des informations
+      historiques et actuelles.
               </p>
             </article>
 
@@ -285,18 +290,18 @@
               <div class="card__number">02</div>
               <h3 class="card__title">Rendre visible</h3>
               <p class="card__desc">
-                Partager les tendances des suicides grâce à un reportage
-                transparent et informé par le traumatisme.
+               Partager les tendances en matière de suicide grâce à des rapports
+      transparents et sensibles aux traumatismes.
               </p>
             </article>
 
             <!-- Card 3 -->
             <article class="card card--light">
               <div class="card__number">03</div>
-              <h3 class="card__title">Conduire le changement</h3>
+              <h3 class="card__title">Favoriser le changement</h3>
               <p class="card__desc">
-                Fournir aux organisations et aux gouvernements des preuves pour
-                guider la prévention et les politiques.
+                 Fournir aux organisations et aux gouvernements des données probantes pour
+      orienter la prévention et les politiques publiques.
               </p>
             </article>
 
@@ -306,8 +311,8 @@
               <h3 class="card__title">Impact à long terme</h3>
               <p class="card__desc">
                 Des programmes de prévention renforcés, des normes nationales de
-                rapport, une stigmatisation réduite et un soutien constant aux
-                familles.
+      déclaration, une réduction de la stigmatisation et un soutien constant
+      aux familles.
               </p>
             </article>
           </div>
@@ -321,7 +326,7 @@
       >
         <div class="js-scroll" role="region" aria-live="polite">
           <h4 id="help-section-title" class="how-to-help__subtitle subtitle">
-            Comment vous pouvez aider
+  Comment vous pouvez aider
           </h4>
 
           <div class="how-to-help__grid">
@@ -347,10 +352,10 @@
                   />
                 </svg>
               </div>
-              <h3 class="card__title">Partager des données</h3>
+              <h3 class="card__title">Devenir partenaire</h3>
               <p class="card__desc">
-                Collaborer à la construction d'un système national sécurisé pour
-                le suivi des suicides chez les premiers répondants.
+                  Collaborer à la création d’un système national sécurisé pour le suivi des
+      suicides chez les premiers intervenants.
               </p>
             </article>
 
@@ -374,10 +379,10 @@
                   />
                 </svg>
               </div>
-              <h3 class="card__title">Bailleurs de fonds</h3>
+              <h3 class="card__title">Faire un don</h3>
               <p class="card__desc">
-                Aidez à attirer l'attention nationale sur un problème trop
-                souvent négligé.
+                 Soutenir le développement d’une base de données durable garantissant une
+      visibilité et une responsabilité à long terme.
               </p>
             </article>
 
@@ -400,40 +405,35 @@
                   />
                 </svg>
               </div>
-              <h3 class="card__title">Partenaires</h3>
+              <h3 class="card__title">Nous soutenir</h3>
               <p class="card__desc">
-                Soutenir le développement d'une base de données durable qui
-                assure une visibilité et une responsabilité à long terme.
+                     Aider à attirer l’attention nationale sur un enjeu trop souvent négligé.
               </p>
             </article>
           </div>
         </div>
       </section>
     </main>
-
     <footer
       class="footer target"
       id="contact_us"
       role="contentinfo"
-      aria-label="Section de contact"
+      aria-label="Contacto y redes sociales"
     >
       <div class="footer__inner">
-        <h5 class="subtitle footer__title">Contactez-nous</h5>
-
-        <!-- action="https://formsubmit.co/fb5070***************708a1" -->
+        <h5 class="subtitle footer__title">Nous contacter</h5>
         <form
           class="footer__form"
           action="https://formsubmit.co/3246edf10c677cc651cd12e80cbee4f2"
           method="POST"
-          aria-label="Contact form"
+          aria-label="Formulario de contacto"
         >
           <input type="hidden" name="_captcha" value="true" />
           <input
             type="hidden"
             name="_subject"
-            value="Nuevo mensaje desde el sitio web"
+            value="New message from the website"
           />
-
           <label class="sr-only" for="footer-name">Nom</label>
           <input
             id="footer-name"
@@ -443,32 +443,28 @@
             placeholder="Ex. Jean Dupont"
             required
           />
-
-          <label class="sr-only" for="footer-email">Email</label>
+          <label class="sr-only" for="footer-email">Adresse e-mail</label>
           <input
             id="footer-email"
             name="email"
             class="footer__input"
             type="email"
-            placeholder="Ex. jean.dupont@mail.com"
+            placeholder="Ex. jeandupont@mail.com"
             required
           />
-
           <label class="sr-only" for="footer-message">Message</label>
           <textarea
             id="footer-message"
             name="message"
             class="footer__textarea"
             rows="5"
-            placeholder="Ex. Bonjour, je souhaite en savoir plus sur..."
+            placeholder="Ex. Bonjour, je souhaiterais en savoir plus sur votre initiative..."
             required
           ></textarea>
-
           <div class="footer__form-actions">
             <button type="submit" class="button button--primary">
               Envoyer
               <svg
-                class="w-6 h-6 text-gray-800 dark:text-white"
                 aria-hidden="true"
                 xmlns="http://www.w3.org/2000/svg"
                 width="24"
@@ -486,19 +482,16 @@
               </svg>
             </button>
           </div>
-
           <div class="footer__form-note">
-            FormSubmit s’ouvrira dans un nouvel onglet pour compléter l’envoi.
-            Les informations que je reçois sont votre message et votre adresse
-            courriel pour pouvoir vous répondre. Je ne les conserve pas et ne
-            les partage pas avec des tiers.
-
+            FormSubmit s’ouvrira dans un nouvel onglet pour finaliser l’envoi.
+  Les informations que je reçois sont votre message et votre adresse e-mail afin de pouvoir vous répondre.
+  Je ne les stocke pas et ne les partage pas avec des tiers.
             <a href="https://formsubmit.co/" class="underline">
-              Pour en savoir plus, consultez FormSubmit
-              <svg
+    Pour plus d’informations, découvrez FormSubmit              <svg
+                aria-hidden="true"
                 xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
+                width="16"
+                height="16"
                 fill="none"
                 viewBox="0 0 24 24"
               >
@@ -515,7 +508,7 @@
         </form>
       </div>
 
-           <div class="footer__bottom">
+      <div class="footer__bottom">
         <div class="footer__social-section">
           <h6 class="footer__social-title subtitle">Suivez-nous</h6>
           <ul class="footer__social-media">
@@ -571,15 +564,14 @@
               data-jslicense="1"
               class="footer__legal-link"
             >
-              JavaScript license information
+               Informations sur la licence JavaScript
             </a>
           </li>
           <li>
             <a 
             class="footer__legal-link"
             href="https://www.dansunphotos.com/">
-             Photos fournies par dansunphotos.com
-            </a>
+  Photos avec l’aimable autorisation de dansunphotos.com            </a>
           </li>
         </ul>
       </div>

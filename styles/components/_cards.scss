@@ -6,7 +6,7 @@
 
   z-index: 2;
 
-  border: 1px solid $accent-color; // Borde naranja
+  border: 1px solid $accent-color; 
   box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px; // Sombra más profunda
 
   &:hover {
@@ -106,7 +106,7 @@
     .card__title {
       color: $secondary-color;
       &::after {
-        background-color: $accent-color; // Línea Naranja
+        background-color: $calmred; // Línea Naranja
       }
     }
 
@@ -129,7 +129,7 @@
     .card__title {
       color: $accent-color;
       &::after {
-        background-color: $white;
+        background-color: $softyellow;
       }
     }
 

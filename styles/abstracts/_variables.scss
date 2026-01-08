@@ -1,16 +1,18 @@
 // Colors
-$primary-color: hsl(32, 100%, 97%);
-$secondary-color: #1A262B;          
+$primary-color: #ffffff;
+$secondary-color: #181818;          
 $tertiary-color: #FFecd6;          
-
 
 $white: #ffffff; 
 $black: #000000;
 $sand: #eae3dc;
 $silver: #ececec;
-
+$safeblue: #415b8a;
+$calmred: #f58f80;
+$comfortingorange: #fab571;
+$softyellow:#fdd796;
 // Accent Colors 
-$accent-color: #e37e54; 
+$accent-color: $comfortingorange; 
 $highlight-color: #f1c40f; 
 
 // Font Sizes s
@@ -35,7 +37,7 @@ $font-weight-black: 900;
 $font-weight-heavy: 950;
 
 
-$primary-font: "Roboto", sans-serif;
-$secondary-font: "Kedebideri", sans-serif;
+$primary-font: "Fira Sans", sans-serif;
+$secondary-font: "BBH Bogle", sans-serif;
 
 $padding-section: 2.3rem 2.5rem 5.3rem 2.5rem;

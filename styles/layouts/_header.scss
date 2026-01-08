@@ -12,11 +12,9 @@
   //background-color: $primary-color;
   background-color: $secondary-color;
   position: fixed; /* Fixes the header at the top of the window */
-  top: 0.5rem;
+  top: 0rem;
   left: 0;
-  width: 96%;
-  margin: 2% 2%; /* Centers the header with 5% margins on each side */
-  border-radius: 15px;
+  width: 100%;
 
   color: $primary-color;
   z-index: 1000; /* Ensures the header is above other elements */
@@ -36,8 +34,8 @@
     padding: 10px 5%;
 
     @include respond-to(medium) {
-      margin-left: 5%;
-      margin-right: 5%;
+      margin-left: 2%;
+      margin-right: 2%;
     }
 
     /* 
@@ -75,15 +73,12 @@
       .header__logo-img {
         width: 35px;
         height: auto;
+        
+        filter: brightness(0) saturate(100%) invert(100%) sepia(98%) saturate(0%) hue-rotate(307deg) brightness(102%) contrast(102%);
 
-        /* Filter to adjust logo color if needed
-        filter: invert(12%) sepia(0%) saturate(0%) hue-rotate(0deg)
-          brightness(12%) contrast(100%);
-        */
-        filter: brightness(90%);
         
         @include respond-to(large) {
-          width: 40px; /* Slightly larger logo on large screens */
+          width: 50px; /* Slightly larger logo on large screens */
           cursor: pointer;
         }
       }
@@ -105,7 +100,8 @@
       z-index: -1;
       width: 100%;
 
-      border-radius: 0 0 15px 15px;
+      //border-radius: 0 0 15px 15px;
+       border-radius: 0;
       max-height: 0vh; /* Initially hidden (height 0) */
       padding: 2rem 0 0 0;
 

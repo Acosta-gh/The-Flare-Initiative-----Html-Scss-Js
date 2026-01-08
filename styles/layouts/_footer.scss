@@ -14,7 +14,7 @@
     margin-bottom: 1rem;
     min-height: 3rem;
     text-align: center;
-    font-family: $primary-font;
+    font-family: $secondary-font;
     font-size: clamp(3rem, 5vw, 12rem);
     margin-inline: auto;
     word-wrap: break-word;
@@ -34,6 +34,7 @@
     color: $secondary-color;
     margin-bottom: 2rem;
     font-weight: 700;
+      letter-spacing: 0.15em;
   }
 
   .sr-only {

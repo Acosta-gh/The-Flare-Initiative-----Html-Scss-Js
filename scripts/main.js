@@ -1,34 +1,42 @@
-import FadeEffect from './components/fadeEffect.js';
-import Navbar from './components/navbar.js';
-import ScrollAnimations from './components/scrollAnimations.js';
+import ScrollAnimations from "./components/scrollAnimations.js";
+import { actualizarSaludo } from "./components/greeting.js"; 
+import { initI18n, setLanguage, getCurrentTranslation } from "./utils/i18n.js";
+import { fadeEffect } from "./components/fadeEffect.js";
+import { barraNavegacion } from "./components/navbar.js";
+import { typewriter } from "./components/typewriter.js";
 
-// import { findElement } from './utils/domUtils.js';
-
-/**
- * Initializes the application once the DOM content is fully loaded.
- * 
- * This event listener ensures that all imported components are
- * instantiated only after the document has been parsed and is ready
- * for interaction.
- */
 document.addEventListener("DOMContentLoaded", () => {
-  /**
-   * Initialize the fade effect component.
-   * Handles fading interactions and transitions on page elements.
-   */
-  const fadeEffect = new FadeEffect();
+  new ScrollAnimations();
+  fadeEffect();
+  barraNavegacion();
+  
+  initI18n(); 
 
-  /**
-   * Initialize the navigation bar component.
-   * Manages navbar behavior such as toggles, scrolling behavior,
-   * or dynamic class updates based on user interaction.
-   */
-  const navbar = new Navbar();
+  actualizarSaludo();
 
-  /**
-   * Initialize scroll-based animations.
-   * Triggers animations when elements enter the viewport
-   * during page scrolling.
-   */
-  const scrollAnimations = new ScrollAnimations();
+const btnFr = document.querySelector("#btn-fr");
+const btnEn = document.querySelector("#btn-en");
+
+if (btnFr) btnFr.addEventListener("click", () => setLanguage("fr"));
+if (btnEn) btnEn.addEventListener("click", () => setLanguage("en"));
+
+  const introJobPositions = document.querySelector(".main__intro-position--type");
+  let typewriterInstance = null;
+
+  function startTypewriter() {
+    if (!introJobPositions) return;
+    if (typewriterInstance) typewriterInstance.stop();
+
+    const currentData = getCurrentTranslation();
+    const words = currentData.hero.jobs;
+
+    typewriterInstance = typewriter(introJobPositions, words);
+  }
+
+  startTypewriter();
+
+  document.addEventListener("language-changed", () => {
+    startTypewriter();
+    actualizarSaludo();
+  });
 });

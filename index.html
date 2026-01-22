@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -29,24 +29,32 @@
     />
     <meta property="og:url" content="https://flareinitiative.org/" />
     <meta property="og:type" content="website" />
-    
+
     <link rel="icon" href="/favicon.ico" type="image/x-icon" />
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=BBH+Bogle&family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=BBH+Bogle&family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
 
     <!-- CSS -->
     <link rel="stylesheet" href="styles/css/main.css" />
-      <script async src="https://www.googletagmanager.com/gtag/js?id=G-37S5JYS2ZN"></script>
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-37S5JYS2ZN"
+    ></script>
 
-      <!-- Google Analytics -->
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-37S5JYS2ZN');
-  </script>
+    <!-- Google Analytics -->
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-37S5JYS2ZN");
+    </script>
   </head>
 
   <body class="body">
@@ -64,10 +72,14 @@
         <!-- Navigation links list -->
         <ul class="header__nav-list">
           <li class="header__nav-item">
-            <a href="#" aria-current="page">Home</a>
+            <a href="#" aria-current="page" data-i18n="nav.home">Home</a>
           </li>
-          <li class="header__nav-item"><a href="#about_us">About Us </a></li>
-          <li class="header__nav-item"><a href="#contact_us">Contact Us</a></li>
+          <li class="header__nav-item">
+            <a href="#about_us" data-i18n="nav.about">About Us</a>
+          </li>
+          <li class="header__nav-item">
+            <a href="#contact_us" data-i18n="nav.contact">Contact Us</a>
+          </li>
           <!-- Language selector with dropdown menu -->
           <li class="header__nav-lang">
             <button
@@ -121,10 +133,14 @@
               aria-labelledby="lang-menu-button"
             >
               <li class="header__nav-langitem" role="menuitem">
-                <a class="no-select" href="">English</a>
+                <a class="no-select" id="btn-fr" data-i18n="nav.lang_fr"
+                  >Français</a
+                >
               </li>
               <li class="header__nav-langitem" role="menuitem">
-                <a class="no-select" href="pages/fr/index.html">Français</a>
+                <a class="no-select" id="btn-en" data-i18n="nav.lang_en"
+                  >English</a
+                >
               </li>
             </ul>
           </li>
@@ -142,22 +158,29 @@
         </button>
       </nav>
     </header>
+
     <!-- Main content -->
     <main class="main">
       <!-- Introduction section -->
       <section class="main__intro" aria-labelledby="intro-title" tabindex="-1">
-       <div class="main__intro-logo-name-container">
-        <img class="main__intro-logo" src="./assets/images/logo.svg">
-         <h1 class="main__intro-name" id="intro-title" tabindex="0">
-          The <br>Flare<br> Initiative
-        </h1>
-       </div>
-        <h2 class="main__intro-subtitle">
+        <div class="main__intro-logo-name-container">
+          <img class="main__intro-logo" src="./assets/images/logo.svg" />
+          <h1 class="main__intro-name" id="intro-title" tabindex="0">
+            <span data-i18n="intro.title_line1">The</span> <br />
+            <span data-i18n="intro.title_line2">Flare</span><br />
+            <span data-i18n="intro.title_line3">Initiative</span>
+          </h1>
+        </div>
+        <h2 class="main__intro-subtitle" data-i18n="intro.subtitle">
           Break the silence.
         </h2>
         <div class="main__intro-donate">
-          <a href="#about_us" class="btn button--tertiary">
-            <span class="paragraph">Who We Are</span>
+          <a href="https://www.zeffy.com/en-CA/donation-form/donate-to-help-first-responders-2" class="btn button--tertiary">
+            <span class="paragraph" data-i18n="intro.cta_button"
+              >Donate</span
+            > <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+      </svg>
           </a>
         </div>
 
@@ -165,7 +188,6 @@
         <div class="scroll-down-indicator" aria-hidden="true"></div>
       </section>
 
-      <!-- scroll-container -->
       <!-- About Us Section -->
       <section
         class="about-us scroll-container target"
@@ -173,20 +195,26 @@
         aria-labelledby="about-us-title"
         tabindex="-1"
       >
-        <!-- js-scroll -->
         <div class="js-scroll slideup" aria-live="polite">
-          <h3 class="subtitle" id="about-us-title" tabindex="0">About Us</h3>
+          <h3
+            class="subtitle"
+            id="about-us-title"
+            tabindex="0"
+            data-i18n="about.title"
+          >
+            About Us
+          </h3>
           <div class="about-us__content">
             <div class="about-us__intro">
-              <p class="paragraph" tabindex="0">
+              <p class="paragraph" tabindex="0" data-i18n="about.intro_p1">
                 The Flare Initiative was created in response to a gap in suicide
                 tracking for first responders.
               </p>
-              <p class="paragraph underline">
+              <p class="paragraph underline" data-i18n="about.intro_p2">
                 Canada currently has no consistent system to track suicides
                 among police, fire, EMS, corrections, or dispatch personnel.
               </p>
-              <p class="paragraph">
+              <p class="paragraph" data-i18n="about.intro_p3">
                 Existing information is fragmented, inconsistent, and
                 inaccessible, leaving first responder agencies and mental health
                 organizations unable to fully understand the scope of the issue
@@ -200,16 +228,14 @@
                   src="./assets/images/police.jpg"
                   alt="firefighter in gear, representing first responder mental health"
                   tabindex="0"
+                  data-i18n-attr="alt:about.img_alt"
                 />
                 <figcaption class="image-credit">
-                  <!-- Photo courtesy of -->
-                  <a href="#" target="_blank" rel="noopener">   <!-- dansunphotos.com --> </a>
-                    <!-- dansunphotos.com -->
-                    </a>
+                  <a href="#" target="_blank" rel="noopener"></a>
                 </figcaption>
               </figure>
 
-              <p class="paragraph" tabindex="0">
+              <p class="paragraph" tabindex="0" data-i18n="about.media_desc">
                 By creating visibility on the true scale of first responder
                 suicides, the Flare Initiative will provide the evidence base
                 for effective prevention programs, inform policy changes, and
@@ -220,15 +246,25 @@
         </div>
       </section>
 
-      <!-- scroll-container -->
       <!-- Mission Section -->
       <section class="mission scroll-container" tabindex="-1">
         <div class="js-scroll slideup" aria-live="polite">
-          <h3 class="subtitle" id="mission-title" tabindex="0">Our Mission</h3>
+          <h3
+            class="subtitle"
+            id="mission-title"
+            tabindex="0"
+            data-i18n="mission.title"
+          >
+            Our Mission
+          </h3>
 
           <div class="mission__content">
             <div class="mission__intro">
-              <p class="paragraph mission__statement" tabindex="0">
+              <p
+                class="paragraph mission__statement"
+                tabindex="0"
+                data-i18n="mission.statement"
+              >
                 To reduce first responder suicides through data-driven
                 prevention.
               </p>
@@ -242,29 +278,29 @@
                   src="./assets/images/police.png"
                   alt="firefighter in gear, representing first responder mental health"
                   tabindex="0"
+                  data-i18n-attr="alt:mission.img_alt"
                 />
                 <figcaption class="image-credit">
-                  <!-- Photo courtesy of -->
-                  <a href="#" target="_blank" rel="noopener">   <!-- dansunphotos.com --> </a>
-                    <!-- dansunphotos.com -->
-                    </a>
+                  <a href="#" target="_blank" rel="noopener"></a>
                 </figcaption>
               </figure>
 
               <p class="paragraph" tabindex="0">
-                By creating visibility on the true scale of first responder
-                suicides,
-                <span class="underline"
+                <span data-i18n="mission.media_desc_part1"
+                  >By creating visibility on the true scale of first responder
+                  suicides,</span
+                >
+                <span class="underline" data-i18n="mission.media_desc_part2"
                   >the Flare Initiative will provide the evidence base for
-                  effective prevention programs.
-                </span>
+                  effective prevention programs.</span
+                >
               </p>
             </div>
           </div>
         </div>
       </section>
 
-      <!-- scroll-container -->
+      <!-- Our Approach Section -->
       <section
         class="our-approach scroll-container"
         aria-labelledby="our-approach-section-title"
@@ -278,6 +314,7 @@
           <h4
             id="our-approach-section-title"
             class="our-approach__subtitle subtitle"
+            data-i18n="approach.title"
           >
             Our Approach
           </h4>
@@ -287,8 +324,10 @@
             <!-- Card 1 -->
             <article class="card card--light">
               <div class="card__number">01</div>
-              <h3 class="card__title">Collect Data</h3>
-              <p class="card__desc">
+              <h3 class="card__title" data-i18n="approach.card1_title">
+                Collect Data
+              </h3>
+              <p class="card__desc" data-i18n="approach.card1_desc">
                 Build a secure national database with historical and current
                 information.
               </p>
@@ -297,8 +336,10 @@
             <!-- Card 2 -->
             <article class="card card--light">
               <div class="card__number">02</div>
-              <h3 class="card__title">Make It Visible</h3>
-              <p class="card__desc">
+              <h3 class="card__title" data-i18n="approach.card2_title">
+                Make It Visible
+              </h3>
+              <p class="card__desc" data-i18n="approach.card2_desc">
                 Share suicide trends through transparent, trauma-informed
                 reporting.
               </p>
@@ -307,8 +348,10 @@
             <!-- Card 3 -->
             <article class="card card--light">
               <div class="card__number">03</div>
-              <h3 class="card__title">Drive Change</h3>
-              <p class="card__desc">
+              <h3 class="card__title" data-i18n="approach.card3_title">
+                Drive Change
+              </h3>
+              <p class="card__desc" data-i18n="approach.card3_desc">
                 Equip organizations and governments with evidence to guide
                 prevention and policy.
               </p>
@@ -317,8 +360,10 @@
             <!-- Card 4 -->
             <article class="card card--light">
               <div class="card__number">04</div>
-              <h3 class="card__title">Long-Term Impact</h3>
-              <p class="card__desc">
+              <h3 class="card__title" data-i18n="approach.card4_title">
+                Long-Term Impact
+              </h3>
+              <p class="card__desc" data-i18n="approach.card4_desc">
                 Stronger prevention programs, national reporting standards,
                 reduced stigma, and consistent support for families.
               </p>
@@ -333,7 +378,11 @@
         aria-labelledby="help-section-title"
       >
         <div class="js-scroll" role="region" aria-live="polite">
-          <h4 id="help-section-title" class="how-to-help__subtitle subtitle">
+          <h4
+            id="help-section-title"
+            class="how-to-help__subtitle subtitle"
+            data-i18n="help.title"
+          >
             How You Can Help
           </h4>
 
@@ -360,8 +409,10 @@
                   />
                 </svg>
               </div>
-              <h3 class="card__title">Partner With Us</h3>
-              <p class="card__desc">
+              <h3 class="card__title" data-i18n="help.card1_title">
+                Partner With Us
+              </h3>
+              <p class="card__desc" data-i18n="help.card1_desc">
                 Collaborate on building a secure, national system for first
                 responder suicide tracking.
               </p>
@@ -387,8 +438,8 @@
                   />
                 </svg>
               </div>
-              <h3 class="card__title">Donate</h3>
-              <p class="card__desc">
+              <h3 class="card__title" data-i18n="help.card2_title">Donate</h3>
+              <p class="card__desc" data-i18n="help.card2_desc">
                 Support the development of a sustainable database that ensures
                 long-term visibility and accountability.
               </p>
@@ -413,8 +464,10 @@
                   />
                 </svg>
               </div>
-              <h3 class="card__title">Support Us</h3>
-              <p class="card__desc">
+              <h3 class="card__title" data-i18n="help.card3_title">
+                Support Us
+              </h3>
+              <p class="card__desc" data-i18n="help.card3_desc">
                 Help bring national attention to an issue too often overlooked.
               </p>
             </article>
@@ -422,56 +475,74 @@
         </div>
       </section>
     </main>
+
     <footer
       class="footer target"
       id="contact_us"
       role="contentinfo"
-      aria-label="Contacto y redes sociales"
+      aria-label="Contact and social media"
     >
       <div class="footer__inner">
-        <h5 class="subtitle footer__title">Contact Us</h5>
+        <h5 class="subtitle footer__title" data-i18n="footer.title">
+          Contact Us
+        </h5>
         <form
           class="footer__form"
           action="https://formsubmit.co/3246edf10c677cc651cd12e80cbee4f2"
           method="POST"
-          aria-label="Formulario de contacto"
+          aria-label="Contact form"
         >
           <input type="hidden" name="_captcha" value="true" />
           <input
             type="hidden"
             name="_subject"
-            value="Nuevo mensaje desde el sitio web"
+            value="New message from website"
           />
-          <label class="sr-only" for="footer-name">Name</label>
+          <label class="sr-only" for="footer-name" data-i18n="footer.name_label"
+            >Name</label
+          >
           <input
             id="footer-name"
             name="name"
             class="footer__input"
             type="text"
             placeholder="E.g. John Doe"
+            data-i18n-attr="placeholder:footer.name_placeholder"
             required
           />
-          <label class="sr-only" for="footer-email">Email</label>
+          <label
+            class="sr-only"
+            for="footer-email"
+            data-i18n="footer.email_label"
+            >Email</label
+          >
           <input
             id="footer-email"
             name="email"
             class="footer__input"
             type="email"
             placeholder="E.g. jhondoe@mail.com"
+            data-i18n-attr="placeholder:footer.email_placeholder"
             required
           />
-          <label class="sr-only" for="footer-message">Message</label>
+          <label
+            class="sr-only"
+            for="footer-message"
+            data-i18n="footer.message_label"
+            >Message</label
+          >
           <textarea
             id="footer-message"
             name="message"
             class="footer__textarea"
             rows="5"
             placeholder="E.g. Hello, I would like to know more about your initiative..."
+            data-i18n-attr="placeholder:footer.message_placeholder"
             required
           ></textarea>
           <div class="footer__form-actions">
             <button type="submit" class="button button--primary">
-              Send
+              <span data-i18n="footer.send_btn">Send</span>
               <svg
                 aria-hidden="true"
                 xmlns="http://www.w3.org/2000/svg"
@@ -491,11 +562,16 @@
             </button>
           </div>
           <div class="footer__form-note">
-            FormSubmit will open in a new tab to complete the submission. The
-            information I receive is your message and your email address to
-            respond to you. I do not store or share it with third parties.
+            <span data-i18n="footer.note_part1"
+              >FormSubmit will open in a new tab to complete the submission. The
+              information I receive is your message and your email address to
+              respond to you. I do not store or share it with third
+              parties.</span
+            >
             <a href="https://formsubmit.co/" class="underline">
-              For more information, learn about FormSubmit
+              <span data-i18n="footer.note_link"
+                >For more information, learn about FormSubmit</span
+              >
               <svg
                 aria-hidden="true"
                 xmlns="http://www.w3.org/2000/svg"
@@ -519,7 +595,12 @@
 
       <div class="footer__bottom">
         <div class="footer__social-section">
-          <h6 class="footer__social-title subtitle">Follow Us</h6>
+          <h6
+            class="footer__social-title subtitle"
+            data-i18n="footer.follow_title"
+          >
+            Follow Us
+          </h6>
           <ul class="footer__social-media">
             <li class="footer__social-item">
               <a
@@ -572,14 +653,13 @@
               href="/pages/javascript.html"
               data-jslicense="1"
               class="footer__legal-link"
+              data-i18n="footer.js_license"
             >
               JavaScript license information
             </a>
           </li>
           <li>
-            <a 
-            class="footer__legal-link"
-            href="https://www.dansunphotos.com/">
+            <a class="footer__legal-link" href="https://www.dansunphotos.com/" data-i18n="footer.photo_credit">
               Photos courtesy of dansunphotos.com
             </a>
           </li>

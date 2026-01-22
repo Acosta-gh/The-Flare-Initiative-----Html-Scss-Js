@@ -23,8 +23,9 @@ html,
 .main {
   &__intro {
     padding: 1rem;
-
-    @include respond-to(medium, max) {
+    padding-top: 2rem;
+    
+    @include respond-to(large, max) {
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -34,6 +35,8 @@ html,
     color: $white;
     min-height: 100vh;
     position: relative;
+
+    bottom: 3rem;
 
     background-image: url("../../assets/images/background.jpg");
     background-size: cover;
@@ -94,7 +97,7 @@ html,
       font-weight: $font-weight-normal;
       font-family: $secondary-font;
       text-align: left;
-      font-size: clamp(2rem, 10vw, $font-size-giant);
+      font-size: clamp(2.7rem, 10vw, $font-size-giant);
       //letter-spacing: -0.02em;
       //line-height: 1.1;
       //text-shadow: 0 2px 30px rgba(0, 0, 0, 0.5);
@@ -127,11 +130,10 @@ html,
     }
 
     &-donate {
-      margin-top: 3%;
-      display: none;
+      display: flex;
       justify-content: center;
       align-items: center;
-
+      
       a {
         text-decoration: none;
       }
@@ -141,11 +143,6 @@ html,
         font-size: $font-size-medium;
         font-weight: $font-weight-normal;
         text-decoration: none;
-      }
-
-      @include respond-to(large) {
-        position: relative;
-        right: 0.7rem;
       }
     }
   }

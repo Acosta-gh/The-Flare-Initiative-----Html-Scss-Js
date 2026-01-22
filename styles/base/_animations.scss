@@ -60,7 +60,7 @@ $easing: cubic-bezier(0.77, 0, 0.175, 1); // Custom acceleration curve
   left: 49%;
   bottom: 12.5%;
   @include respond-to(medium) {
-    bottom: 22.5%;
+    bottom: 10%;
     left: 49.25%;
   }
 }

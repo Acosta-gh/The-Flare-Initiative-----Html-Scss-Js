@@ -63,7 +63,7 @@ table {
 
 .underline {
   text-decoration: underline;
-  color: #fab571;
+  color: #faac5d;
   font-weight: 700;
 }
 .underline svg {
@@ -72,7 +72,7 @@ table {
   margin-bottom: -3px;
 }
 .underline svg path {
-  stroke: #fab571;
+  stroke: #faac5d;
   stroke-width: 2px;
 }
 
@@ -146,6 +146,30 @@ table {
   animation: down-arrow-after 2.6s cubic-bezier(0.77, 0, 0.175, 1) infinite;
 }
 
+.hero-bg-zoom {
+  animation: heroZoom 6s ease forwards;
+}
+
+.hero-fade-1 {
+  animation: heroFadeUp 0.8s ease both;
+  animation-delay: 0.2s;
+}
+
+.hero-fade-2 {
+  animation: heroFadeUp 0.8s ease both;
+  animation-delay: 0.45s;
+}
+
+.hero-fade-3 {
+  animation: heroFadeUp 0.8s ease both;
+  animation-delay: 0.65s;
+}
+
+.hero-fade-4 {
+  animation: heroFadeIn 1s ease both;
+  animation-delay: 1s;
+}
+
 /**
  * @keyframes animation definitions
  * ----------------------------------
@@ -170,6 +194,37 @@ table {
   100% {
     transform: rotate(45deg) translate(-70%, -70%);
     opacity: 1;
+  }
+}
+/**
+ * Hero entrance animations
+ * -------------------------
+ * Staggered fade-up for hero content and slow zoom-out for background image.
+ */
+@keyframes heroFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes heroFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes heroZoom {
+  from {
+    transform: scale(1.08);
+  }
+  to {
+    transform: scale(1);
   }
 }
 .target {
@@ -202,7 +257,7 @@ table {
   display: inline-flex;
   align-items: center;
   padding: 1rem 1rem 1rem 1.2rem;
-  background-color: #fab571;
+  background-color: #faac5d;
   color: #181818;
   border: none;
   border-radius: 15px;
@@ -247,8 +302,8 @@ table {
 
 .button--tertiary {
   padding: 0.9rem 1.7rem;
-  background-color: #fab571;
-  border: 2px solid #fab571;
+  background-color: #faac5d;
+  border: 2px solid #faac5d;
   color: #181818;
   border-radius: 45px;
   transition: all 0.3s ease;
@@ -264,7 +319,7 @@ table {
 .card.highlight {
   transform: scale(1.1);
   z-index: 2;
-  border: 1px solid #fab571;
+  border: 1px solid #faac5d;
   box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px;
 }
 .card.highlight:hover {
@@ -274,7 +329,7 @@ table {
   .card.highlight {
     transform: scale(1);
     margin: 1rem 0;
-    border: 2px solid #fab571;
+    border: 2px solid #faac5d;
   }
   .card.highlight:hover {
     transform: translateY(-5px);
@@ -336,7 +391,7 @@ table {
 .card__number {
   font-size: 3rem;
   font-weight: 900;
-  color: #fab571;
+  color: #faac5d;
   line-height: 1;
   margin-bottom: 1rem;
 }
@@ -347,13 +402,13 @@ table {
 }
 .card--light:hover {
   box-shadow: rgba(149, 157, 165, 0.2) 0px 12px 30px;
-  border: 1px solid #fab571;
+  border: 1px solid #faac5d;
 }
 .card--light .card__title {
   color: #181818;
 }
 .card--light .card__title::after {
-  background-color: #fab571;
+  background-color: #faac5d;
 }
 .card--light .card__desc,
 .card--light .card__paragraph {
@@ -366,13 +421,13 @@ table {
 }
 .card--dark:hover {
   background-color: rgba(255, 255, 255, 0.1);
-  border-color: #fab571;
+  border-color: #faac5d;
 }
 .card--dark .card__title {
-  color: #fab571;
+  color: #faac5d;
 }
 .card--dark .card__title::after {
-  background-color: #fab571;
+  background-color: #faac5d;
 }
 .card--dark .card__desc,
 .card--dark .card__paragraph {
@@ -383,7 +438,7 @@ table {
   display: block;
   width: 100px;
   height: 3px;
-  background-color: #fab571;
+  background-color: #faac5d;
   margin: 1.5rem 0;
   border-radius: 2px;
 }
@@ -424,7 +479,7 @@ table {
   transition: color 0.2s ease;
 }
 .image-credit a:hover {
-  color: #fab571;
+  color: #faac5d;
   text-decoration: underline;
 }
 
@@ -435,7 +490,7 @@ table {
   color: rgba(255, 255, 255, 0.7);
 }
 .image-credit--dark a:hover {
-  color: #fab571;
+  color: #faac5d;
 }
 
 .footer {
@@ -508,7 +563,7 @@ table {
   font-family: "Fira Sans", sans-serif;
   position: relative;
   border-bottom: 1px solid rgba(24, 24, 24, 0.2);
-  background-image: linear-gradient(#fab571, #fab571);
+  background-image: linear-gradient(#faac5d, #faac5d);
   background-position: left bottom;
   background-repeat: no-repeat;
   background-size: 0% 2px;
@@ -552,7 +607,7 @@ table {
   transition: transform 0.2s, background-color 0.2s;
 }
 .footer__form-actions button:hover {
-  background-color: #fab571;
+  background-color: #faac5d;
   transform: translateX(1px);
 }
 .footer__form-actions button {
@@ -574,7 +629,7 @@ table {
   margin-top: 0;
 }
 .footer__form-note a {
-  color: #fab571;
+  color: #faac5d;
   text-decoration: none;
 }
 .footer__form-note a:hover {
@@ -606,11 +661,11 @@ table {
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 .footer__email-link:hover {
-  background-color: rgba(250, 181, 113, 0.15);
-  color: #fab571;
+  background-color: rgba(250, 172, 93, 0.15);
+  color: #faac5d;
 }
 .footer__email-link:focus-visible {
-  outline: 2px solid #fab571;
+  outline: 2px solid #faac5d;
   outline-offset: 2px;
 }
 .footer__email-icon {
@@ -673,12 +728,12 @@ table {
   transition: transform 0.3s ease;
 }
 .footer__social-link:hover {
-  background-color: #fab571;
+  background-color: #faac5d;
   color: #ffffff;
-  border-color: #fab571;
+  border-color: #faac5d;
 }
 .footer__social-link:focus-visible {
-  outline: 2px solid #fab571;
+  outline: 2px solid #faac5d;
   outline-offset: 3px;
 }
 .footer__social-text {
@@ -920,7 +975,7 @@ table {
     height: 2px;
     bottom: -5px;
     left: 0;
-    background-color: #fab571;
+    background-color: #faac5d;
     transition: transform 0.25s ease-out;
   }
 }
@@ -1019,7 +1074,7 @@ table {
  * Shows accent color and animated bottom line
  */
 .item--active a {
-  color: #fab571;
+  color: #faac5d;
 }
 .item--active::after {
   transform: scaleX(1); /* Shows expanded bottom line */
@@ -1068,21 +1123,30 @@ html,
   min-height: 100vh;
   position: relative;
   bottom: 3rem;
+  overflow: hidden;
+}
+.main__intro::after {
+  content: "";
+  position: absolute;
+  inset: -20px;
+  z-index: 0;
   background-image: url("../../assets/images/background.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
+  filter: blur(4px);
+  animation: heroZoom 6s ease forwards;
 }
 .main__intro::before {
   content: "";
   position: absolute;
   inset: 0;
-  z-index: 0;
+  z-index: 1;
   background: linear-gradient(135deg, rgba(65, 91, 138, 0.85) 0%, rgba(65, 91, 138, 0.7) 50%, rgba(65, 91, 138, 0.3) 100%);
 }
-.main__intro-name, .main__intro-subtitle, .main__intro-donate, .main__intro-salutation-container, .main__intro-logo {
+.main__intro-name, .main__intro-subtitle, .main__intro-donate, .main__intro-salutation-container, .main__intro-logo, .main__intro-logo-name-container {
   position: relative;
-  z-index: 1;
+  z-index: 2;
 }
 @media (min-width: 768px) {
   .main__intro {
@@ -1173,18 +1237,21 @@ html,
 .main .about-us .subtitle {
   text-align: center;
   margin: 2rem 2rem 1.3rem 2rem;
-  color: #f58f80;
+  color: #f17e6d;
 }
 .main .about-us .paragraph {
   text-align: center;
   margin-bottom: 0.8rem;
   color: #181818;
 }
+.main .about-us .paragraph:nth-last-of-type(2) {
+  font-weight: 500;
+}
 .main .about-us .divider {
   display: none;
 }
 .main .about-us .underline {
-  color: #f58f80;
+  color: #f17e6d;
 }
 @media (min-width: 768px) {
   .main .about-us {
@@ -1195,7 +1262,7 @@ html,
   }
   .main .about-us .divider {
     display: block;
-    background-color: #f58f80;
+    background-color: #f17e6d;
   }
   .main .about-us .subtitle {
     margin: 2rem 2rem 1.3rem 0rem;
@@ -1238,7 +1305,7 @@ html,
   height: 400px;
   object-fit: cover;
   border-radius: 10px;
-  box-shadow: 4px 3px 17px -11px rgba(0, 0, 0, 0.2);
+  box-shadow: 4px 3px 17px -11px rgba(0, 0, 0, 0.5);
 }
 @media (min-width: 768px) {
   .main .about-us__media figure img {
@@ -1262,6 +1329,7 @@ html,
 }
 .main .mission {
   padding: 2.3rem 2.5rem 5.3rem 2.5rem;
+  padding-top: 22.5%;
   font-family: "Fira Sans", sans-serif;
   font-size: 1.75rem;
   background-color: #2c3e50;
@@ -1288,11 +1356,11 @@ html,
 }
 .main .mission .subtitle,
 .main .mission .underline {
-  color: #fab571;
+  color: #faac5d;
 }
 .main .mission .divider {
   display: none;
-  background-color: #fab571;
+  background-color: #faac5d;
 }
 @media (min-width: 768px) {
   .main .mission {
@@ -1345,7 +1413,7 @@ html,
   height: 400px;
   object-fit: cover;
   border-radius: 10px;
-  box-shadow: 4px 3px 17px -11px rgba(0, 0, 0, 0.2);
+  box-shadow: 4px 3px 17px -11px rgba(0, 0, 0, 0.5);
 }
 @media (min-width: 768px) {
   .main .mission__media figure img {
@@ -1369,6 +1437,7 @@ html,
 }
 .main .our-approach {
   padding: 2.3rem 2.5rem 5.3rem 2.5rem;
+  padding-top: 22.5%;
   background-color: #ffffff;
 }
 @media (min-width: 768px) {

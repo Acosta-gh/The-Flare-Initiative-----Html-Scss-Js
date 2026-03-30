@@ -1,671 +1,441 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>
-      The Flare Initiative | First Responder Suicide Prevention Canada
-    </title>
-    <meta
-      name="description"
-      content="The Flare Initiative is dedicated to reducing first responder suicides through data-driven prevention. We build national tracking systems for police, fire, and EMS."
-    />
-    <meta
-      name="keywords"
-      content="first responder suicide, mental health, suicide prevention, police, firefighter, EMS, data tracking, Canada"
-    />
-    <meta name="author" content="The Flare Initiative" />
-    <meta
-      property="og:title"
-      content="The Flare Initiative | First Responder Suicide Prevention"
-    />
-    <meta
-      property="og:description"
-      content="Join us in building a secure, national system for first responder suicide tracking and prevention."
-    />
-    <meta
-      property="og:image"
-      content="https://flareinitiative.org/assets/images/police.jpg"
-    />
-    <meta property="og:url" content="https://flareinitiative.org/" />
-    <meta property="og:type" content="website" />
 
-    <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>
+    The Flare Initiative | First Responder Suicide Prevention Canada
+  </title>
+  <meta name="description"
+    content="The Flare Initiative is dedicated to reducing first responder suicides through data-driven prevention. We build national tracking systems for police, fire, and EMS." />
+  <meta name="keywords"
+    content="first responder suicide, mental health, suicide prevention, police, firefighter, EMS, data tracking, Canada" />
+  <meta name="author" content="The Flare Initiative" />
+  <meta property="og:title" content="The Flare Initiative | First Responder Suicide Prevention" />
+  <meta property="og:description"
+    content="Join us in building a secure, national system for first responder suicide tracking and prevention." />
+  <meta property="og:image" content="https://flareinitiative.org/assets/images/police.jpg" />
+  <meta property="og:url" content="https://flareinitiative.org/" />
+  <meta property="og:type" content="website" />
 
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=BBH+Bogle&family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-      rel="stylesheet"
-    />
+  <link rel="icon" href="/favicon.ico" type="image/x-icon" />
 
-    <!-- CSS -->
-    <link rel="stylesheet" href="styles/css/main.css" />
-    <script
-      async
-      src="https://www.googletagmanager.com/gtag/js?id=G-37S5JYS2ZN"
-    ></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=BBH+Bogle&family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet" />
 
-    <!-- Google Analytics -->
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag("js", new Date());
-      gtag("config", "G-37S5JYS2ZN");
-    </script>
-  </head>
+  <!-- CSS -->
+  <link rel="stylesheet" href="styles/css/main.css" />
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-37S5JYS2ZN"></script>
 
-  <body class="body">
-    <!-- Header with navigation -->
-    <header class="header">
-      <nav class="header__nav" role="navigation" aria-label="Main menu">
-        <!-- Site logo -->
-        <a href="#" class="header__nav-logo">
-          <img
-            src="assets/images/logo.svg"
-            alt="The Flare Initiative Logo - First Responder Support"
-            class="header__logo-img"
-          />
-        </a>
-        <!-- Navigation links list -->
-        <ul class="header__nav-list">
-          <li class="header__nav-item">
-            <a href="#" aria-current="page" data-i18n="nav.home">Home</a>
-          </li>
-          <li class="header__nav-item">
-            <a href="#about_us" data-i18n="nav.about">About Us</a>
-          </li>
-          <li class="header__nav-item">
-            <a href="#contact_us" data-i18n="nav.contact">Contact Us</a>
-          </li>
-          <!-- Language selector with dropdown menu -->
-          <li class="header__nav-lang">
-            <button
-              class="header__nav-langmenu"
-              aria-haspopup="true"
-              aria-expanded="false"
-              aria-controls="lang-menu"
-              id="lang-menu-button"
-              type="button"
-            >
-              <!-- Translation icon -->
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="18"
-                height="18"
-                fill="currentColor"
-                class="bi bi-translate no-select"
-                viewBox="0 0 16 16"
-                aria-hidden="true"
-                focusable="false"
-              >
-                <path
-                  d="M4.545 6.714L4.11 8H3l1.862-5h1.284L8 8H6.833l-.435-1.286zm1.634-.736L5.5 3.956h-.049l-.679 2.022z"
-                />
-                <path
-                  d="M0 2a2 2 0 0 1 2-2h7a2 2 0 0 1 2 2v3h3a2 2 0 0 1 2 2v7a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-3H2a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v7a1 1 0 0 0 1 1h7a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zm7.138 9.995q.289.451.63.846c-.748.575-1.673 1.001-2.768 1.292.178.217.451.635.555.867 1.125-.359 2.08-.844 2.886-1.494.777.665 1.739 1.165 2.93 1.472.133-.254.414-.673.629-.89-1.125-.253-2.057-.694-2.82-1.284.681-.747 1.222-1.651 1.621-2.757H14V8h-3v1.047h.765c-.318.844-.74 1.546-1.272 2.13a6 6 0 0 1-.415-.492 2 2 0 0 1-.94.31"
-                />
-              </svg>
-              <!-- Dropdown arrow icon (rotates with CSS when active) -->
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="16"
-                height="16"
-                fill="currentColor"
-                class="bi bi-chevron-down arrow"
-                viewBox="0 0 16 16"
-                aria-hidden="true"
-                focusable="false"
-              >
-                <path
-                  fill-rule="evenodd"
-                  d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708"
-                />
-              </svg>
-            </button>
-            <!-- Dropdown list of available languages -->
-            <ul
-              class="header__nav-langlist"
-              id="lang-menu"
-              role="menu"
-              aria-labelledby="lang-menu-button"
-            >
-              <li class="header__nav-langitem" role="menuitem">
-                <a class="no-select" id="btn-fr" data-i18n="nav.lang_fr"
-                  >Français</a
-                >
-              </li>
-              <li class="header__nav-langitem" role="menuitem">
-                <a class="no-select" id="btn-en" data-i18n="nav.lang_en"
-                  >English</a
-                >
-              </li>
-            </ul>
-          </li>
-        </ul>
-        <!-- Hamburger menu button for small device navigation -->
-        <button
-          class="header__nav-burguer"
-          aria-label="Mobile menu"
-          aria-expanded="false"
-          type="button"
-        >
-          <span class="header__nav-burguer-line" aria-hidden="true"></span>
-          <span class="header__nav-burguer-line" aria-hidden="true"></span>
-          <span class="header__nav-burguer-line" aria-hidden="true"></span>
-        </button>
-      </nav>
-    </header>
+  <!-- Google Analytics -->
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag("js", new Date());
+    gtag("config", "G-37S5JYS2ZN");
+  </script>
+</head>
 
-    <!-- Main content -->
-    <main class="main">
-      <!-- Introduction section -->
-      <section class="main__intro" aria-labelledby="intro-title" tabindex="-1">
-        <div class="main__intro-logo-name-container">
-          <img class="main__intro-logo" src="./assets/images/logo.svg" />
-          <h1 class="main__intro-name" id="intro-title" tabindex="0">
-            <span data-i18n="intro.title_line1">The</span> <br />
-            <span data-i18n="intro.title_line2">Flare</span><br />
-            <span data-i18n="intro.title_line3">Initiative</span>
-          </h1>
-        </div>
-        <h2 class="main__intro-subtitle" data-i18n="intro.subtitle">
-          Break the silence.
-        </h2>
-        <div class="main__intro-donate">
-          <a href="https://www.zeffy.com/en-CA/donation-form/donate-to-help-first-responders-2" class="btn button--tertiary">
-            <span class="paragraph" data-i18n="intro.cta_button"
-              >Donate</span
-            > <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-      </svg>
-          </a>
-        </div>
-
-        <!-- Visual scroll down indicator -->
-        <div class="scroll-down-indicator" aria-hidden="true"></div>
-      </section>
-
-      <!-- About Us Section -->
-      <section
-        class="about-us scroll-container target"
-        id="about_us"
-        aria-labelledby="about-us-title"
-        tabindex="-1"
-      >
-        <div class="js-scroll slideup" aria-live="polite">
-          <h3
-            class="subtitle"
-            id="about-us-title"
-            tabindex="0"
-            data-i18n="about.title"
-          >
-            About Us
-          </h3>
-          <div class="about-us__content">
-            <div class="about-us__intro">
-              <p class="paragraph" tabindex="0" data-i18n="about.intro_p1">
-                The Flare Initiative was created in response to a gap in suicide
-                tracking for first responders.
-              </p>
-              <p class="paragraph underline" data-i18n="about.intro_p2">
-                Canada currently has no consistent system to track suicides
-                among police, fire, EMS, corrections, or dispatch personnel.
-              </p>
-              <p class="paragraph" data-i18n="about.intro_p3">
-                Existing information is fragmented, inconsistent, and
-                inaccessible, leaving first responder agencies and mental health
-                organizations unable to fully understand the scope of the issue
-                or evaluate prevention efforts.
-              </p>
-            </div>
-            <span class="divider" aria-hidden="true"></span>
-            <div class="about-us__media">
-              <figure>
-                <img
-                  src="./assets/images/police.jpg"
-                  alt="firefighter in gear, representing first responder mental health"
-                  tabindex="0"
-                  data-i18n-attr="alt:about.img_alt"
-                />
-                <figcaption class="image-credit">
-                  <a href="#" target="_blank" rel="noopener"></a>
-                </figcaption>
-              </figure>
-
-              <p class="paragraph" tabindex="0" data-i18n="about.media_desc">
-                By creating visibility on the true scale of first responder
-                suicides, the Flare Initiative will provide the evidence base
-                for effective prevention programs, inform policy changes, and
-                reduce stigma around first responder mental health
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Mission Section -->
-      <section class="mission scroll-container" tabindex="-1">
-        <div class="js-scroll slideup" aria-live="polite">
-          <h3
-            class="subtitle"
-            id="mission-title"
-            tabindex="0"
-            data-i18n="mission.title"
-          >
-            Our Mission
-          </h3>
-
-          <div class="mission__content">
-            <div class="mission__intro">
-              <p
-                class="paragraph mission__statement"
-                tabindex="0"
-                data-i18n="mission.statement"
-              >
-                To reduce first responder suicides through data-driven
-                prevention.
-              </p>
-            </div>
-
-            <span class="divider" aria-hidden="true"></span>
-
-            <div class="mission__media">
-              <figure>
-                <img
-                  src="./assets/images/police.png"
-                  alt="firefighter in gear, representing first responder mental health"
-                  tabindex="0"
-                  data-i18n-attr="alt:mission.img_alt"
-                />
-                <figcaption class="image-credit">
-                  <a href="#" target="_blank" rel="noopener"></a>
-                </figcaption>
-              </figure>
-
-              <p class="paragraph" tabindex="0">
-                <span data-i18n="mission.media_desc_part1"
-                  >By creating visibility on the true scale of first responder
-                  suicides,</span
-                >
-                <span class="underline" data-i18n="mission.media_desc_part2"
-                  >the Flare Initiative will provide the evidence base for
-                  effective prevention programs.</span
-                >
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Our Approach Section -->
-      <section
-        class="our-approach scroll-container"
-        aria-labelledby="our-approach-section-title"
-      >
-        <div
-          class="js-scroll"
-          role="region"
-          aria-live="polite"
-          aria-atomic="true"
-        >
-          <h4
-            id="our-approach-section-title"
-            class="our-approach__subtitle subtitle"
-            data-i18n="approach.title"
-          >
-            Our Approach
-          </h4>
-
-          <!-- Grid Container -->
-          <div class="our-approach__grid">
-            <!-- Card 1 -->
-            <article class="card card--light">
-              <div class="card__number">01</div>
-              <h3 class="card__title" data-i18n="approach.card1_title">
-                Collect Data
-              </h3>
-              <p class="card__desc" data-i18n="approach.card1_desc">
-                Build a secure national database with historical and current
-                information.
-              </p>
-            </article>
-
-            <!-- Card 2 -->
-            <article class="card card--light">
-              <div class="card__number">02</div>
-              <h3 class="card__title" data-i18n="approach.card2_title">
-                Make It Visible
-              </h3>
-              <p class="card__desc" data-i18n="approach.card2_desc">
-                Share suicide trends through transparent, trauma-informed
-                reporting.
-              </p>
-            </article>
-
-            <!-- Card 3 -->
-            <article class="card card--light">
-              <div class="card__number">03</div>
-              <h3 class="card__title" data-i18n="approach.card3_title">
-                Drive Change
-              </h3>
-              <p class="card__desc" data-i18n="approach.card3_desc">
-                Equip organizations and governments with evidence to guide
-                prevention and policy.
-              </p>
-            </article>
-
-            <!-- Card 4 -->
-            <article class="card card--light">
-              <div class="card__number">04</div>
-              <h3 class="card__title" data-i18n="approach.card4_title">
-                Long-Term Impact
-              </h3>
-              <p class="card__desc" data-i18n="approach.card4_desc">
-                Stronger prevention programs, national reporting standards,
-                reduced stigma, and consistent support for families.
-              </p>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <!-- How You Can Help Section -->
-      <section
-        class="how-to-help scroll-container"
-        aria-labelledby="help-section-title"
-      >
-        <div class="js-scroll" role="region" aria-live="polite">
-          <h4
-            id="help-section-title"
-            class="how-to-help__subtitle subtitle"
-            data-i18n="help.title"
-          >
-            How You Can Help
-          </h4>
-
-          <div class="how-to-help__grid">
-            <!-- Card 1 -->
-            <article class="card card--dark">
-              <div class="card__icon">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="16"
-                  height="16"
-                  fill="currentColor"
-                  class="bi bi-clipboard-data"
-                  viewBox="0 0 16 16"
-                >
-                  <path
-                    d="M4 11a1 1 0 1 1 2 0v1a1 1 0 1 1-2 0zm6-4a1 1 0 1 1 2 0v5a1 1 0 1 1-2 0zM7 9a1 1 0 0 1 2 0v3a1 1 0 1 1-2 0z"
-                  />
-                  <path
-                    d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1z"
-                  />
-                  <path
-                    d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0z"
-                  />
-                </svg>
-              </div>
-              <h3 class="card__title" data-i18n="help.card1_title">
-                Partner With Us
-              </h3>
-              <p class="card__desc" data-i18n="help.card1_desc">
-                Collaborate on building a secure, national system for first
-                responder suicide tracking.
-              </p>
-            </article>
-
-            <!-- Card 2 -->
-            <article class="card card--dark highlight">
-              <div class="card__icon">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="16"
-                  height="16"
-                  fill="currentColor"
-                  class="bi bi-piggy-bank"
-                  viewBox="0 0 16 16"
-                >
-                  <path
-                    d="M5 6.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0m1.138-1.496A6.6 6.6 0 0 1 7.964 4.5c.666 0 1.303.097 1.893.273a.5.5 0 0 0 .286-.958A7.6 7.6 0 0 0 7.964 3.5c-.734 0-1.441.103-2.102.292a.5.5 0 1 0 .276.962"
-                  />
-                  <path
-                    fill-rule="evenodd"
-                    d="M7.964 1.527c-2.977 0-5.571 1.704-6.32 4.125h-.55A1 1 0 0 0 .11 6.824l.254 1.46a1.5 1.5 0 0 0 1.478 1.243h.263c.3.513.688.978 1.145 1.382l-.729 2.477a.5.5 0 0 0 .48.641h2a.5.5 0 0 0 .471-.332l.482-1.351c.635.173 1.31.267 2.011.267.707 0 1.388-.095 2.028-.272l.543 1.372a.5.5 0 0 0 .465.316h2a.5.5 0 0 0 .478-.645l-.761-2.506C13.81 9.895 14.5 8.559 14.5 7.069q0-.218-.02-.431c.261-.11.508-.266.705-.444.315.306.815.306.815-.417 0 .223-.5.223-.461-.026a1 1 0 0 0 .09-.255.7.7 0 0 0-.202-.645.58.58 0 0 0-.707-.098.74.74 0 0 0-.375.562c-.024.243.082.48.32.654a2 2 0 0 1-.259.153c-.534-2.664-3.284-4.595-6.442-4.595M2.516 6.26c.455-2.066 2.667-3.733 5.448-3.733 3.146 0 5.536 2.114 5.536 4.542 0 1.254-.624 2.41-1.67 3.248a.5.5 0 0 0-.165.535l.66 2.175h-.985l-.59-1.487a.5.5 0 0 0-.629-.288c-.661.23-1.39.359-2.157.359a6.6 6.6 0 0 1-2.157-.359.5.5 0 0 0-.635.304l-.525 1.471h-.979l.633-2.15a.5.5 0 0 0-.17-.534 4.65 4.65 0 0 1-1.284-1.541.5.5 0 0 0-.446-.275h-.56a.5.5 0 0 1-.492-.414l-.254-1.46h.933a.5.5 0 0 0 .488-.393m12.621-.857a.6.6 0 0 1-.098.21l-.044-.025c-.146-.09-.157-.175-.152-.223a.24.24 0 0 1 .117-.173c.049-.027.08-.021.113.012a.2.2 0 0 1 .064.199"
-                  />
-                </svg>
-              </div>
-              <h3 class="card__title" data-i18n="help.card2_title">Donate</h3>
-              <p class="card__desc" data-i18n="help.card2_desc">
-                Support the development of a sustainable database that ensures
-                long-term visibility and accountability.
-              </p>
-            </article>
-
-            <!-- Card 3 -->
-            <article class="card card--dark">
-              <div class="card__icon">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="16"
-                  height="16"
-                  fill="currentColor"
-                  class="bi bi-person-vcard"
-                  viewBox="0 0 16 16"
-                >
-                  <path
-                    d="M5 8a2 2 0 1 0 0-4 2 2 0 0 0 0 4m4-2.5a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1h-4a.5.5 0 0 1-.5-.5M9 8a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1h-4A.5.5 0 0 1 9 8m1 2.5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1h-3a.5.5 0 0 1-.5-.5"
-                  />
-                  <path
-                    d="M2 2a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2zM1 4a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H8.96q.04-.245.04-.5C9 10.567 7.21 9 5 9c-2.086 0-3.8 1.398-3.984 3.181A1 1 0 0 1 1 12z"
-                  />
-                </svg>
-              </div>
-              <h3 class="card__title" data-i18n="help.card3_title">
-                Support Us
-              </h3>
-              <p class="card__desc" data-i18n="help.card3_desc">
-                Help bring national attention to an issue too often overlooked.
-              </p>
-            </article>
-          </div>
-        </div>
-      </section>
-    </main>
-
-    <footer
-      class="footer target"
-      id="contact_us"
-      role="contentinfo"
-      aria-label="Contact and social media"
-    >
-      <div class="footer__inner">
-        <h5 class="subtitle footer__title" data-i18n="footer.title">
-          Contact Us
-        </h5>
-        <form
-          class="footer__form"
-          action="https://formsubmit.co/3246edf10c677cc651cd12e80cbee4f2"
-          method="POST"
-          aria-label="Contact form"
-        >
-          <input type="hidden" name="_captcha" value="true" />
-          <input
-            type="hidden"
-            name="_subject"
-            value="New message from website"
-          />
-          <label class="sr-only" for="footer-name" data-i18n="footer.name_label"
-            >Name</label
-          >
-          <input
-            id="footer-name"
-            name="name"
-            class="footer__input"
-            type="text"
-            placeholder="E.g. John Doe"
-            data-i18n-attr="placeholder:footer.name_placeholder"
-            required
-          />
-          <label
-            class="sr-only"
-            for="footer-email"
-            data-i18n="footer.email_label"
-            >Email</label
-          >
-          <input
-            id="footer-email"
-            name="email"
-            class="footer__input"
-            type="email"
-            placeholder="E.g. jhondoe@mail.com"
-            data-i18n-attr="placeholder:footer.email_placeholder"
-            required
-          />
-          <label
-            class="sr-only"
-            for="footer-message"
-            data-i18n="footer.message_label"
-            >Message</label
-          >
-          <textarea
-            id="footer-message"
-            name="message"
-            class="footer__textarea"
-            rows="5"
-            placeholder="E.g. Hello, I would like to know more about your initiative..."
-            data-i18n-attr="placeholder:footer.message_placeholder"
-            required
-          ></textarea>
-          <div class="footer__form-actions">
-            <button type="submit" class="button button--primary">
-              <span data-i18n="footer.send_btn">Send</span>
-              <svg
-                aria-hidden="true"
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                fill="none"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  stroke="currentColor"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M19 12H5m14 0-4 4m4-4-4-4"
-                />
-              </svg>
-            </button>
-          </div>
-          <div class="footer__form-note">
-            <span data-i18n="footer.note_part1"
-              >FormSubmit will open in a new tab to complete the submission. The
-              information I receive is your message and your email address to
-              respond to you. I do not store or share it with third
-              parties.</span
-            >
-            <a href="https://formsubmit.co/" class="underline">
-              <span data-i18n="footer.note_link"
-                >For more information, learn about FormSubmit</span
-              >
-              <svg
-                aria-hidden="true"
-                xmlns="http://www.w3.org/2000/svg"
-                width="16"
-                height="16"
-                fill="none"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  stroke="currentColor"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M18 14v4.833A1.166 1.166 0 0 1 16.833 20H5.167A1.167 1.167 0 0 1 4 18.833V7.167A1.166 1.166 0 0 1 5.167 6h4.618m4.447-2H20v5.768m-7.889 2.121 7.778-7.778"
-                />
-              </svg>
-            </a>
-          </div>
-        </form>
-      </div>
-
-      <div class="footer__bottom">
-        <div class="footer__social-section">
-          <h6
-            class="footer__social-title subtitle"
-            data-i18n="footer.follow_title"
-          >
-            Follow Us
-          </h6>
-          <ul class="footer__social-media">
-            <li class="footer__social-item">
-              <a
-                href="https://www.instagram.com/the_flare_initiative/"
-                aria-label="Visit our Instagram profile"
-                class="footer__social-link"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  fill="currentColor"
-                  viewBox="0 0 16 16"
-                  aria-hidden="true"
-                >
-                  <path
-                    d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.9 3.9 0 0 0-1.417.923A3.9 3.9 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.9 3.9 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.9 3.9 0 0 0-.923-1.417A3.9 3.9 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599s.453.546.598.92c.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.5 2.5 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.5 2.5 0 0 1-.92-.598 2.5 2.5 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233s.008-2.388.046-3.231c.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92s.546-.453.92-.598c.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92m-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217m0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334"
-                  />
-                </svg>
-                <span class="footer__social-text">Instagram</span>
-              </a>
+<body class="body">
+  <!-- Header with navigation -->
+  <header class="header">
+    <nav class="header__nav" role="navigation" aria-label="Main menu">
+      <!-- Site logo -->
+      <a href="#" class="header__nav-logo">
+        <img src="assets/images/logo.svg" alt="The Flare Initiative Logo - First Responder Support"
+          class="header__logo-img" />
+      </a>
+      <!-- Navigation links list -->
+      <ul class="header__nav-list">
+        <li class="header__nav-item">
+          <a href="#" aria-current="page" data-i18n="nav.home">Home</a>
+        </li>
+        <li class="header__nav-item">
+          <a href="#about_us" data-i18n="nav.about">About Us</a>
+        </li>
+        <li class="header__nav-item">
+          <a href="#contact_us" data-i18n="nav.contact">Contact Us</a>
+        </li>
+        <!-- Language selector with dropdown menu -->
+        <li class="header__nav-lang">
+          <button class="header__nav-langmenu" aria-haspopup="true" aria-expanded="false" aria-controls="lang-menu"
+            id="lang-menu-button" type="button">
+            <!-- Translation icon -->
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor"
+              class="bi bi-translate no-select" viewBox="0 0 16 16" aria-hidden="true" focusable="false">
+              <path
+                d="M4.545 6.714L4.11 8H3l1.862-5h1.284L8 8H6.833l-.435-1.286zm1.634-.736L5.5 3.956h-.049l-.679 2.022z" />
+              <path
+                d="M0 2a2 2 0 0 1 2-2h7a2 2 0 0 1 2 2v3h3a2 2 0 0 1 2 2v7a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-3H2a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v7a1 1 0 0 0 1 1h7a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zm7.138 9.995q.289.451.63.846c-.748.575-1.673 1.001-2.768 1.292.178.217.451.635.555.867 1.125-.359 2.08-.844 2.886-1.494.777.665 1.739 1.165 2.93 1.472.133-.254.414-.673.629-.89-1.125-.253-2.057-.694-2.82-1.284.681-.747 1.222-1.651 1.621-2.757H14V8h-3v1.047h.765c-.318.844-.74 1.546-1.272 2.13a6 6 0 0 1-.415-.492 2 2 0 0 1-.94.31" />
+            </svg>
+            <!-- Dropdown arrow icon (rotates with CSS when active) -->
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+              class="bi bi-chevron-down arrow" viewBox="0 0 16 16" aria-hidden="true" focusable="false">
+              <path fill-rule="evenodd"
+                d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708" />
+            </svg>
+          </button>
+          <!-- Dropdown list of available languages -->
+          <ul class="header__nav-langlist" id="lang-menu" role="menu" aria-labelledby="lang-menu-button">
+            <li class="header__nav-langitem" role="menuitem">
+              <a class="no-select" id="btn-fr" data-i18n="nav.lang_fr">Français</a>
             </li>
-            <li class="footer__social-item">
-              <a
-                href="https://www.linkedin.com/company/flare-initiative"
-                aria-label="Visit our Linkedin profile"
-                class="footer__social-link"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  fill="currentColor"
-                  viewBox="0 0 16 16"
-                  aria-hidden="true"
-                >
-                  <path
-                    d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854zm4.943 12.248V6.169H2.542v7.225zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248S2.4 3.226 2.4 3.934c0 .694.521 1.248 1.327 1.248zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016l.016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225z"
-                  />
-                </svg>
-                <span class="footer__social-text">LinkedIn</span>
-              </a>
+            <li class="header__nav-langitem" role="menuitem">
+              <a class="no-select" id="btn-en" data-i18n="nav.lang_en">English</a>
             </li>
           </ul>
-        </div>
+        </li>
+      </ul>
+      <!-- Hamburger menu button for small device navigation -->
+      <button class="header__nav-burguer" aria-label="Mobile menu" aria-expanded="false" type="button">
+        <span class="header__nav-burguer-line" aria-hidden="true"></span>
+        <span class="header__nav-burguer-line" aria-hidden="true"></span>
+        <span class="header__nav-burguer-line" aria-hidden="true"></span>
+      </button>
+    </nav>
+  </header>
 
-        <ul class="footer__legal">
-          <li>
-            <a
-              href="/pages/javascript.html"
-              data-jslicense="1"
-              class="footer__legal-link"
-              data-i18n="footer.js_license"
-            >
-              JavaScript license information
+  <!-- Main content -->
+  <main class="main">
+    <!-- Introduction section -->
+    <section class="main__intro" aria-labelledby="intro-title" tabindex="-1">
+      <div class="main__intro-logo-name-container hero-fade-1">
+        <img class="main__intro-logo" src="./assets/images/logo.svg" />
+        <h1 class="main__intro-name" id="intro-title" tabindex="0">
+          <span data-i18n="intro.title_line1">The</span> <br />
+          <span data-i18n="intro.title_line2">Flare</span><br />
+          <span data-i18n="intro.title_line3">Initiative</span>
+        </h1>
+      </div>
+      <h2 class="main__intro-subtitle hero-fade-2" data-i18n="intro.subtitle">
+        Break the silence.
+      </h2>
+      <div class="main__intro-donate hero-fade-3">
+        <a href="https://www.zeffy.com/en-CA/donation-form/donate-to-help-first-responders-2"
+          class="btn button--tertiary">
+          <span class="paragraph" data-i18n="intro.cta_button">Donate</span>
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+          </svg>
+        </a>
+      </div>
+      <div class="scroll-down-indicator hero-fade-4" aria-hidden="true"></div>
+    </section>
+
+    <!-- About Us Section -->
+    <section class="about-us scroll-container target" id="about_us" aria-labelledby="about-us-title" tabindex="-1">
+      <div class="js-scroll slideup" aria-live="polite">
+        <h3 class="subtitle" id="about-us-title" tabindex="0" data-i18n="about.title">
+          About Us
+        </h3>
+        <div class="about-us__content">
+          <div class="about-us__intro">
+            <p class="paragraph" tabindex="0" data-i18n="about.intro_p1">
+              The Flare Initiative was created in response to a gap in suicide
+              tracking for first responders.
+            </p>
+            <p class="paragraph" data-i18n="about.intro_p2">
+              Canada currently has no consistent system to track suicides
+              among police, fire, EMS, corrections, or dispatch personnel.
+            </p>
+            <p class="paragraph" data-i18n="about.intro_p3">
+              Existing information is fragmented, inconsistent, and
+              inaccessible, leaving first responder agencies and mental health
+              organizations unable to fully understand the scope of the issue
+              or evaluate prevention efforts.
+            </p>
+          </div>
+          <span class="divider" aria-hidden="true"></span>
+          <div class="about-us__media">
+            <figure>
+              <img src="./assets/images/police.jpg"
+                alt="firefighter in gear, representing first responder mental health" tabindex="0"
+                data-i18n-attr="alt:about.img_alt" />
+              <figcaption class="image-credit">
+                <a href="#" target="_blank" rel="noopener"></a>
+              </figcaption>
+            </figure>
+
+            <p class="paragraph" tabindex="0" data-i18n="about.media_desc">
+              By creating visibility on the true scale of first responder
+              suicides, the Flare Initiative will provide the evidence base
+              for effective prevention programs, inform policy changes, and
+              reduce stigma around first responder mental health
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Mission Section -->
+    <section class="mission scroll-container" tabindex="-1">
+      <div class="js-scroll slideup" aria-live="polite">
+        <h3 class="subtitle" id="mission-title" tabindex="0" data-i18n="mission.title">
+          Our Mission
+        </h3>
+
+        <div class="mission__content">
+          <div class="mission__intro">
+            <p class="paragraph mission__statement" tabindex="0" data-i18n="mission.statement">
+              To reduce first responder suicides through data-driven
+              prevention.
+            </p>
+          </div>
+
+          <span class="divider" aria-hidden="true"></span>
+
+          <div class="mission__media">
+            <figure>
+              <img src="./assets/images/police.png"
+                alt="firefighter in gear, representing first responder mental health" tabindex="0"
+                data-i18n-attr="alt:mission.img_alt" />
+              <figcaption class="image-credit">
+                <a href="#" target="_blank" rel="noopener"></a>
+              </figcaption>
+            </figure>
+
+            <p class="paragraph" tabindex="0">
+              <span data-i18n="mission.media_desc_part1">By creating visibility on the true scale of first responder
+                suicides,</span>
+              <span class="" data-i18n="mission.media_desc_part2">the Flare Initiative will provide the
+                evidence base for
+                effective prevention programs.</span>
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Our Approach Section -->
+    <section class="our-approach scroll-container" aria-labelledby="our-approach-section-title">
+      <div class="js-scroll" role="region" aria-live="polite" aria-atomic="true">
+        <h4 id="our-approach-section-title" class="our-approach__subtitle subtitle" data-i18n="approach.title">
+          Our Approach
+        </h4>
+
+        <!-- Grid Container -->
+        <div class="our-approach__grid">
+          <!-- Card 1 -->
+          <article class="card card--light">
+            <div class="card__number">01</div>
+            <h3 class="card__title" data-i18n="approach.card1_title">
+              Collect Data
+            </h3>
+            <p class="card__desc" data-i18n="approach.card1_desc">
+              Build a secure national database with historical and current
+              information.
+            </p>
+          </article>
+
+          <!-- Card 2 -->
+          <article class="card card--light">
+            <div class="card__number">02</div>
+            <h3 class="card__title" data-i18n="approach.card2_title">
+              Make It Visible
+            </h3>
+            <p class="card__desc" data-i18n="approach.card2_desc">
+              Share suicide trends through transparent, trauma-informed
+              reporting.
+            </p>
+          </article>
+
+          <!-- Card 3 -->
+          <article class="card card--light">
+            <div class="card__number">03</div>
+            <h3 class="card__title" data-i18n="approach.card3_title">
+              Drive Change
+            </h3>
+            <p class="card__desc" data-i18n="approach.card3_desc">
+              Equip organizations and governments with evidence to guide
+              prevention and policy.
+            </p>
+          </article>
+
+          <!-- Card 4 -->
+          <article class="card card--light">
+            <div class="card__number">04</div>
+            <h3 class="card__title" data-i18n="approach.card4_title">
+              Long-Term Impact
+            </h3>
+            <p class="card__desc" data-i18n="approach.card4_desc">
+              Stronger prevention programs, national reporting standards,
+              reduced stigma, and consistent support for families.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- How You Can Help Section -->
+    <section class="how-to-help scroll-container" aria-labelledby="help-section-title">
+      <div class="js-scroll" role="region" aria-live="polite">
+        <h4 id="help-section-title" class="how-to-help__subtitle subtitle" data-i18n="help.title">
+          How You Can Help
+        </h4>
+
+        <div class="how-to-help__grid">
+          <!-- Card 1 -->
+          <article class="card card--dark">
+            <div class="card__icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                class="bi bi-clipboard-data" viewBox="0 0 16 16">
+                <path
+                  d="M4 11a1 1 0 1 1 2 0v1a1 1 0 1 1-2 0zm6-4a1 1 0 1 1 2 0v5a1 1 0 1 1-2 0zM7 9a1 1 0 0 1 2 0v3a1 1 0 1 1-2 0z" />
+                <path
+                  d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1z" />
+                <path
+                  d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0z" />
+              </svg>
+            </div>
+            <h3 class="card__title" data-i18n="help.card1_title">
+              Partner With Us
+            </h3>
+            <p class="card__desc" data-i18n="help.card1_desc">
+              Collaborate on building a secure, national system for first
+              responder suicide tracking.
+            </p>
+          </article>
+
+          <!-- Card 2 -->
+          <article class="card card--dark highlight">
+            <div class="card__icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                class="bi bi-piggy-bank" viewBox="0 0 16 16">
+                <path
+                  d="M5 6.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0m1.138-1.496A6.6 6.6 0 0 1 7.964 4.5c.666 0 1.303.097 1.893.273a.5.5 0 0 0 .286-.958A7.6 7.6 0 0 0 7.964 3.5c-.734 0-1.441.103-2.102.292a.5.5 0 1 0 .276.962" />
+                <path fill-rule="evenodd"
+                  d="M7.964 1.527c-2.977 0-5.571 1.704-6.32 4.125h-.55A1 1 0 0 0 .11 6.824l.254 1.46a1.5 1.5 0 0 0 1.478 1.243h.263c.3.513.688.978 1.145 1.382l-.729 2.477a.5.5 0 0 0 .48.641h2a.5.5 0 0 0 .471-.332l.482-1.351c.635.173 1.31.267 2.011.267.707 0 1.388-.095 2.028-.272l.543 1.372a.5.5 0 0 0 .465.316h2a.5.5 0 0 0 .478-.645l-.761-2.506C13.81 9.895 14.5 8.559 14.5 7.069q0-.218-.02-.431c.261-.11.508-.266.705-.444.315.306.815.306.815-.417 0 .223-.5.223-.461-.026a1 1 0 0 0 .09-.255.7.7 0 0 0-.202-.645.58.58 0 0 0-.707-.098.74.74 0 0 0-.375.562c-.024.243.082.48.32.654a2 2 0 0 1-.259.153c-.534-2.664-3.284-4.595-6.442-4.595M2.516 6.26c.455-2.066 2.667-3.733 5.448-3.733 3.146 0 5.536 2.114 5.536 4.542 0 1.254-.624 2.41-1.67 3.248a.5.5 0 0 0-.165.535l.66 2.175h-.985l-.59-1.487a.5.5 0 0 0-.629-.288c-.661.23-1.39.359-2.157.359a6.6 6.6 0 0 1-2.157-.359.5.5 0 0 0-.635.304l-.525 1.471h-.979l.633-2.15a.5.5 0 0 0-.17-.534 4.65 4.65 0 0 1-1.284-1.541.5.5 0 0 0-.446-.275h-.56a.5.5 0 0 1-.492-.414l-.254-1.46h.933a.5.5 0 0 0 .488-.393m12.621-.857a.6.6 0 0 1-.098.21l-.044-.025c-.146-.09-.157-.175-.152-.223a.24.24 0 0 1 .117-.173c.049-.027.08-.021.113.012a.2.2 0 0 1 .064.199" />
+              </svg>
+            </div>
+            <h3 class="card__title" data-i18n="help.card2_title">Donate</h3>
+            <p class="card__desc" data-i18n="help.card2_desc">
+              Support the development of a sustainable database that ensures
+              long-term visibility and accountability.
+            </p>
+          </article>
+
+          <!-- Card 3 -->
+          <article class="card card--dark">
+            <div class="card__icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                class="bi bi-person-vcard" viewBox="0 0 16 16">
+                <path
+                  d="M5 8a2 2 0 1 0 0-4 2 2 0 0 0 0 4m4-2.5a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1h-4a.5.5 0 0 1-.5-.5M9 8a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1h-4A.5.5 0 0 1 9 8m1 2.5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1h-3a.5.5 0 0 1-.5-.5" />
+                <path
+                  d="M2 2a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2zM1 4a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H8.96q.04-.245.04-.5C9 10.567 7.21 9 5 9c-2.086 0-3.8 1.398-3.984 3.181A1 1 0 0 1 1 12z" />
+              </svg>
+            </div>
+            <h3 class="card__title" data-i18n="help.card3_title">
+              Support Us
+            </h3>
+            <p class="card__desc" data-i18n="help.card3_desc">
+              Help bring national attention to an issue too often overlooked.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer target" id="contact_us" role="contentinfo" aria-label="Contact and social media">
+    <div class="footer__inner">
+      <h5 class="subtitle footer__title" data-i18n="footer.title">
+        Contact Us
+      </h5>
+      <form class="footer__form" action="https://formsubmit.co/3246edf10c677cc651cd12e80cbee4f2" method="POST"
+        aria-label="Contact form">
+        <input type="hidden" name="_captcha" value="true" />
+        <input type="hidden" name="_subject" value="New message from website" />
+        <label class="sr-only" for="footer-name" data-i18n="footer.name_label">Name</label>
+        <input id="footer-name" name="name" class="footer__input" type="text" placeholder="E.g. John Doe"
+          data-i18n-attr="placeholder:footer.name_placeholder" required />
+        <label class="sr-only" for="footer-email" data-i18n="footer.email_label">Email</label>
+        <input id="footer-email" name="email" class="footer__input" type="email" placeholder="E.g. jhondoe@mail.com"
+          data-i18n-attr="placeholder:footer.email_placeholder" required />
+        <label class="sr-only" for="footer-message" data-i18n="footer.message_label">Message</label>
+        <textarea id="footer-message" name="message" class="footer__textarea" rows="5"
+          placeholder="E.g. Hello, I would like to know more about your initiative..."
+          data-i18n-attr="placeholder:footer.message_placeholder" required></textarea>
+        <div class="footer__form-actions">
+          <button type="submit" class="button button--primary">
+            <span data-i18n="footer.send_btn">Send</span>
+            <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none"
+              viewBox="0 0 24 24">
+              <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M19 12H5m14 0-4 4m4-4-4-4" />
+            </svg>
+          </button>
+        </div>
+        <div class="footer__form-note">
+          <span data-i18n="footer.note_part1">FormSubmit will open in a new tab to complete the submission. The
+            information I receive is your message and your email address to
+            respond to you. I do not store or share it with third
+            parties.</span>
+          <a href="https://formsubmit.co/" class="underline">
+            <span data-i18n="footer.note_link">For more information, learn about FormSubmit</span>
+            <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none"
+              viewBox="0 0 24 24">
+              <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M18 14v4.833A1.166 1.166 0 0 1 16.833 20H5.167A1.167 1.167 0 0 1 4 18.833V7.167A1.166 1.166 0 0 1 5.167 6h4.618m4.447-2H20v5.768m-7.889 2.121 7.778-7.778" />
+            </svg>
+          </a>
+        </div>
+      </form>
+    </div>
+
+    <div class="footer__bottom">
+      <div class="footer__social-section">
+        <h6 class="footer__social-title subtitle" data-i18n="footer.follow_title">
+          Follow Us
+        </h6>
+        <ul class="footer__social-media">
+          <li class="footer__social-item">
+            <a href="https://www.instagram.com/the_flare_initiative/" aria-label="Visit our Instagram profile"
+              class="footer__social-link">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 16 16"
+                aria-hidden="true">
+                <path
+                  d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.9 3.9 0 0 0-1.417.923A3.9 3.9 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.9 3.9 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.9 3.9 0 0 0-.923-1.417A3.9 3.9 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599s.453.546.598.92c.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.5 2.5 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.5 2.5 0 0 1-.92-.598 2.5 2.5 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233s.008-2.388.046-3.231c.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92s.546-.453.92-.598c.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92m-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217m0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334" />
+              </svg>
+              <span class="footer__social-text">Instagram</span>
             </a>
           </li>
-          <li>
-            <a class="footer__legal-link" href="https://www.dansunphotos.com/" data-i18n="footer.photo_credit">
-              Photos courtesy of dansunphotos.com
+          <li class="footer__social-item">
+            <a href="https://www.linkedin.com/company/flare-initiative" aria-label="Visit our Linkedin profile"
+              class="footer__social-link">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 16 16"
+                aria-hidden="true">
+                <path
+                  d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854zm4.943 12.248V6.169H2.542v7.225zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248S2.4 3.226 2.4 3.934c0 .694.521 1.248 1.327 1.248zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016l.016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225z" />
+              </svg>
+              <span class="footer__social-text">LinkedIn</span>
             </a>
           </li>
         </ul>
       </div>
-    </footer>
-  </body>
-  <script type="module" src="./scripts/main.js"></script>
+
+      <ul class="footer__legal">
+        <li>
+          <a href="/pages/javascript.html" data-jslicense="1" class="footer__legal-link" data-i18n="footer.js_license">
+            JavaScript license information
+          </a>
+        </li>
+        <li>
+          <a class="footer__legal-link" href="https://www.dansunphotos.com/" data-i18n="footer.photo_credit">
+            Photos courtesy of dansunphotos.com
+          </a>
+        </li>
+      </ul>
+    </div>
+  </footer>
+</body>
+<script type="module" src="./scripts/main.js"></script>
+
 </html>

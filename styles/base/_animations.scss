@@ -15,6 +15,7 @@
  * when the element becomes visible.
  */
 .scroll-container {
+
   // Initial state: elements invisible and shifted down
   .js-scroll {
     opacity: 0;
@@ -59,6 +60,7 @@ $easing: cubic-bezier(0.77, 0, 0.175, 1); // Custom acceleration curve
   bottom: 0;
   left: 49%;
   bottom: 12.5%;
+
   @include respond-to(medium) {
     bottom: 10%;
     left: 49.25%;
@@ -85,6 +87,32 @@ $easing: cubic-bezier(0.77, 0, 0.175, 1); // Custom acceleration curve
 // Animation for the second arrow
 .scroll-down-indicator:after {
   animation: down-arrow-after $timing $easing infinite;
+}
+
+// Aplicado al ::after de .main__intro (imagen de fondo)
+.hero-bg-zoom {
+  animation: heroZoom 6s ease forwards;
+}
+
+// Contenido del hero con stagger
+.hero-fade-1 {
+  animation: heroFadeUp 0.8s ease both;
+  animation-delay: 0.2s;
+}
+
+.hero-fade-2 {
+  animation: heroFadeUp 0.8s ease both;
+  animation-delay: 0.45s;
+}
+
+.hero-fade-3 {
+  animation: heroFadeUp 0.8s ease both;
+  animation-delay: 0.65s;
+}
+
+.hero-fade-4 {
+  animation: heroFadeIn 1s ease both;
+  animation-delay: 1s;
 }
 
 /**
@@ -118,5 +146,43 @@ $easing: cubic-bezier(0.77, 0, 0.175, 1); // Custom acceleration curve
   100% {
     transform: rotate(45deg) translate(-70%, -70%); // Returns to its position
     opacity: 1; // Fully visible
+  }
+}
+
+/**
+ * Hero entrance animations
+ * -------------------------
+ * Staggered fade-up for hero content and slow zoom-out for background image.
+ */
+
+@keyframes heroFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes heroFadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes heroZoom {
+  from {
+    transform: scale(1.08);
+  }
+
+  to {
+    transform: scale(1);
   }
 }

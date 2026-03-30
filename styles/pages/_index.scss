@@ -24,7 +24,7 @@ html,
   &__intro {
     padding: 1rem;
     padding-top: 2rem;
-    
+
     @include respond-to(large, max) {
       display: flex;
       flex-direction: column;
@@ -35,34 +35,41 @@ html,
     color: $white;
     min-height: 100vh;
     position: relative;
-
     bottom: 3rem;
+    overflow: hidden;
 
-    background-image: url("../../assets/images/background.jpg");
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
+    &::after {
+      content: "";
+      position: absolute;
+      inset: -20px;
+      z-index: 0;
+      background-image: url("../../assets/images/background.jpg");
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      filter: blur(4px);
+      animation: heroZoom 6s ease forwards;
+    }
 
     &::before {
       content: "";
       position: absolute;
       inset: 0;
-      z-index: 0;
-      background: linear-gradient(
-        135deg,
-        rgba(#415b8a, 0.85) 0%,
-        rgba(#415b8a, 0.7) 50%,
-        rgba(#415b8a, 0.3) 100%
-      );
+      z-index: 1;
+      background: linear-gradient(135deg,
+          rgba(#415b8a, 0.85) 0%,
+          rgba(#415b8a, 0.7) 50%,
+          rgba(#415b8a, 0.3) 100%);
     }
 
     &-name,
     &-subtitle,
     &-donate,
     &-salutation-container,
-    &-logo {
+    &-logo,
+    &-logo-name-container {
       position: relative;
-      z-index: 1;
+      z-index: 2;
     }
 
     @include respond-to(medium) {
@@ -71,9 +78,11 @@ html,
       padding-left: 10%;
       padding-right: 10%;
     }
+
     &-logo-name-container {
       display: flex;
       flex-direction: row;
+
       @include respond-to(large) {
         padding: 0 25%;
       }
@@ -84,7 +93,7 @@ html,
       flex: 1;
       position: relative;
       bottom: 0px;
-      //filter: drop-shadow(0 2px 30px rgba(0, 0, 0, 0.5));
+
       @include respond-to(large) {
         width: 15vw;
       }
@@ -98,14 +107,12 @@ html,
       font-family: $secondary-font;
       text-align: left;
       font-size: clamp(2.7rem, 10vw, $font-size-giant);
-      //letter-spacing: -0.02em;
-      //line-height: 1.1;
-      //text-shadow: 0 2px 30px rgba(0, 0, 0, 0.5);
       word-wrap: break-word;
       hyphens: auto;
       padding: 0 1rem;
       color: $white;
       flex: 1;
+
       @include respond-to(large) {
         font-size: $font-size-huge;
       }
@@ -124,6 +131,7 @@ html,
       color: rgba($white, 0.95);
       text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
       font-weight: $font-weight-normal;
+
       @include respond-to(large) {
         font-size: $font-size-large;
       }
@@ -133,7 +141,7 @@ html,
       display: flex;
       justify-content: center;
       align-items: center;
-      
+
       a {
         text-decoration: none;
       }
@@ -163,14 +171,20 @@ html,
       text-align: center;
       margin-bottom: 0.8rem;
       color: $secondary-color;
+
+      &:nth-last-of-type(2) {
+        font-weight: $font-weight-medium;
+      }
     }
 
     .divider {
       display: none;
     }
+
     .underline {
       color: $calmred;
     }
+
     @include respond-to(medium) {
       padding-left: 13%;
       padding-right: 13%;
@@ -228,7 +242,7 @@ html,
           height: 400px;
           object-fit: cover;
           border-radius: 10px;
-          box-shadow: 4px 3px 17px -11px rgba(0, 0, 0, 0.2);
+          box-shadow: 4px 3px 17px -11px rgba(0, 0, 0, 0.5);
 
           @include respond-to(medium) {
             width: 380px;
@@ -253,6 +267,7 @@ html,
 
   .mission {
     padding: $padding-section;
+    padding-top: 22.5%;
     font-family: $primary-font;
     font-size: $font-size-large;
     background-color: #2c3e50;
@@ -276,6 +291,8 @@ html,
       @include respond-to(medium) {
         text-align: right;
       }
+
+      span {}
     }
 
     .subtitle,
@@ -343,7 +360,7 @@ html,
           height: 400px;
           object-fit: cover;
           border-radius: 10px;
-          box-shadow: 4px 3px 17px -11px rgba(0, 0, 0, 0.2);
+          box-shadow: 4px 3px 17px -11px rgba(0, 0, 0, 0.5);
 
           @include respond-to(medium) {
             width: 380px;
@@ -368,6 +385,8 @@ html,
 
   .our-approach {
     padding: $padding-section;
+    padding-top: 22.5%;
+
     background-color: $primary-color;
 
     @include respond-to(medium) {

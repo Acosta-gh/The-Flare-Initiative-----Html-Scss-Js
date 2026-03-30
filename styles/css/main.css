@@ -769,12 +769,14 @@ table {
  */
 .header {
   background-color: #181818;
-  position: fixed; /* Fixes the header at the top of the window */
+  position: fixed;
+  /* Fixes the header at the top of the window */
   top: 0rem;
   left: 0;
   width: 100%;
   color: #ffffff;
-  z-index: 1000; /* Ensures the header is above other elements */
+  z-index: 1000;
+  /* Ensures the header is above other elements */
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
   transition: border-radius 0.1s ease-in-out;
   font-family: "Fira Sans", sans-serif;
@@ -787,7 +789,8 @@ table {
 .header__nav {
   position: relative;
   display: flex;
-  justify-content: space-between; /* Distributes elements at start and end */
+  justify-content: space-between;
+  /* Distributes elements at start and end */
   align-items: center;
   padding: 10px 5%;
 }
@@ -809,13 +812,19 @@ table {
   border: none;
   box-shadow: none;
   padding: 0;
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
   margin: 0;
   color: inherit;
   font: inherit;
   cursor: pointer;
 }
 .header__nav-langmenu .arrow {
-  transition: transform 0.3s ease; /* Rotation animation for the arrow icon */
+  transition: transform 0.3s ease;
+  position: relative;
+  left: 10px;
+  /* Rotation animation for the arrow icon */
 }
 .header__nav {
   /* 
@@ -838,7 +847,8 @@ table {
 }
 @media (min-width: 992px) {
   .header__nav-logo .header__logo-img {
-    width: 50px; /* Slightly larger logo on large screens */
+    width: 50px;
+    /* Slightly larger logo on large screens */
     cursor: pointer;
   }
 }
@@ -853,16 +863,19 @@ table {
 .header__nav-list {
   background-color: #181818;
   overflow: hidden;
-  position: absolute; /* On mobile, absolute positioning for dropdown */
+  position: absolute;
+  /* On mobile, absolute positioning for dropdown */
   left: 0;
   top: 30px;
   z-index: -1;
   width: 100%;
   border-radius: 0;
-  max-height: 0vh; /* Initially hidden (height 0) */
+  max-height: 0vh;
+  /* Initially hidden (height 0) */
   padding: 2rem 0 0 0;
   opacity: 1;
-  transition: all 0.3s ease; /* Smooth transition to show/hide */
+  transition: all 0.3s ease;
+  /* Smooth transition to show/hide */
   /* On large screens, displays as horizontal bar */
 }
 @media (min-width: 992px) {
@@ -894,7 +907,8 @@ table {
 }
 .header__nav-langlist {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0);
-  max-height: 0rem; /* Initially hidden */
+  max-height: 0rem;
+  /* Initially hidden */
   opacity: 0;
   overflow: hidden;
   /* Transitions for various effects when showing/hiding */
@@ -921,7 +935,8 @@ table {
     display: flex;
     flex-direction: column;
     top: 3.3rem;
-    right: -25px; /* Adjusted positioning */
+    right: -25px;
+    /* Adjusted positioning */
     max-height: 0px;
     padding: 0.1rem;
     background-color: #181818;
@@ -947,10 +962,12 @@ table {
 }
 .header__nav-item a, .header__nav-lang a {
   display: block;
-  width: 100vw; /* Full width on mobile */
+  width: 100vw;
+  /* Full width on mobile */
   text-decoration: none;
   color: inherit;
-  opacity: 0; /* Initially invisible on mobile (until activation) */
+  opacity: 0;
+  /* Initially invisible on mobile (until activation) */
   transition: opacity 0.3s ease;
 }
 .header__nav-item, .header__nav-lang {
@@ -959,7 +976,8 @@ table {
 @media (min-width: 992px) {
   .header__nav-item a, .header__nav-lang a {
     width: 100%;
-    opacity: 1; /* Visible on desktop */
+    opacity: 1;
+    /* Visible on desktop */
   }
   .header__nav-item, .header__nav-lang {
     font-size: 1.25rem;
@@ -971,7 +989,8 @@ table {
     content: "";
     position: absolute;
     width: 100%;
-    transform: scaleX(0); /* Initially scale 0 (invisible) */
+    transform: scaleX(0);
+    /* Initially scale 0 (invisible) */
     height: 2px;
     bottom: -5px;
     left: 0;
@@ -1011,7 +1030,8 @@ table {
     width: 30px;
     height: 2px;
     margin: 5px 0;
-    transition: all 0.3s ease; /* For animation when transforming to X */
+    transition: all 0.3s ease;
+    /* For animation when transforming to X */
     background-color: #ffffff;
   }
 }
@@ -1025,13 +1045,16 @@ table {
 /* Animation of hamburger button to X shape when active */
 @media (max-width: 991px) {
   .header__nav-burguer--active span:nth-child(1) {
-    transform: rotate(45deg) translate(5px, 5px); /* Diagonal line \ */
+    transform: rotate(45deg) translate(5px, 5px);
+    /* Diagonal line \ */
   }
   .header__nav-burguer--active span:nth-child(2) {
-    opacity: 0; /* Hides middle line */
+    opacity: 0;
+    /* Hides middle line */
   }
   .header__nav-burguer--active span:nth-child(3) {
-    transform: rotate(-45deg) translate(5px, -5px); /* Diagonal line / */
+    transform: rotate(-45deg) translate(5px, -5px);
+    /* Diagonal line / */
   }
 }
 
@@ -1061,7 +1084,8 @@ table {
 .header__nav-langlist--active {
   max-height: 7rem;
   opacity: 1;
-  overflow: none; /* Note: should be 'visible' or 'auto', 'none' is not valid */
+  overflow: none;
+  /* Note: should be 'visible' or 'auto', 'none' is not valid */
 }
 @media (min-width: 992px) {
   .header__nav-langlist--active {
@@ -1077,7 +1101,8 @@ table {
   color: #faac5d;
 }
 .item--active::after {
-  transform: scaleX(1); /* Shows expanded bottom line */
+  transform: scaleX(1);
+  /* Shows expanded bottom line */
 }
 
 /* 
@@ -1085,7 +1110,8 @@ table {
  * to visually indicate open/closed state
  */
 .header__nav-langmenu--active .arrow {
-  transform: rotate(180deg); /* Rotates arrow upward */
+  transform: rotate(180deg);
+  /* Rotates arrow upward */
 }
 
 html,

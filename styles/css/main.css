@@ -353,7 +353,7 @@ table {
   color: #181818;
 }
 .card--light .card__title::after {
-  background-color: #f58f80;
+  background-color: #fab571;
 }
 .card--light .card__desc,
 .card--light .card__paragraph {
@@ -372,7 +372,7 @@ table {
   color: #fab571;
 }
 .card--dark .card__title::after {
-  background-color: #fdd796;
+  background-color: #fab571;
 }
 .card--dark .card__desc,
 .card--dark .card__paragraph {

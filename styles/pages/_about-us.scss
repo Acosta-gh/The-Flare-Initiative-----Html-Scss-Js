@@ -1,0 +1,145 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+
+.main {
+    .about-us {
+        padding: $padding-section;
+        font-family: $primary-font;
+        font-size: $font-size-large;
+        background-color: $primary-color;
+
+        .subtitle {
+            text-align: center;
+            margin: 2rem 2rem 1.3rem 2rem;
+            color: $calmred;
+        }
+
+        .paragraph {
+            text-align: center;
+            margin-bottom: 0.8rem;
+            color: $secondary-color;
+
+            &:nth-last-of-type(2) {}
+        }
+
+        .divider {
+            display: none;
+        }
+
+        .underline {
+            color: $calmred;
+        }
+
+        @include respond-to(medium) {
+            padding-left: 13%;
+            padding-right: 13%;
+            padding-bottom: 0px;
+            padding-top: 3%;
+
+            .divider {
+                display: block;
+                background-color: $calmred;
+            }
+
+            .subtitle {
+                margin: 2rem 2rem 1.3rem 0rem;
+                text-align: left;
+            }
+
+            .paragraph {
+                text-align: left;
+            }
+        }
+
+        &__intro {
+            @include respond-to(medium) {
+                p {
+                    width: 60%;
+                    margin: 0 0 1rem 0;
+                }
+            }
+        }
+
+        &__quote {
+            position: relative;
+            margin: 1.5rem 0;
+            padding: 1.2rem 1.5rem 1.2rem 2rem;
+            border-left: 3px solid $calmred;
+            background: rgba($calmred, 0.05);
+            border-radius: 0 8px 8px 0;
+            font-style: italic;
+            font-size: $font-size-base;
+            line-height: 1.75;
+            color: $secondary-color;
+            font-weight: $font-weight-medium;
+
+            // Comillas decorativas
+            &::before {
+                content: "\201C"; // "
+                position: absolute;
+                top: -0.6rem;
+                left: 0.6rem;
+                font-size: 4rem;
+                line-height: 1;
+                color: $calmred;
+                opacity: 0.4;
+                font-style: normal;
+                font-family: Georgia, serif;
+            }
+
+            @include respond-to(medium) {
+                width: 60%;
+                margin: 1rem 0 1.5rem 0;
+            }
+        }
+
+        &__media {
+            gap: 3rem;
+
+            @include respond-to(medium) {
+                display: flex;
+                flex-direction: row-reverse;
+                gap: 0;
+                height: 15rem;
+            }
+
+            p {
+                margin-bottom: 3rem;
+                text-align: left;
+
+                @include respond-to(large) {
+                    line-height: 25px;
+                    width: 60%;
+                    margin: 0;
+                }
+            }
+
+            figure {
+                img {
+                    width: 100%;
+                    height: 400px;
+                    object-fit: cover;
+                    border-radius: 5px;
+                    box-shadow: 4px 3px 17px -11px rgba(0, 0, 0, 0.5);
+
+                    @include respond-to(medium) {
+                        width: 380px;
+                        height: 450px;
+                    }
+                }
+
+                display: block;
+                margin: 3rem auto;
+
+                @include respond-to(medium) {
+                    width: calc(180px * 1.8);
+                    height: calc(250px * 1.8);
+                    position: relative;
+                    bottom: 20rem;
+                    left: 2rem;
+                    margin: 0 auto;
+                }
+            }
+        }
+    }
+}

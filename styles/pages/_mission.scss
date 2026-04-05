@@ -1,0 +1,156 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+
+.main {
+    .mission {
+        padding: $padding-section;
+        padding-top: 22.5%;
+        font-family: $primary-font;
+        font-size: $font-size-large;
+        background-color: #1c1b19;
+        color: $white;
+        position: relative;
+        overflow: hidden;
+
+        // Glow blobs de fondo
+        &::before,
+        &::after {
+            content: "";
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(80px);
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        &::before {
+            top: -5%;
+            right: -5%;
+            width: 400px;
+            height: 400px;
+            opacity: 0.25;
+            background: radial-gradient(circle, $comfortingorange 0%, transparent 20%);
+        }
+
+        &::after {
+            bottom: -5%;
+            left: -5%;
+            width: 500px;
+            height: 500px;
+            opacity: 0.2;
+            background: radial-gradient(circle, rgba($comfortingorange, 0.8) 0%, transparent 20%);
+        }
+
+        .subtitle {
+            text-align: center;
+            margin-bottom: 2rem;
+            color: $white;
+
+            @include respond-to(medium) {
+                text-align: right;
+            }
+        }
+
+        .paragraph {
+            text-align: center;
+            color: $white;
+
+            @include respond-to(medium) {
+                text-align: right;
+            }
+
+        }
+
+        .subtitle,
+        .underline {
+            color: $comfortingorange;
+        }
+
+        .divider {
+            display: none;
+            background-color: $comfortingorange;
+        }
+
+        @include respond-to(medium) {
+            padding-left: 13%;
+            padding-right: 13%;
+            padding-bottom: 3%;
+            padding-top: 10%;
+
+            .divider {
+                display: block;
+                margin-left: auto;
+                margin-right: 0;
+            }
+        }
+
+        &__intro {
+            position: relative;
+            z-index: 1;
+
+            @include respond-to(medium) {
+                p {
+                    width: 60%;
+                    margin: 0 0 1rem 0;
+                    margin-left: auto;
+                    text-align: right;
+                }
+            }
+
+            p {
+                color: $white;
+            }
+        }
+
+        &__media {
+            position: relative;
+            z-index: 1;
+            gap: 3rem;
+
+            @include respond-to(medium) {
+                display: flex;
+                flex-direction: row;
+                gap: 0;
+                height: 17rem;
+            }
+
+            p {
+                margin-bottom: 3rem;
+                text-align: left;
+
+                @include respond-to(large) {
+                    line-height: 25px;
+                    width: 60%;
+                    margin: 0;
+                }
+            }
+
+            figure {
+                img {
+                    width: 100%;
+                    height: 400px;
+                    object-fit: cover;
+                    border-radius: 5px;
+                    box-shadow: 4px 3px 17px -11px rgba(0, 0, 0, 0.5);
+
+                    @include respond-to(medium) {
+                        width: 380px;
+                        height: 450px;
+                    }
+                }
+
+                display: block;
+                margin: 3rem auto;
+
+                @include respond-to(medium) {
+                    width: calc(180px * 1.8);
+                    height: calc(250px * 1.8);
+                    position: relative;
+                    bottom: 15rem;
+                    right: 6rem;
+                    margin: 0 auto;
+                }
+            }
+        }
+    }
+}

@@ -1,58 +1,47 @@
 @use "../abstracts/variables" as *;
 @use "../abstracts/mixins" as *;
 
-.card.highlight {
-  transform: scale(1.1);
 
-  z-index: 2;
-
-  border: 1px solid $accent-color;
-  box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px; // Sombra más profunda
-
-  &:hover {
-    transform: scale(1.1) translateY(-5px);
-  }
-
-  @include respond-to(medium, max) {
-    transform: scale(1);
-    margin: 1rem 0;
-    border: 2px solid $accent-color;
-
-    &:hover {
-      transform: translateY(-5px);
-    }
-  }
-}
 
 .card {
   display: flex;
   flex-direction: column;
-  padding: 2rem;
+  padding: 2.5rem; // Más espacio para el look "clásico"
   border-radius: 20px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease,
-    background-color 0.3s ease;
-
+  transition: all 0.3s ease;
   position: relative;
   overflow: hidden;
   font-family: $primary-font;
 
   &:hover {
-    transform: translateY(-5px);
+    transform: translateY(-8px);
+
+    .card__icon svg {
+      transform: scale(1.1);
+    }
   }
 
+  // --- REEMPLAZO DEL ICONO MARCA DE AGUA POR ICONO SUPERIOR ---
   &__icon {
-    position: absolute;
-    bottom: -23px;
-    right: -23px;
-    opacity: 0.1;
-    z-index: 0;
+    margin-bottom: 1.5rem; // Espacio respecto al título
+    display: block;
+    position: static; // Quita el position: absolute
+    opacity: 1; // Visibilidad total
 
     svg {
-      width: 8rem;
-      height: 8rem;
-      transition: transform 0.4s ease, opacity 0.4s ease;
-      color: inherit;
+      width: 2.5rem; // Tamaño estándar de icono superior
+      height: 2.5rem;
+      transition: transform 0.4s ease;
+      color: $accent-color; // Color de marca por defecto
     }
+  }
+
+  &__number {
+    font-size: 3rem;
+    font-weight: 900;
+    color: $accent-color;
+    line-height: 1;
+    margin-bottom: 1.5rem;
   }
 
   &__title {
@@ -61,7 +50,6 @@
     margin-bottom: 1rem;
     position: relative;
     padding-bottom: 0.5rem;
-    width: 100%;
     text-align: left;
 
     &::after {
@@ -71,37 +59,23 @@
       left: 0;
       width: 40px;
       height: 3px;
+      border-radius: 2px;
     }
   }
 
-  &__desc,
-  &__paragraph {
-    font-family: $primary-font;
+  &__desc {
     font-size: 1rem;
     line-height: 1.7;
-    margin-top: 5px;
+    margin: 0;
     text-align: left;
-    position: relative;
-    z-index: 1;
   }
 
-  &__number {
-    font-size: 3rem;
-    font-weight: 900;
-    color: $accent-color;
-    line-height: 1;
-    margin-bottom: 1rem;
-  }
+  // --- VARIANTES ---
 
   &--light {
     background-color: #ffffff;
     border: 1px solid rgba(0, 0, 0, 0.05);
     box-shadow: rgba(149, 157, 165, 0.1) 0px 8px 24px;
-
-    &:hover {
-      box-shadow: rgba(149, 157, 165, 0.2) 0px 12px 30px;
-      border: 1px solid $accent-color;
-    }
 
     .card__title {
       color: $secondary-color;
@@ -111,21 +85,18 @@
       }
     }
 
-    .card__desc,
-    .card__paragraph {
+    .card__desc {
       color: lighten($secondary-color, 20%);
+    }
+
+    &:hover {
+      border-color: rgba($accent-color, 0.4);
     }
   }
 
   &--dark {
     background-color: rgba(255, 255, 255, 0.05);
     border: 1px solid rgba(255, 255, 255, 0.1);
-    box-shadow: none;
-
-    &:hover {
-      background-color: rgba(255, 255, 255, 0.1);
-      border-color: $accent-color;
-    }
 
     .card__title {
       color: $accent-color;
@@ -135,9 +106,13 @@
       }
     }
 
-    .card__desc,
-    .card__paragraph {
+    .card__desc {
       color: rgba($white, 0.8);
+    }
+
+    &:hover {
+      background-color: rgba(255, 255, 255, 0.08);
+      border-color: rgba($accent-color, 0.5);
     }
   }
 }

@@ -2,12 +2,42 @@
 @use "../abstracts/mixins" as *;
 
 .footer {
-  background-color: $primary-color;
+  background-color: #1c1b19;
   padding: $padding-section;
   padding-top: 4rem;
   padding-bottom: 4rem;
-  color: $secondary-color;
-  margin-top: auto;
+  color: $white;
+  position: relative;
+
+  // Glow blobs de fondo — posicionados dentro del contenedor para no causar scroll
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+    z-index: 0;
+    pointer-events: none;
+  }
+
+  &::before {
+    top: 5%;
+    left: 2%;
+    width: 350px;
+    height: 350px;
+    opacity: 0.22;
+    background: radial-gradient(circle, $comfortingorange 0%, transparent 20%);
+  }
+
+  &::after {
+    bottom: 5%;
+    right: 2%;
+    width: 300px;
+    height: 300px;
+    opacity: 0.18;
+    background: radial-gradient(circle, rgba($comfortingorange, 0.8) 0%, transparent 20%);
+  }
+
 
   &__title {
     margin-top: 0.5rem;
@@ -19,11 +49,25 @@
     margin-inline: auto;
     word-wrap: break-word;
     overflow-wrap: break-word;
-    
+    position: relative;
+    z-index: 1;
+
     @include respond-to(large) {
       font-size: $font-size-xxlarge;
     }
   }
+
+  // Eleva todo el contenido sobre los blobs
+  &__inner,
+  &__form,
+  &__bottom,
+  &__contact-info,
+  .subtitle,
+  .sr-only {
+    position: relative;
+    z-index: 1;
+  }
+
 
   @include respond-to(medium) {
     padding: 5% 13%;
@@ -31,10 +75,10 @@
 
   .subtitle {
     text-align: center;
-    color: $secondary-color;
+    color: $comfortingorange;
     margin-bottom: 2rem;
     font-weight: 700;
-      letter-spacing: 0.15em;
+    letter-spacing: 0.15em;
   }
 
   .sr-only {
@@ -56,6 +100,8 @@
     max-width: 800px;
     margin-left: auto;
     margin-right: auto;
+    position: relative;
+    z-index: 1;
 
     input,
     textarea,
@@ -66,13 +112,13 @@
       border: none;
       border-radius: 0;
       background: none;
-      color: $secondary-color;
+      color: $white;
       font-size: $font-size-base;
       width: 100%;
       font-family: $primary-font;
       position: relative;
-      border-bottom: 1px solid rgba($secondary-color, 0.2);
-      background-image: linear-gradient($accent-color, $accent-color);
+      border-bottom: 1px solid rgba($white, 0.2);
+      background-image: linear-gradient($comfortingorange, $comfortingorange);
       background-position: left bottom;
       background-repeat: no-repeat;
       background-size: 0% 2px;
@@ -80,7 +126,7 @@
         border-color 220ms ease;
 
       &::placeholder {
-        color: rgba($secondary-color, 0.5);
+        color: rgba($white, 0.4);
         font-family: $primary-font;
       }
 
@@ -100,30 +146,31 @@
       margin: 1rem 0 2rem 0;
 
       button {
-        background-color: $secondary-color;
-        color: $white;
+        background-color: $comfortingorange;
+        color: #1c1b19;
         border: none;
         padding: 1rem 1.5rem;
         border-radius: 50px;
         cursor: pointer;
-        font-weight: 600;
-        transition: transform 0.2s, background-color 0.2s;
+        font-weight: 700;
+        transition: transform 0.2s, background-color 0.2s, box-shadow 0.2s;
 
         &:hover {
-          background-color: $accent-color;
+          background-color: lighten($comfortingorange, 8%);
           transform: translateX(1px);
+          box-shadow: 0 4px 20px rgba($comfortingorange, 0.35);
         }
 
         display: inline-flex;
         align-items: center;
         gap: 0.5rem;
-        
+
         svg {
           width: 1.2em;
           height: 1.2em;
-          
+
           path {
-            stroke: $white;
+            stroke: #1c1b19;
             stroke-width: 2px;
           }
         }
@@ -132,13 +179,13 @@
 
     &-note {
       font-size: $font-size-small;
-      color: rgba($secondary-color, 0.6);
+      color: rgba($white, 0.45);
       margin-top: 0;
 
       a {
-        color: $accent-color;
+        color: $comfortingorange;
         text-decoration: none;
-        
+
         &:hover {
           text-decoration: underline;
         }
@@ -200,7 +247,7 @@
   &__bottom {
     margin-top: 3rem;
     padding-top: 2.5rem;
-    border-top: 1px solid rgba($secondary-color, 0.1);
+    border-top: 1px solid rgba($white, 0.1);
   }
 
   &__social-section {
@@ -209,7 +256,7 @@
   }
 
   &__social-title {
-    color: $secondary-color;
+    color: $comfortingorange;
     font-size: $font-size-medium;
     font-weight: $font-weight-bold;
     margin-bottom: 1.5rem;
@@ -235,10 +282,10 @@
     align-items: center;
     gap: 0.75rem;
     padding: 1rem 1.75rem;
-    color: $secondary-color;
+    color: rgba($white, 0.75);
     text-decoration: none;
-    background-color: rgba($secondary-color, 0.05);
-    border: 2px solid transparent;
+    background-color: rgba($white, 0.05);
+    border: 2px solid rgba($white, 0.1);
     border-radius: 50px;
     font-weight: $font-weight-semibold;
     font-family: $primary-font;
@@ -252,15 +299,13 @@
     }
 
     &:hover {
-      background-color: $accent-color;
-      color: $white;
-      border-color: $accent-color;
-
-    
+      background-color: $comfortingorange;
+      color: #1c1b19;
+      border-color: $comfortingorange;
     }
 
     &:focus-visible {
-      outline: 2px solid $accent-color;
+      outline: 2px solid $comfortingorange;
       outline-offset: 3px;
     }
   }
@@ -275,7 +320,7 @@
     margin-top: 1.5rem;
     list-style: none;
     padding: 0;
-    
+
     li {
       margin-bottom: .8rem;
       list-style: none;
@@ -283,13 +328,13 @@
   }
 
   &__legal-link {
-    color: rgba($secondary-color, 0.6);
+    color: rgba($white, 0.35);
     text-decoration: none;
     font-size: $font-size-small;
     transition: color 0.2s ease;
-    
+
     &:hover {
-      color: $secondary-color;
+      color: rgba($white, 0.7);
       text-decoration: underline;
     }
   }

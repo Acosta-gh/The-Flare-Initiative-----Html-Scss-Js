@@ -1,0 +1,68 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+
+.main {
+    .how-to-help {
+        padding: $padding-section;
+        padding-top: 4rem;
+        padding-bottom: 8rem;
+        background-color: #2c3e50;
+        color: $white;
+        position: relative;
+        overflow: hidden;
+
+        // Glow blobs de fondo
+        &::before,
+        &::after {
+            content: "";
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(80px);
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        &::before {
+            bottom: -10%;
+            left: -5%;
+            width: 450px;
+            height: 450px;
+            opacity: 0.25;
+            background: radial-gradient(circle, $comfortingorange 0%, transparent 20%);
+        }
+
+        &::after {
+            top: -10%;
+            right: -5%;
+            width: 500px;
+            height: 500px;
+            opacity: 0.2;
+            background: radial-gradient(circle, rgba($accent-color, 0.8) 0%, transparent 20%);
+        }
+
+        &__content {
+            position: relative;
+            z-index: 1;
+        }
+
+        @include respond-to(medium) {
+            padding: 5% 13% 13% 13%;
+        }
+
+        &__subtitle {
+            text-align: center;
+            margin-bottom: 1rem;
+            margin-top: 3rem;
+            color: $white;
+        }
+
+        &__grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+            position: relative;
+            z-index: 1;
+        }
+    }
+}

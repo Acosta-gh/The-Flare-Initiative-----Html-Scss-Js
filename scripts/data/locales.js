@@ -73,6 +73,22 @@ export const translations = {
       developed_by: "Developed by Aurora Labs",
       photo_credit: "Photos courtesy of dansunphotos.com",
     },
+    popup: {
+      title: "The Trevor Claydon Fundraiser",
+      tagline: "In memory of Trevor Claydon, an Edmonton Police Officer lost to suicide, and in support of first responders, their families, and suicide prevention",
+      date_label: "Date & Time",
+      date_value: "Sunday June 14th | 10:00am - 2:00pm",
+      location_label: "Location",
+      location_value: "Blue Meadows, 4 Kuch Ct, Spruce Grove, AB T7Y 1A8",
+      blurb_p1: "Join The Flare Initiative on June 14th for a day of remembrance, conversation, and family fun in support of first responder mental health.",
+      blurb_p2: "Enjoy the day with food trucks, family games, a bouncy castle, and a space for open dialogue and discussion around first responder mental health.",
+      highlights: {
+        music: "Live Music by Delta 88 & The Cabbies",
+        tickets: "Tickets on sale May 14th",
+        silence: "Help us break the silence"
+      },
+      close: "Close"
+    },
   },
 
   fr: {
@@ -148,6 +164,22 @@ export const translations = {
       js_license: "Informations sur la licence JavaScript",
       developed_by: "Développé par Aurora Labs",
       photo_credit: "Photos gracieuseté de dansunphotos.com",
+    },
+    popup: {
+      title: "Collecte de fonds Trevor Claydon",
+      tagline: "À la mémoire de Trevor Claydon, un policier d'Edmonton qui s'est suicidé, et en soutien aux premiers intervenants, à leurs familles et à la prévention du suicide",
+      date_label: "Date et heure",
+      date_value: "Dimanche 14 juin | 10h00 - 14h00",
+      location_label: "Lieu",
+      location_value: "Blue Meadows, 4 Kuch Ct, Spruce Grove, AB T7Y 1A8",
+      blurb_p1: "Rejoignez l'Initiative Flare le 14 juin pour une journée de commémoration, de conversation et de plaisir en famille en soutien à la santé mentale des premiers intervenants.",
+      blurb_p2: "Profitez de la journée avec des camions de nourriture, des jeux familiaux, un château gonflable et un espace de dialogue ouvert sur la santé mentale des premiers intervenants.",
+      highlights: {
+        music: "Musique en direct par Delta 88 et The Cabbies",
+        tickets: "Billets en vente le 14 mai",
+        silence: "Aidez-nous à briser le silence"
+      },
+      close: "Fermer"
     },
   },
 };

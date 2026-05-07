@@ -4,11 +4,13 @@ import { initI18n, setLanguage, getCurrentTranslation } from "./utils/i18n.js";
 import { fadeEffect } from "./components/fadeEffect.js";
 import { barraNavegacion } from "./components/navbar.js";
 import { typewriter } from "./components/typewriter.js";
+import { initPopup } from "./components/popup.js";
 
 document.addEventListener("DOMContentLoaded", () => {
   new ScrollAnimations();
   fadeEffect();
   barraNavegacion();
+  initPopup();
   
   initI18n(); 
 

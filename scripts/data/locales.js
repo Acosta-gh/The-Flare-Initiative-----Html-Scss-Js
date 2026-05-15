@@ -84,9 +84,10 @@ export const translations = {
       blurb_p2: "Enjoy the day with food trucks, family games, a bouncy castle, and a space for open dialogue and discussion around first responder mental health.",
       highlights: {
         music: "Live Music by Delta 88 & The Cabbies",
-        tickets: "Tickets on sale May 14th",
+        free_entry: "Free Entry &bull; Donations Welcome",
         silence: "Help us break the silence"
       },
+      donate: "Donate",
       close: "Close"
     },
   },
@@ -176,9 +177,10 @@ export const translations = {
       blurb_p2: "Profitez de la journée avec des camions de nourriture, des jeux familiaux, un château gonflable et un espace de dialogue ouvert sur la santé mentale des premiers intervenants.",
       highlights: {
         music: "Musique en direct par Delta 88 et The Cabbies",
-        tickets: "Billets en vente le 14 mai",
+        free_entry: "Entrée Gratuite &bull; Dons Bienvenus",
         silence: "Aidez-nous à briser le silence"
       },
+      donate: "Faire un don",
       close: "Fermer"
     },
   },
